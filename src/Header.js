@@ -1,4 +1,4 @@
-import header from './kwhite.webp';
+import logo from './kwhite.webp';
 
 import Row from "react-bootstrap/Row";
 import {BsFillGrid3X3GapFill} from "react-icons/bs"
@@ -9,7 +9,7 @@ function Header(){
         <Row className="row">
           
             <div className="col-6 col-sm-6 col-md-6 col-lg-6" id="logoContainer">
-                <img src={header} alt="KaizerFit" className="logo-bw" />
+                <img src={logo} alt="KaizerFit" className="logo-bw" />
             </div>
       
           
