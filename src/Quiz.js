@@ -15,7 +15,10 @@ function Quiz(){
 
     const [state,setChange ] = useState(1);
     const [cls,setClass ] = useState("");
+
+
     const handleClick1  = event => {
+      
             var id = parseInt(event.currentTarget.getAttribute('data-id')); 
             var ans = event.currentTarget.getAttribute('data-ans');
             var question = event.currentTarget.getAttribute('data-question');
@@ -49,7 +52,9 @@ function Quiz(){
                 $("#progress-load").css("width", "100%");
                 $("#progress-load").removeClass("bg-warning");
                 $("#progress-load").addClass("bg-success");
+             
               break;
+             
               default: break;
             }
          
