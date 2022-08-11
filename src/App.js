@@ -3,8 +3,8 @@ import './quiz.css';
 import Header from "./Header";
 import QuizComponent from './QuizComponent';
 import Footer from "./Footer";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import Fathacks from "./Fathacks";
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" component={QuizComponent} />
-          <Route path="test" component={<div><h1>asdf</h1></div>} />
+          <Route path="/" element={<QuizComponent />} />
+          <Route path="/fathacks" element={<Fathacks />} />
         </Routes>
       </BrowserRouter>
     

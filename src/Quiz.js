@@ -1,24 +1,24 @@
 
 import Range from "react-bootstrap/FormRange"
-import React, { useState } from "react";
+import { useState } from "react";
 import $ from "jquery";
 import { FaFemale } from 'react-icons/fa';
 import { FaMale } from 'react-icons/fa';
+import {BrowserRouter, useNavigate, Navigate} from "react-router-dom";
 
-
-
+import ReactDOM from 'react-dom/client';
 
 
 
 
 function Quiz(){
-
+    const [quizDone, setComplete] = useState(false);
     const [state,setChange ] = useState(1);
     const [cls,setClass ] = useState("");
-
-
+    const navigate = useNavigate();
+ 
     const handleClick1  = event => {
-      
+   
             var id = parseInt(event.currentTarget.getAttribute('data-id')); 
             var ans = event.currentTarget.getAttribute('data-ans');
             var question = event.currentTarget.getAttribute('data-question');
@@ -52,7 +52,8 @@ function Quiz(){
                 $("#progress-load").css("width", "100%");
                 $("#progress-load").removeClass("bg-warning");
                 $("#progress-load").addClass("bg-success");
-             
+                setComplete(quizDone=>true);
+                navigate("/fathacks", { replace: true });
               break;
              
               default: break;
@@ -232,6 +233,7 @@ function Quiz(){
     }
 
     function Question6(){
+   
         return (
             <div className="col-12 col-sm-6 mx-auto">
             <div className="d-grid gap-3" id="age-grid">
