@@ -1,5 +1,5 @@
 
-
+import React from 'react';
 function Footer(){
     return(
 <div className="container-fluid p-3 p-sm-5 p-md-5 p-lg-5 p-xl-5 bg-dark fs-7 fw-light text-white clearfix">

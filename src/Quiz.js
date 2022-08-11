@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Range from "react-bootstrap/FormRange"
 import { useState } from "react";
 import $ from "jquery";

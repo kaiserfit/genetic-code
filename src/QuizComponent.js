@@ -1,3 +1,4 @@
+import React from 'react';
 import QuizBanner from "./Quizbanner";
 import Quiz from "./Quiz";
 

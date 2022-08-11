@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './kwhite.webp';
 
 import Row from "react-bootstrap/Row";

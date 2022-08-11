@@ -1,6 +1,6 @@
 import React from 'react';
 import videojs from 'video.js';
-import './vsl-components/css/video-js.css';
+import 'video.js/dist/video-js.css';
 
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null);
@@ -14,11 +14,11 @@ export const VideoJS = (props) => {
       const videoElement = videoRef.current;
 
       if (!videoElement) return;
-      playerRef.current = videojs(videoElement, options);
-      // const player = playerRef.current = videojs(videoElement, options, () => {
-      //   videojs.log('player is ready');
-      //   // onReady && onReady(player);
-      // });
+
+      const player = playerRef.current = videojs(videoElement, options, () => {
+       
+        onReady && onReady(player);
+      });
 
     // You could update an existing player in the `else` block here
     // on prop change, for example:
@@ -31,20 +31,21 @@ export const VideoJS = (props) => {
   }, [options, videoRef]);
 
   // Dispose the Video.js player when the functional component unmounts
-  React.useEffect(() => {
-    const player = playerRef.current;
+//   React.useEffect(() => {
+//     const player = playerRef.current;
 
-    return () => {
-      if (player) {
-        player.dispose();
-        playerRef.current = null;
-      }
-    };
-  }, [playerRef]);
+//     return () => {
+//       if (player) {
+//           videojs.log("video disposed");
+//           player.dispose();
+//         playerRef.current = null;
+//       }
+//     };
+//   }, [playerRef]);
 
   return (
     <div data-vjs-player>
-      <video ref={videoRef} className='video-js vjs-big-play-centered' />
+      <video ref={videoRef} id="my-video" className='video-js vjs-big-play-centered' />
     </div>
   );
 }

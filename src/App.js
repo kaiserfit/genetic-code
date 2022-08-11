@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './quiz.css';
 import "./vsl-components/css/product.css";
 import "./vsl-components/css/product-sm.css";

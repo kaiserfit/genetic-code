@@ -1,4 +1,4 @@
-
+import React from 'react';
 import GetCookie from "../Cookie";
 
 

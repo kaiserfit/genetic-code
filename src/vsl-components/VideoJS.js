@@ -1,6 +1,6 @@
 import React from 'react';
 import videojs from 'video.js';
-import './vsl-components/css/video-js.css';
+import 'video.js/dist/video-js.css';
 
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null);
@@ -14,11 +14,11 @@ export const VideoJS = (props) => {
       const videoElement = videoRef.current;
 
       if (!videoElement) return;
-      playerRef.current = videojs(videoElement, options);
-      // const player = playerRef.current = videojs(videoElement, options, () => {
-      //   videojs.log('player is ready');
-      //   // onReady && onReady(player);
-      // });
+
+      const player = playerRef.current = videojs(videoElement, options, () => {
+        videojs.log('player is ready');
+        onReady && onReady(player);
+      });
 
     // You could update an existing player in the `else` block here
     // on prop change, for example:

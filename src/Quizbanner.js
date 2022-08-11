@@ -1,3 +1,4 @@
+import React from 'react';
 import genetic from "./genetic.webp";
 
 // import Progress from "react-bootstrap/ProgressBar";
