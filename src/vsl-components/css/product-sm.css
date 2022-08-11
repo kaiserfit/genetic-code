@@ -1,0 +1,119 @@
+
+  @media (min-width: 280px) and (max-width: 767px){
+  
+    /* media query for the top-banner (remove floats) */
+  
+    
+    #top-banner .fa-phone-alt {
+        /* position:relative;
+        top: 0px;
+        float: none; */
+        display: none;
+  
+    }
+    #top-banner .container .row #logo1 { 
+        display: block;
+    }
+  
+    #top-banner .container .row #logo2 { 
+        display: none;
+    }
+  
+    #top-banner .container .row #banner-phone  {
+        display: none;
+        float: none;
+        text-align: center;
+    }
+  
+    #top-banner .container .row #banner-email { 
+        display: none;
+        float: none;
+        text-align: center;
+    }
+  
+    #top-banner .container .row .col-sm-4.col-md-4.col-lg-4 {
+        padding-bottom: 10px;
+    }
+  
+  /* media query for active bundle selected image size */
+
+
+
+
+
+#mb-pic {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.info-content {
+    padding: 20px 10px;
+}
+
+/* COMMENT SECTION */
+
+
+.list-head {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.list-content {
+    font-size: 1.2em;
+}
+
+.price {
+    font-size: 1.2em;
+    
+}
+
+
+
+
+
+  }
+
+  @media (min-width: 280px) and (max-width: 480px){ 
+    /* mobile only */
+
+    .head-slim {
+        font-size: 3rem;
+    }
+
+    .faq-title, .faq-question {
+        font-size: 1.6em;
+    }
+
+    .faq-answer {
+       margin-left: .8rem;
+       font-size: 2rem;
+    } 
+
+    .faq-content {
+        font-size: 1.4em;
+        padding-left: 12px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px){ 
+    /* tablets and small screens only */
+
+
+.main-checkout .container #in-caret .caret {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000000;
+   
+}
+
+  }
+
+  @media (min-width: 280px) and (max-width: 991px){
+
+    
+    #comment-reviews, .comments {
+   width: 100%; 
+  }
+    
+  }

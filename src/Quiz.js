@@ -4,15 +4,15 @@ import { useState } from "react";
 import $ from "jquery";
 import { FaFemale } from 'react-icons/fa';
 import { FaMale } from 'react-icons/fa';
-import {BrowserRouter, useNavigate, Navigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-import ReactDOM from 'react-dom/client';
+
 
 
 
 
 function Quiz(){
-    const [quizDone, setComplete] = useState(false);
+    
     const [state,setChange ] = useState(1);
     const [cls,setClass ] = useState("");
     const navigate = useNavigate();
@@ -52,7 +52,7 @@ function Quiz(){
                 $("#progress-load").css("width", "100%");
                 $("#progress-load").removeClass("bg-warning");
                 $("#progress-load").addClass("bg-success");
-                setComplete(quizDone=>true);
+               
                 navigate("/fathacks", { replace: true });
               break;
              
