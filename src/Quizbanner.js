@@ -28,7 +28,7 @@ function QuizData(){
 
 function ProgBar(){
     return (
-        <div className="bg-gray bg-gradient rounded-pill p-2 mt-2">
+        <div className="bg-gray bg-gradient rounded-pill p-1 mt-2">
         <div className="progress">
           <div className="progress-bar progress-bar-striped bg-warning rounded-pill" id="progress-load" role="progressbar" style={{width: '1%'}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
         </div>

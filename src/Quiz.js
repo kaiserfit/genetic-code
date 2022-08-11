@@ -14,17 +14,47 @@ import { FaMale } from 'react-icons/fa';
 function Quiz(){
 
     const [state,setChange ] = useState(1);
-    
+    const [cls,setClass ] = useState("");
     const handleClick1  = event => {
             var id = parseInt(event.currentTarget.getAttribute('data-id')); 
             var ans = event.currentTarget.getAttribute('data-ans');
             var question = event.currentTarget.getAttribute('data-question');
             if(id===4 && ans === "0 lbs"){
-                alert("Please Indicate your Weight");
-                return false;
+              alert("Please Indicate your Weight");
+              return false;
+          }
+            switch(id){
+              case 1:
+                $("#progress-load").css("width", "13%");
+                if (ans === "Man"){
+                  setClass(cls=>"male-btn")
+                } else {
+                  setClass(cls=>"female-btn")
+                }
+              break;
+              case 2:
+                $("#progress-load").css("width", "27%");
+                
+              break;
+              case 3:
+                $("#progress-load").css("width", "51%");
+              break;
+              case 4:
+                $("#progress-load").css("width", "70%");
+              break;
+              case 5:
+                $("#progress-load").css("width", "85%");
+              break;
+              case 6:
+                $("#progress-load").css("width", "100%");
+                $("#progress-load").removeClass("bg-warning");
+                $("#progress-load").addClass("bg-success");
+              break;
+              default: break;
             }
-            $("#quiz-data").append(question+": " +ans + "&nbsp;&nbsp;|&nbsp;&nbsp;");
          
+            $("#quiz-data").append(question+": " +ans + "&nbsp;&nbsp;|&nbsp;&nbsp;");
+            document.cookie= question.toLowerCase()+"="+ans+";path=/";
             
 
             setChange(prev=>prev+1)
@@ -55,27 +85,27 @@ function Quiz(){
         return (
             <div className="col-12 col-sm-6 mx-auto">
                 <div className="d-grid gap-3" id="age-grid">
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="Teens">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="Teens">
                     Teens
                   </button>
       
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="20s">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="20s">
                     20s
                   </button>
     
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="30s">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="30s">
                     30s
                   </button>
     
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="40s">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="40s">
                     40s
                   </button>
     
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="50s">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="50s">
                     50s
                   </button>
     
-                  <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Age" data-id="2" data-ans="60s and up">
+                  <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Age" data-id="2" data-ans="60s and up">
                     60s and up
                   </button>
                 </div>
@@ -87,15 +117,15 @@ function Quiz(){
         return (
             <div className="col-12 col-sm-6 mx-auto">
               <div className="d-grid gap-3" id="metabolism-grid">
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold text-capitalize" data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Slow">
+                <button className={`btn btn-outline-dark btn-lg p-3 ans-btn fw-bold ${cls} text-capitalize`} data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Slow">
                   Slow
                 </button>
     
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold text-capitalize" data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Normal">
+                <button className={`btn btn-outline-dark btn-lg p-3 ans-btn fw-bold ${cls} text-capitalize`} data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Normal">
                   Normal
                 </button>
 
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold text-capitalize" data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Fast">
+                <button className={`btn btn-outline-dark btn-lg p-3 ans-btn fw-bold ${cls} text-capitalize`} data-question="Metabolism" onClick={handleClick1} data-id="3" data-ans="Fast">
                   fast
                 </button>
               </div>
@@ -151,7 +181,7 @@ function Quiz(){
               </div>
   
               <div className="text-center">
-                <button className="btn btn-lg bg-kaizerfit ans-btn text-white" onClick={handleClick1} data-question="Weight" id="ansWeight" data-id="4" data-ans={value+" lbs"} >
+                <button className={`btn btn-lg bg-kaizerfit ans-btn ${cls} text-white`} onClick={handleClick1} data-question="Weight" id="ansWeight" data-id="4" data-ans={value+" lbs"} >
                   Continue
                 </button>
               </div>
@@ -170,23 +200,23 @@ function Quiz(){
         return (
         <div className="col-12 col-sm-6 mx-auto">
               <div className="d-grid gap-3" id="age-grid">
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Goal" data-id="5" data-ans="5-10 lbs">
+                <button className={`btn btn-outline-dark btn-lg p-3 ${cls} ans-btn fw-bold`} onClick={handleClick1} data-question="Goal" data-id="5" data-ans="5-10 lbs">
                   5-10 pounds
                 </button>
     
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Goal" data-id="5" data-ans="15-25 lbs">
+                <button className={`btn btn-outline-dark btn-lg p-3 ${cls} ans-btn fw-bold`} onClick={handleClick1} data-question="Goal" data-id="5" data-ans="15-25 lbs">
                   15-25 pounds
                 </button>
 
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Goal" data-id="5" data-ans="26-49 lbs">
+                <button className={`btn btn-outline-dark btn-lg p-3 ${cls} ans-btn fw-bold`} onClick={handleClick1} data-question="Goal" data-id="5" data-ans="26-49 lbs">
                   26-49 pounds
                 </button>
 
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Goal" data-id="5" data-ans="50+ lbs">
+                <button className={`btn btn-outline-dark btn-lg p-3 ${cls} ans-btn fw-bold`} onClick={handleClick1} data-question="Goal" data-id="5" data-ans="50+ lbs">
                   50+ pounds
                 </button>
   
-                <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Goal" data-id="5" data-ans="100+ lbs">
+                <button className={`btn btn-outline-dark btn-lg p-3 ${cls} ans-btn fw-bold`} onClick={handleClick1} data-question="Goal" data-id="5" data-ans="100+ lbs">
                   100+ pounds
                 </button>
   
@@ -200,27 +230,27 @@ function Quiz(){
         return (
             <div className="col-12 col-sm-6 mx-auto">
             <div className="d-grid gap-3" id="age-grid">
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No diet has worked">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No diet has worked">
                 No diet has worked for me
               </button>
   
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="I am lost/confused">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="I am lost/confused">
                 I am lost/confused
               </button>
 
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="Bad Habits">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="Bad Habits">
                 Bad Habits
               </button>
 
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No consistency">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No consistency">
                 No consistency
               </button>
 
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No motivation">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="No motivation">
                 No motivation
               </button>
 
-              <button className="btn btn-outline-dark btn-lg p-3 ans-btn fw-bold" onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="Countless reasons">
+              <button className={`btn btn-outline-dark btn-lg p-3 ans-btn ${cls} fw-bold`} onClick={handleClick1} data-question="Challenge" data-id="6" data-ans="Countless reasons">
                 Countless reasons
               </button>
             </div>
