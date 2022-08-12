@@ -269,9 +269,6 @@ body {
 margin-bottom: 36px;
 }
 
-strike {
-    color: red;
-}
 
 .product-pack {
     font-family: 'Barlow', sans-serif;
@@ -288,31 +285,13 @@ strike {
   color: #403b38;
 }
 
-.bottle {
-    font-size: 4.4rem;
-    font-weight: 700;
-}
 
-.day-supply {
- font-size: 3.4rem;
- font-weight: 700;
-}
 
-.product-price {
- font-size: 4.4rem;
- font-weight: 700;
-}
 
-.per-bottle {
- position: relative;
- top: -1rem;
- font-size: 2rem;
- font-weight: 600;
-}
 
-.bottom-strike {
- font-size: 3.4rem;
-}
+
+
+
 
 .border-black {
     border-color: #000;
@@ -329,62 +308,10 @@ strike {
     background-color: #cd0000;
   }
 
-  .product-pack {
-    font-family: 'Barlow', sans-serif;
-    background-color: #fff;
-  }
-.product-pack:hover {
-  background-color: #fffeda;
-}
-
-.bonus, .checkb {   
-    font-size: 2.4rem;
-  }
-
-
-  .list-head {
-    font-size: 1.8em;
-    font-weight: 700;
-   
-}
-.faq-title {
-    font-size: 2em;
-    font-weight: 500;
-    margin-bottom: 12px;
-    margin-top: 24px;
-    color: #000;
-}
-.faq-title .row {
-    cursor: pointer;
-}
-.faq-title .row .col-xs-10.col-sm-11.col-md-11.col-lg-11 {
-    padding-left: 0;
-}
-
-.faq-content {
-    font-size: 1.6em;
-    margin-bottom: 24px;
-    margin-top: 12px;
-    padding-left: 2em;
-    max-height: 100%;
-  
-    
-   
-    display: block;
-    
-} 
-
-.faq-content.hidden {
- 
-    display: none;
-} 
 
 
 
-.list-content {
-    font-size: 1.6em;
-    
-}
+
 
 
 
