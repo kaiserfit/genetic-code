@@ -9,14 +9,14 @@ import VslContent from './vsl-components/VslContent';
 // import App from "./vsl-components/New";
 import Vid from './Vid';
   function Fathacks(){
-    const [vidWatched, setVid] = useState(false);
+   
     document.title="Fathacks";
-    console.log(vidWatched)
+    
     return (
       <div>
         <Sticky />
         <ResultPanel />
-        <Vid setVid={setVid}/>
+        <Vid />
         {/* <VslContent vidWatched={vidWatched} /> */}
       </div>
       )

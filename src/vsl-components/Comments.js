@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 
 export const commentsArray = [
@@ -9,7 +9,7 @@ export const commentsArray = [
 
       "title": "I can eat Ice Cream!",
       
-"content": '<div style=style={padding:56.25% 0 0 0;position:relative;}><iframe src="https://player.vimeo.com/video/637761406?h=b385d6fb1e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="1 JeAnna Bland"></iframe></div>',
+"content": '<div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src="https://player.vimeo.com/video/637761406?h=b385d6fb1e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="1 JeAnna Bland"></iframe></div>',
    
        "page": 1,
       "creator": 1,
@@ -26,7 +26,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Renche-Jenkins.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Renche-Jenkins.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" />',
    
        "page": 1,
       "creator": 1,
@@ -43,7 +43,7 @@ export const commentsArray = [
 
       "title": "I don't even take pictures at the gym before but this is the real deal.",
       
-      "content": '<img src={require("../vsl-components/images/comments/tammy-keown.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/tammy-keown.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -60,7 +60,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Nicole-Smith.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Nicole-Smith.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -77,7 +77,7 @@ export const commentsArray = [
 
       "title": "Just trust the program ladies, you won't even notice it",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764559?h=8d29eef55d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="15 Nicolette"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764559?h=8d29eef55d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="15 Nicolette"></iframe></div>',
    
        "page": 1,
       "creator": 1,
@@ -94,7 +94,7 @@ export const commentsArray = [
 
       "title": "Going steady! props to kaiserfit family!",
       
-      "content": '<img src={require("../vsl-components/images/comments/reyna-del-mundo.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/reyna-del-mundo.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -112,7 +112,7 @@ export const commentsArray = [
 
       "title": "I left my room singing and dancing!",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_anam.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_anam.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -129,7 +129,7 @@ export const commentsArray = [
 
       "title": "This Program WORKS! Thanks Coach Shane!",
       
-      "content": '<img src={require("../vsl-components/images/comments/nikita.webp")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/nikita.webp")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -146,7 +146,7 @@ export const commentsArray = [
 
       "title": "Sharing my week 1 results, I'm on my way to fitness ladies!",
       
-      "content": '<img src={require("../vsl-components/images/comments/tysha.webp")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/tysha.webp")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -163,7 +163,7 @@ export const commentsArray = [
 
       "title": "This program works ladies!",
       
-      "content": 'Hi! It\'s been so long but this is me now with my kid! actually I have 2 kids now 😅<br /><br />.<img src={require("../vsl-components/images/comments/marina.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": 'Hi! It\'s been so long but this is me now with my kid! actually I have 2 kids now 😅<br /><br />.<img src={require("../vsl-components/images/comments/marina.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -181,7 +181,7 @@ export const commentsArray = [
 
       "title": "Getting there without even starving myself.",
       
-      "content": '<img src={require("../vsl-components/images/comments/Veronica-Diamond.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Veronica-Diamond.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -198,7 +198,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764633?h=4d6ca7baf0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="16 Robin"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764633?h=4d6ca7baf0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="16 Robin"></iframe></div>',
    
        "page": 2,
       "creator": 1,
@@ -215,7 +215,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Lelie-Wenning.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Lelie-Wenning.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -233,7 +233,7 @@ export const commentsArray = [
 
       "title": "I LOVE IT!",
       
-      "content": '<img src={require("../vsl-components/images/comments/tami-rodriguez.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/tami-rodriguez.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -250,7 +250,7 @@ export const commentsArray = [
 
       "title": "❤️",
       
-      "content": '<img src={require("../vsl-components/images/comments/Michelle-Cantrall.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Michelle-Cantrall.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -267,7 +267,7 @@ export const commentsArray = [
 
       "title": "had to share this post from last year, Kaiser Coach + Queen Formula Combo FTW!!",
       
-      "content": '<img src={require("../vsl-components/images/comments/kendra.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/kendra.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -285,7 +285,7 @@ export const commentsArray = [
 
       "title": "small VICTORY!",
       
-"content": '<img src={require("../vsl-components/images/comments/comm_attachment_helen.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment"> ',
+"content": '<img src={require("../vsl-components/images/comments/comm_attachment_helen.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment"> ',
    
        "page": 1,
       "creator": 1,
@@ -303,7 +303,7 @@ export const commentsArray = [
 
       "title": "I'm eating more food!",
       
-"content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761455?h=c8588f96e5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="2 Linda_testimonial"></iframe></div>',
+"content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761455?h=c8588f96e5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="2 Linda_testimonial"></iframe></div>',
    
        "page": 1,
       "creator": 1,
@@ -321,7 +321,7 @@ export const commentsArray = [
 
       "title": "I'm eating more and losing more!",
       
-"content": '<img src={require("../vsl-components/images/comments/comm_attachment_jackie.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment"> ',
+"content": '<img src={require("../vsl-components/images/comments/comm_attachment_jackie.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment"> ',
    
        "page": 1,
       "creator": 1,
@@ -338,7 +338,7 @@ export const commentsArray = [
 
       "title": "Just sharing my transformation journey 🙂",
       
-"content": '<img src={require("../vsl-components/images/comments/comm_attachment_alyson.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+"content": '<img src={require("../vsl-components/images/comments/comm_attachment_alyson.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -356,7 +356,7 @@ export const commentsArray = [
 
       "title": "I'm finally able to pursue my dream of becoming a model!",
       
-"content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761545?h=34ccbb643e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="3 Rebeca"></iframe></div>',
+"content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761545?h=34ccbb643e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="3 Rebeca"></iframe></div>',
    
        "page": 2,
       "creator": 1,
@@ -373,7 +373,7 @@ export const commentsArray = [
 
       "title": "I'm ready to lose more this year",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_brooke.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_brooke.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -390,7 +390,7 @@ export const commentsArray = [
 
       "title": "Thought I would share my journey from last year",
       
-"content": '<img src={require("../vsl-components/images/comments/comm_attachment_bumbe.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+"content": '<img src={require("../vsl-components/images/comments/comm_attachment_bumbe.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 2,
       "creator": 1,
@@ -407,7 +407,7 @@ export const commentsArray = [
 
       "title": "Yep! I'm in a bikini again!",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761630?h=0ecc858e9a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="4 Shardai"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761630?h=0ecc858e9a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="4 Shardai"></iframe></div>',
    
        "page": 2,
       "creator": 1,
@@ -424,7 +424,7 @@ export const commentsArray = [
 
       "title": "I'm much more confident",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761677?h=18d9657607&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="5 Faith Hernandez"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761677?h=18d9657607&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="5 Faith Hernandez"></iframe></div>',
    
        "page": 3,
       "creator": 1,
@@ -441,7 +441,7 @@ export const commentsArray = [
 
       "title": "still can't believe I lost almost 40inches off. Great program!",
       
-      "content": '<img src={require("../vsl-components/images/comments/Valerie-Mireles.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Valerie-Mireles.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -458,7 +458,7 @@ export const commentsArray = [
 
       "title": "Best transformation program!",
       
-      "content": '<img src={require("../vsl-components/images/comments/maddy.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/maddy.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -476,7 +476,7 @@ export const commentsArray = [
 
       "title": "really like this video of me! thanks KaiserFit!",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761760?h=a96e3b355c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="6 Samantha"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761760?h=a96e3b355c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="6 Samantha"></iframe></div>',
    
        "page": 3,
       "creator": 1,
@@ -493,7 +493,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Martha-Perea.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Martha-Perea.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -510,7 +510,7 @@ export const commentsArray = [
 
       "title": "This program helped me with my health issues as well",
       
-      "content": '<img src={require("../vsl-components/images/comments/Michelle-Colbert.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Michelle-Colbert.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -527,7 +527,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_angel.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_angel.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -545,7 +545,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Vincenza.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Vincenza.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -562,7 +562,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/tayler-mahan.jpg" className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/tayler-mahan.jpg" className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -579,7 +579,7 @@ export const commentsArray = [
 
       "title": "so lucky I stumbled upon KaiserFit 😊",
       
-      "content": '<img src={require("../vsl-components/images/comments/cath.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/cath.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -596,7 +596,7 @@ export const commentsArray = [
 
       "title": "Melts like butter!",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_ann-marie.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_ann-marie.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 3,
       "creator": 1,
@@ -613,7 +613,7 @@ export const commentsArray = [
 
       "title": "Do I get a reward for keeping my transformation for over a year? 😂",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761857?h=8b68772bea&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="7 Tess"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761857?h=8b68772bea&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="7 Tess"></iframe></div>',
    
        "page": 3,
       "creator": 1,
@@ -630,7 +630,7 @@ export const commentsArray = [
 
       "title": "This transformation is alarmingly good lmao",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_ashley.PNG")} className"ms-3 rounded img-rev lazy" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_ashley.PNG")} className="ms-3 rounded img-rev lazy" alt="comment attachment" >',
    
        "page": 1,
       "creator": 1,
@@ -648,7 +648,7 @@ export const commentsArray = [
 
       "title": "I'm smiling whenever I look at myself in the mirror 😊",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761934?h=bc2064a7ba&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="8 Jacque Cole"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761934?h=bc2064a7ba&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="8 Jacque Cole"></iframe></div>',
    
        "page": 4,
       "creator": 1,
@@ -665,7 +665,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/cici-Woods.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/cici-Woods.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 4,
       "creator": 1,
@@ -682,7 +682,7 @@ export const commentsArray = [
 
       "title": "Thank you coach Shane and kaiserfit family!",
       
-      "content": '<img src={require("../vsl-components/images/comments/carly.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/carly.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 4,
       "creator": 1,
@@ -699,7 +699,7 @@ export const commentsArray = [
 
       "title": "Going for the goal!",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_cereza.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_cereza.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 4,
       "creator": 1,
@@ -716,7 +716,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764770?h=a163c03538&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="17 Annie"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764770?h=a163c03538&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="17 Annie"></iframe></div>',
    
        "page": 4,
       "creator": 1,
@@ -733,7 +733,7 @@ export const commentsArray = [
 
       "title": "I'm glad I found the KaiserFit Team",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762163?h=fe8c79d173&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="9 Joie"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762163?h=fe8c79d173&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="9 Joie"></iframe></div>',
    
        "page": 4,
       "creator": 1,
@@ -750,7 +750,7 @@ export const commentsArray = [
 
       "title": "Finally found a fix for my metabolism",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762456?h=5d6a6965e7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="10 Charmaine"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762456?h=5d6a6965e7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="10 Charmaine"></iframe></div>',
    
        "page": 4,
       "creator": 1,
@@ -768,7 +768,7 @@ export const commentsArray = [
 
       "title": "Imagine, having a 26-inch waist again...Thanks KaiserFit!",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762894?h=5d7bed0252&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="12 Lariena"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762894?h=5d7bed0252&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="12 Lariena"></iframe></div>',
    
        "page": 4,
       "creator": 1,
@@ -785,7 +785,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Rabia-Malik.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Rabia-Malik.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 4,
       "creator": 1,
@@ -802,7 +802,7 @@ export const commentsArray = [
 
       "title": "Just in time for my sister's wedding 😀",
       
-      "content": '<img src={require("../vsl-components/images/comments/renee.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/renee.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 4,
       "creator": 1,
@@ -820,7 +820,7 @@ export const commentsArray = [
 
       "title": "Hope this motivates someone. 🤗",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_jennifer.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_jennifer.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -837,7 +837,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/stephanie-blair.jpg" className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/stephanie-blair.jpg" className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -854,7 +854,7 @@ export const commentsArray = [
 
       "title": "It worked for me as well",
       
-      "content": 'this program helped me be who I am today <br /><br /><img src={require("../vsl-components/images/comments/zaia.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": 'this program helped me be who I am today <br /><br /><img src={require("../vsl-components/images/comments/zaia.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -871,7 +871,7 @@ export const commentsArray = [
 
       "title": "How it started vs. how it's going 🤣",
       
-      "content": '<img src={require("../vsl-components/images/comments/shane.webp")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/shane.webp")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -888,7 +888,7 @@ export const commentsArray = [
 
       "title": "Truly one of a kind!",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637763049?h=55c420771f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="13 Naiara"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637763049?h=55c420771f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="13 Naiara"></iframe></div>',
    
        "page": 5,
       "creator": 1,
@@ -905,7 +905,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764937?h=67af1f2495&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="18 Enisa"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764937?h=67af1f2495&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="18 Enisa"></iframe></div>',
    
        "page": 5,
       "creator": 1,
@@ -922,7 +922,7 @@ export const commentsArray = [
 
       "title": "I was so surprised with this program.",
       
-      "content": '<img src={require("../vsl-components/images/comments/Marilyn.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Marilyn.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -939,7 +939,7 @@ export const commentsArray = [
 
       "title": "Finally, a plan that doesn't let you starve",
       
-      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_jayde.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/comm_attachment_jayde.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -956,7 +956,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Natalia2.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Natalia2.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -973,7 +973,7 @@ export const commentsArray = [
 
       "title": "Sending love to the KaiserFit Fam!",
       
-      "content": '<div style=style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764190?h=30685a22ad&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="14 Olivia"></iframe></div>',
+      "content": '<div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764190?h=30685a22ad&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="14 Olivia"></iframe></div>',
    
        "page": 5,
       "creator": 1,
@@ -991,7 +991,7 @@ export const commentsArray = [
 
       "title": "Thanks a lot Coach Shane!",
       
-      "content": '<img src={require("../vsl-components/images/comments/fen-morrish.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/fen-morrish.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 5,
       "creator": 1,
@@ -1031,7 +1031,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Selena-Pedersen.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Selena-Pedersen.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 6,
       "creator": 1,
@@ -1048,7 +1048,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Robin-Rutherford-Hensen.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Robin-Rutherford-Hensen.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 6,
       "creator": 1,
@@ -1065,7 +1065,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Petya-Yankova.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Petya-Yankova.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 6,
       "creator": 1,
@@ -1229,7 +1229,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Kimberly-Rush-Bittick.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Kimberly-Rush-Bittick.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 7,
       "creator": 1,
@@ -1246,7 +1246,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Rachel-Mccully.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Rachel-Mccully.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 7,
       "creator": 1,
@@ -1282,7 +1282,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Matt.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Matt.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 7,
       "creator": 1,
@@ -1319,7 +1319,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Melanie-Mccarty.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Melanie-Mccarty.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 7,
       "creator": 1,
@@ -1436,7 +1436,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Marlene-June.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Marlene-June.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 8,
       "creator": 1,
@@ -1455,7 +1455,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/Wendy-York-Hudlow.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/Wendy-York-Hudlow.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 8,
       "creator": 1,
@@ -1615,7 +1615,7 @@ export const commentsArray = [
 
       "title": "",
       
-      "content": '<img src={require("../vsl-components/images/comments/tracey-mascrow.PNG")} className"ms-3 rounded img-rev" alt="comment attachment" >',
+      "content": '<img src={require("../vsl-components/images/comments/tracey-mascrow.PNG")} className="ms-3 rounded img-rev" alt="comment attachment" >',
    
        "page": 8,
       "creator": 1,

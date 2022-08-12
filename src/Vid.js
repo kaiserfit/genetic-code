@@ -9,30 +9,33 @@ import Play from "./vsl-components/images/customplay.webp"
 import {BsPlayBtnFill} from "react-icons/bs"
 import $ from "jquery";
 
-const Vid = ({setVid}) => {
+const Vid = () => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
     const [hook6, setHook6] = useState(false);
     const [videoTime, setTime] = useState(0);
-    const [timer, setExp] = useState("24:00:00");
+    // const [timer, setExp] = useState("24:00:00");
     const [pageNum, setPage] = useState(1);
+   
     useEffect(() => {
-      if (videoTime >=10){
+     
+      
         if (userPlay){
-          setWatch(vslWatched=>true)
-        }
-        if (vslWatched){
-          if (hook6 === false) {
-            setVid(true);
-            $("#sticky").addClass("scrolled");
-            console.log("video done");
-            setHook6(true);
-          }
+          const veed = videojs(document.getElementById("my-video"));
+          veed.on('timeupdate', ()=> {
+            if (veed.currentTime()>=10){
+              if (hook6 === false) {
+                $("#sticky").addClass("scrolled");             
+                setHook6(true);
+              }
+            }
+          })
+      
      
       } 
-      }
+      
     
     
     }, [userPlay, vslWatched, hook6, videoTime]);
@@ -70,15 +73,15 @@ const Vid = ({setVid}) => {
       var xmins = ( (mins < 10) ? "0" : "" ) + mins;
         var xsec = ( (secs < 10) ? "0" : "" ) + secs;
        
-      setExp(xhours+":"+xmins+":"+xsec);
-        // $(".unlock-timer").text(xhours+":"+xmins+":"+xsec);
+      // setExp(xhours+":"+xmins+":"+xsec);
+        $(".unlock-timer").text(xhours+":"+xmins+":"+xsec);
   
       }
       
       startTimer(1440*60);
     }
 
-
+    
 
 
   const playerRef = React.useRef(null);
@@ -101,20 +104,12 @@ const Vid = ({setVid}) => {
   const clickPlay = (e) => {
     const veed = videojs(document.getElementById("my-video"));
     
+   
       veed.muted(false);
       veed.currentTime(0);
       setTime(0);
-
-        setUserPlay({userPlay:!userPlay}, console.log(userPlay));
-  
-
-   
-      
-
-   
-      
-    
-    $(".video-js .vjs-control-bar").css({"visibility":"visible"});
+      setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
+      $(".video-js .vjs-control-bar").css({"visibility":"visible"});
      //   $(".vjs-fullscreen-control").trigger("click");
  
     
@@ -135,19 +130,15 @@ const Vid = ({setVid}) => {
         setPaused(paused=>true);
     });
 
-    player.on('timeupdate',()=>{
-       
-        setTime(player.currentTime());
-   
+    player.on('timeupdate',()=>{   
      
     });
 
     player.on('ready', () => {
-      timer_init()
-      
+      timer_init();
         videojs.log('player is asdfasdf');
-        $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
-      });
+          $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
+        });
 
     player.on('dispose', () => {
       videojs.log('player will dispose');
@@ -204,7 +195,7 @@ const Vid = ({setVid}) => {
                   <div className="text-center">
                       <img src={require('./vsl-components/images/Shane5.webp')} className="img-fluid" alt="Coach Shane with lady"/>
                   <button className="btn btn-lg btn-warning watch-btn gray-glow"><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-                  <h4 className="unlock-text text-center text-white">Custom Plan Video Expires In: <span className="unlock-timer">{timer}</span></h4>
+                  <h4 className="unlock-text text-center text-white">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
                   </div>
               </div>
           </div>
@@ -322,7 +313,7 @@ const Vid = ({setVid}) => {
     
       <div className="text-center">
           <button className="btn btn-lg btn-warning watch-btn gray-glow"><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-          <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer">{timer}</span></h4>
+          <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
        
       </div>
     </div>
@@ -331,16 +322,23 @@ const Vid = ({setVid}) => {
   }
 
   function Reviews(){
-    var ca = commentsArray.filter(x=>x.page===pageNum);
-    const PageReview = (e) => {
-      console.log(e.target);
-      // var p = parseInt(e.target.text);
-    
-      // setPage(p);
+    function getFormattedDate(strDate){
+      var x = (strDate === "") ? "" : new Date(strDate)
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      let formattedDate = (x==="")? "": months[x.getMonth()] + ' '+x.getDate() +', ' + x.getFullYear();
+      return formattedDate;
     }
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var ca = commentsArray.filter(x=>x.page===pageNum);
+    const PageReview = (e) => {     
+      var p = parseInt(e.target.text);
+      setPage(p);
+    }
+    function removeQuote(str){
+      // console.log($.type(str));
+      return str.replace(/["']/g,"");
+    }
     return (
-      <div className='container-fluid px-0'>
+      <div className='container-fluid px-0 py-4'>
           <div className="container text-dark mb-4" id="review-banner">
         <h1>REVIEWS</h1>
           <div className="row">
@@ -372,43 +370,53 @@ const Vid = ({setVid}) => {
     
       <div id="product-reviews" className="text-dark">
       {ca.map((data, idx) => (
-        
+          
         <div className="rev-section clearfix">
             <div className="rev-head ">
             <p className="rev-person-name float-start"><strong>{data.fullname}</strong></p>
+            <p className="rev-date float-end">{getFormattedDate(data.created)}</p>
             </div>
-            <p >{data.title}</p>
+            <p className="rev-title">
+            <img src={require('./vsl-components/images/stars.webp')} className="me-2" alt="stars" height="15" width="85"/>
+            <br className="d-block d-sm-none"/>
+            <strong>{data.title}</strong>
+            </p>
+            <div className="rev-content">
+              {removeQuote(data.content)}
+            </div>
+            <hr className='border border-top border-1 border-dark' />
         </div>
       ))}
+        
       </div>
 
 
         <nav aria-label="Page navigation reviews" id="comment-nav">
           <ul className="pagination bg-transparent rounded py-2 mb-4 justify-content-center">
             <li className="page-item" key={"0"}>
-              <a className="page-link rev-arrows" data-id='prev'  href="#0" tabIndex="-1">
+              <a className="page-link rev-arrows" data-id='prev' key="0"  href="#0" tabIndex="-1">
                 <span aria-hidden="true" className="d-none d-sm-block">&laquo;</span>
                 <span aria-hidden="true" className="d-block d-sm-none">Prev</span>
               </a>
             </li>
             
-            <li className="page-item d-none d-sm-block rev-page active" key={"1"} onClick={PageReview}><a className="page-link" href="#0">1</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"2"} onClick={PageReview}><a className="page-link"  href="#0">2</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"3"} onClick={PageReview}><a className="page-link"  href="#0">3</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"4"} onClick={PageReview}><a className="page-link"  href="#0">4</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"5"} onClick={PageReview}><a className="page-link"  href="#0">5</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"6"} onClick={PageReview}><a className="page-link"  href="#0">6</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"7"} onClick={PageReview}><a className="page-link"  href="#0">7</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"8"} onClick={PageReview}><a className="page-link"  href="#0">8</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"9"} onClick={PageReview}><a className="page-link"  href="#0">9</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"10"} onClick={PageReview}><a className="page-link"  href="#0">10</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"11"} onClick={PageReview}><a className="page-link"  href="#0">11</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"12"} onClick={PageReview}><a className="page-link"  href="#0">12</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"13"} onClick={PageReview}><a className="page-link"  href="#0">13</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"14"} onClick={PageReview}><a className="page-link"  href="#0">14</a></li>
-            <li className="page-item d-none d-sm-block rev-page" key={"15"} onClick={PageReview}><a className="page-link"  href="#0">15</a></li>
+            <li className="page-item d-none d-sm-block rev-page active" key={"1"} onClick={PageReview}><a className="page-link" key="1" href="#0">1</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"2"} onClick={PageReview}><a className="page-link" key="2"  href="#0">2</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"3"} onClick={PageReview}><a className="page-link" key="3"  href="#0">3</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"4"} onClick={PageReview}><a className="page-link" key="4"  href="#0">4</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"5"} onClick={PageReview}><a className="page-link" key="5" href="#0">5</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"6"} onClick={PageReview}><a className="page-link" key="6" href="#0">6</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"7"} onClick={PageReview}><a className="page-link" key="7" href="#0">7</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"8"} onClick={PageReview}><a className="page-link" key="8" href="#0">8</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"9"} onClick={PageReview}><a className="page-link" key="9" href="#0">9</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"10"} onClick={PageReview}><a className="page-link" key="10" href="#0">10</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"11"} onClick={PageReview}><a className="page-link" key="11" href="#0">11</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"12"} onClick={PageReview}><a className="page-link" key="12" href="#0">12</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"13"} onClick={PageReview}><a className="page-link" key="13" href="#0">13</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"14"} onClick={PageReview}><a className="page-link" key="14" href="#0">14</a></li>
+            <li className="page-item d-none d-sm-block rev-page" key={"15"} onClick={PageReview}><a className="page-link" key="15" href="#0">15</a></li>
             <li className="page-item" key={"16"}>
-              <a className="page-link rev-arrows" data-id='next'  href="#0">
+              <a className="page-link rev-arrows" data-id='next' key="16"  href="#0">
                 <span aria-hidden="true" className="d-none d-sm-block">&raquo;</span>
                 <span aria-hidden="true" className="d-block d-sm-none">Next</span>
               </a>
@@ -423,12 +431,13 @@ const Vid = ({setVid}) => {
 
   return (
     <>
+    {hook6 === true && <h1>Video is finished</h1>}
     <div className="container-fluid bg-black text-center" id="ff5">
  
- <div id="col-video">
- <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-2 offset-lg-5 position-relative">
+      <div id="col-video">
+        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-2 offset-lg-5 position-relative">
     
- <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+          <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                 {paused===true && (
                     <div id="btnResume" onClick={pauseButton} className="text-center">
                     <h4 className="text-white">Resume Watching Video</h4>
@@ -443,23 +452,14 @@ const Vid = ({setVid}) => {
               </div>
                )}
                
- </div>
+        </div>
 
+      </div>
 
-
-
-
-</div>
-
-
-
-
-
-
- <div className="container text-center mt-3">
-     <h4 className="unlock-text text-center text-white" style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer">{timer}</span></h4>
- </div>
-       </div>
+      <div className="container text-center mt-3">
+          <h4 className="unlock-text text-center text-white" style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+      </div>
+    </div>
       
        <div className="container-fluid" id="co-box">
         <Section1 />
