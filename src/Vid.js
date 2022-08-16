@@ -11,283 +11,15 @@ import GetCookie from './Cookie';
 import Basic from "./vsl-components/images/Products/1-bottle.webp";
 import Premium from "./vsl-components/images/Products/3-bottles.webp";
 import Ultimate from "./vsl-components/images/Products/6-bottles.webp";
-import AddtoCart from "./vsl-components/images/add-cart.webp";
+
 import Cards from "./vsl-components/images/visa-mastercard-icon.webp";
 import MoneyBackImage from "./vsl-components/images/moneyback-guarantee.webp"
 import $ from "jquery";
 import UltimatePack from './Ultimate';
-
-function Products({num}){
-  const [bronzePack, setBronze] = useState("bronze-saver")
-    const [goldPack, setGold] = useState("gold-saver")
-    
-    
-  const checkHandler = (e)=> {
-      console.log(e.target.value);
-  }
-
-  const bronzeClick = event => {
-    console.log(event.target.value);
-    // setBronze(event.target.value);
-  }
-
-
-
-  const goldClick = event => {
-    console.log(event.target.value);
-    // setGold(event.target.value);
-  }
-
-  
-
- 
-  return (
-      <div className="product-wrap" id="wrap-1">
-          <div className="container product-section text-center">
-              <div className="text-center text-capitalize display-4 mb-3 fw-light bundle-suggestion" >
-
-              </div>
-              <div className="list-head text-center">
-              Claim Your Savings Bundle<br />
-              While Stocks Last
-              </div>
-          
-              <div className="row">
-              
-              <div className="col-12 col-sm-4 col-md-4 padding-2 order-3 order-sm-1">
-                  <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
-                          <div className="bundle-name">BASIC</div>
-                          <span className="bottle">1 BOTTLE</span><br />
-                          <span className="day-supply mb-3">30 Day Supply</span><br />
-                          <img src={Basic} className="img-fluid " alt="1 bottle queen formula" />
-
-                      
-
-                  
-
-                          <ul className="list-unstyled text-start bonus-summary" >
-                          <li className="bullets">
-                              <span className="be-3 red-text">&#x2718;</span> Shipping NOT Included
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Queen Formula
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
-                          </li>
-                          <li className="bullets">
-                              <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
-                          </li>
-                      
-                          </ul>
-                  
-                      
-
-                          <div className="text-center my-3 subscribe-plan" onClick={checkHandler}>
-                          <input type="radio"  name="bronze-pack" id={`bronze-saver${num}`} onChange={bronzeClick} className="bronze-pack" value="bronze-saver" />
-                          <label htmlFor={`bronze-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 15%)</small></label>
-                          <br /><br />
-                          <input type="radio" name="bronze-pack" id={`bronze-basic${num}`} onChange={bronzeClick} className="bronze-pack" value="bronze" />
-                          <label htmlFor={`bronze-basic${num}`} className="payment-plan ms-1">One-Time Purchase</label>
-                          </div>
-
-                          <div className="price-text">
-                          
-                  <p className="product-price">$59 <span className="per-bottle"> / bottle</span></p>
-                          </div>
-                      
-                          <a href="#0" className="checkout-button" id='basic-button' data-sku={bronzePack}>
-                          <img src={AddtoCart} className="img-fluid " alt="cart button" />
-                          </a>
-                          <div style={{width: '90%', margin: 'auto'}}>
-                          <img src={Cards} className="img-fluid " alt="stripe cards" />
-                          </div>
-
-                          <div className="bottom-strike gray d-none">
-                              <span >
-                              <span className="gray">$119</span> 
-                              </span><b>$69</b>
-                          </div>
-                  
-
-                      
-                  </div>
-              </div>
-              <div className="col-12 col-sm-4 col-md-4 padding-2 order-1 order-sm-2">
-                  <div className="green bordered padding-2 border-green product-pack lh-1 text-center text-black">
-                  <div className="bundle-name bundle-ultimate">ULTIMATE</div>
-                      <span className="bottle">6 BOTTLES</span><br />
-                      <span className="day-supply mb-3">180 Day Supply</span><br />
-                      <img src={Ultimate} className="img-fluid " alt="6 bottles queen formula" />
-                  
-
-
-                      
-
-                      <ul className="list-unstyled text-start bonus-summary text-black" >
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span><strong>BEST Bundle For Your Goal: <span className="wg-text">{GetCookie("goal")}</span></strong>
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Best Value & Most Popular
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Shipping Included
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Queen Formula
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
-                          </li>
-                          <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
-                          </li>
-                      
-                      </ul>
-
-                      
-                    <UltimatePack num={num} />
-
-                      
-                 
-
-                      <div style={{width: '90%', margin: 'auto'}}>
-                          <img src={Cards} className="img-fluid " alt="stripe cards" />
-                      </div>
-
-                          <div className="bottom-strike d-none">
-                          <span >
-                              <span>$1194</span> 
-                          </span><b>$294</b>
-                          </div>
-                  
-                  
-
-                      
-                  </div>
-              </div>
-
-              <div className="col-12 col-sm-4 col-md-4 padding-2 order-2 order-sm-3">
-              <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
-                  <div className="bundle-name">PREMIUM</div>
-                      <span className="bottle">3 BOTTLES</span><br />
-                      <span className="day-supply mb-3">90 Day Supply</span><br />
-                      <img src={Premium} className="img-fluid " alt="3 bottles queen formula" />
-                  
-
-                  
-                      
-                      
-                  
-                      <ul className="list-unstyled text-start bonus-summary text-black" >
-                  
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Shipping Included
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Queen Formula
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
-                      </li>
-                      <li className="bullets">
-                          <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
-                      </li>
-                  
-                      </ul>
-              
-
-                      <div className="text-center my-3 subscribe-plan" >
-                      <input type="radio"  name="gold-pack" id={`gold-saver${num}`} onChange={goldClick} className="gold-pack" value="gold-saver" checked={goldPack === 'gold-saver'}/>
-                      <label htmlFor={`gold-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 17%)</small></label>
-                      <br /><br />
-                      <input type="radio" name="gold-pack" id={`gold-basic${num}`} onChange={goldClick} className="gold-pack" value="gold" checked={goldPack === 'gold'} />
-                      <label htmlFor={`gold-basic${num}`} className="payment-plan ms-1">One-Time Purchase</label>
-                      </div>
-
-                      <div className="price-text">
-                      
-                  <p className="product-price">$49 <span className="per-bottle"> / bottle</span></p>
-                      </div>
-
-                      <a href="#0" className="checkout-button" data-sku={goldPack}>
-                      <img src={AddtoCart} className="img-fluid " alt="cart button" />
-                      </a>
-
-                      <div style={{width: '90%', margin: 'auto'}}>
-                      <img src={Cards} className="img-fluid " alt="stripe cards" />
-                      </div>
-
-                      <div className="bottom-strike gray d-none">
-                          <span >
-                          <span className="gray">$797</span> 
-                          </span><b>$177</b>
-                      </div>
-                  
-
-              
-                  
-              </div>
-              </div>
-
-
-              </div>
-
-          </div>
-
-
-         
-
-
-      </div>
-  )
-}
+import PremiumPack from './Premium';
+import BasicPack from './Basic';
+import Bonuses from './Bonus';
+import Steps from './TransformationSteps';
 const Vid = () => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
@@ -438,6 +170,225 @@ const Vid = () => {
     setPaused(paused=>false);
   }
 
+  function Products({num}){
+  
+    return (
+       <div className="product-wrap">
+           <div className="container product-section text-center">
+               <div className="text-center text-capitalize display-4 mb-3 fw-light bundle-suggestion" >
+ 
+               </div>
+               <div className="list-head text-center">
+               Claim Your Savings Bundle<br />
+               While Stocks Last
+               </div>
+           
+               <div className="row">
+               
+               <div className="col-12 col-sm-4 col-md-4 padding-2 order-3 order-sm-1">
+                   <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
+                           <div className="bundle-name">BASIC</div>
+                           <span className="bottle">1 BOTTLE</span><br />
+                           <span className="day-supply mb-3">30 Day Supply</span><br />
+                           <img src={Basic} className="img-fluid " alt="1 bottle queen formula" />
+ 
+                       
+ 
+                   
+ 
+                           <ul className="list-unstyled text-start bonus-summary" >
+                           <li className="bullets">
+                               <span className="be-3 red-text">&#x2718;</span> Shipping NOT Included
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
+                           </li>
+                           <li className="bullets">
+                               <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
+                           </li>
+                       
+                           </ul>
+                   
+                       
+ 
+                           <BasicPack num={num} />
+                           <div style={{width: '90%', margin: 'auto'}}>
+                           <img src={Cards} className="img-fluid " alt="stripe cards" />
+                           </div>
+ 
+                           <div className="bottom-strike gray d-none">
+                               <span >
+                               <span className="gray">$119</span> 
+                               </span><b>$69</b>
+                           </div>
+                   
+ 
+                       
+                   </div>
+               </div>
+               <div className="col-12 col-sm-4 col-md-4 padding-2 order-1 order-sm-2">
+                   <div className="green bordered padding-2 border-green product-pack lh-1 text-center text-black">
+                   <div className="bundle-name bundle-ultimate">ULTIMATE</div>
+                       <span className="bottle">6 BOTTLES</span><br />
+                       <span className="day-supply mb-3">180 Day Supply</span><br />
+                       <img src={Ultimate} className="img-fluid " alt="6 bottles queen formula" />
+                   
+ 
+ 
+                       
+ 
+                       <ul className="list-unstyled text-start bonus-summary text-black" >
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span><strong>BEST Bundle For Your Goal: <span className="wg-text">{GetCookie("goal")}</span></strong>
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Best Value & Most Popular
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Shipping Included
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
+                           </li>
+                           <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
+                           </li>
+                       
+                       </ul>
+ 
+                       
+                     <UltimatePack num={num} />
+ 
+                       
+                  
+ 
+                       <div style={{width: '90%', margin: 'auto'}}>
+                           <img src={Cards} className="img-fluid " alt="stripe cards" />
+                       </div>
+ 
+                           <div className="bottom-strike d-none">
+                           <span >
+                               <span>$1194</span> 
+                           </span><b>$294</b>
+                           </div>
+                   
+                   
+ 
+                       
+                   </div>
+               </div>
+ 
+               <div className="col-12 col-sm-4 col-md-4 padding-2 order-2 order-sm-3">
+               <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
+                   <div className="bundle-name">PREMIUM</div>
+                       <span className="bottle">3 BOTTLES</span><br />
+                       <span className="day-supply mb-3">90 Day Supply</span><br />
+                       <img src={Premium} className="img-fluid " alt="3 bottles queen formula" />
+                   
+ 
+                   
+                       
+                       
+                   
+                       <ul className="list-unstyled text-start bonus-summary text-black" >
+                   
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Shipping Included
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Unlimited 1 on 1 Coaching
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Dream Body In 90 Program
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Custom Meal Planner
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> KaiserFit CookBook
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Beach Body Blueprint
+                       </li>
+                       <li className="bullets">
+                           <span className="be-3 bright-green">&#10004;</span> Home Workouts For Rapid Fat Loss
+                       </li>
+                   
+                       </ul>
+               
+                       <PremiumPack num={num} />
+                       
+ 
+                       <div style={{width: '90%', margin: 'auto'}}>
+                       <img src={Cards} className="img-fluid " alt="stripe cards" />
+                       </div>
+ 
+                       <div className="bottom-strike gray d-none">
+                           <span >
+                           <span className="gray">$797</span> 
+                           </span><b>$177</b>
+                       </div>
+                   
+ 
+               
+                   
+               </div>
+               </div>
+ 
+ 
+               </div>
+ 
+           </div>
+ 
+ 
+          
+ 
+ 
+       </div>
+   )
+ }
 
   function Bna1() {
     return (
@@ -701,9 +652,9 @@ const Vid = () => {
         <nav aria-label="Page navigation reviews" id="comment-nav">
           <ul className="pagination bg-transparent rounded py-2 mb-4 justify-content-center">
             <li className="page-item" key={"0"}>
-              <a className="page-link rev-arrows" onClick={PrevClick} data-id='prev' key="0"  href="#0" tabIndex="-1">
-                <span aria-hidden="true" className="d-none d-sm-block">&laquo;</span>
-                <span aria-hidden="true" className="d-block d-sm-none">Prev</span>
+              <a className="page-link rev-arrows"  onClick={PrevClick} data-id='prev' key="0"  href="#0" tabIndex="-1">
+                <span aria-hidden="true" key="19" className="d-none d-sm-block">&laquo;</span>
+                <span aria-hidden="true" key="20" className="d-block d-sm-none">Prev</span>
               </a>
             </li>
             
@@ -724,8 +675,8 @@ const Vid = () => {
             <li className={`page-item d-none d-sm-block rev-page ${pageNum===15 ?"active":""}`} key={"15"} onClick={PageReview}><a className="page-link" key="15" href="#0">15</a></li>
             <li className="page-item" key={"16"}>
               <a className="page-link rev-arrows" onClick={NextClick} data-id='next' key="16"  href="#0">
-                <span aria-hidden="true" className="d-none d-sm-block">&raquo;</span>
-                <span aria-hidden="true" className="d-block d-sm-none">Next</span>
+                <span aria-hidden="true" key="17" className="d-none d-sm-block">&raquo;</span>
+                <span aria-hidden="true" key="18" className="d-block d-sm-none">Next</span>
               </a>
             </li>
           </ul>
@@ -817,15 +768,18 @@ function MoneyBackGuarantee(){
     </div>
       
        <div className="container-fluid" id="co-box">
-       <Products num={1} />
+                <hr id="wrap-1"></hr>
         {hook6 === true && (<Products num={1} />)}
         {hook6 === true && (<MoneyBackGuarantee />)}
         <Section1 />
         <Bna1 />
+        
+        {hook6 === true && (<Bonuses />)}
         {hook6 === true && (<Products num={2} />)}
-        <Products num={3} />
+    
         <Reviews />
-
+        {hook6 === true && (<Products num={3} />)}
+        <Steps />
         <ShaneFooter />
        </div>
      

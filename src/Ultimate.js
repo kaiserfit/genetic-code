@@ -3,6 +3,7 @@ import AddtoCart from "./vsl-components/images/add-cart.webp";
 
 function UltimatePack({num}) {
     const [platinumPack, setPlatinum] = useState("")
+    
     const ultimateClick = event => {
       setPlatinum(event.target.value);
     }
@@ -15,11 +16,12 @@ function UltimatePack({num}) {
   
     return (
       <>
-      <div className="text-center my-3 subscribe-plan" onChange={ultimateClick}>
-      <input type="radio"  name="platinum-pack" id={`platinum-saver${num}`}  className="platinum-pack" value="platinum-saver" />
+      <div className="text-center my-3 subscribe-plan" onChange={ultimateClick} >
+        <p className={`text-info ${(platinumPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p>
+      <input type="radio"  name="platinum-pack" id={`platinum-saver${num}`}  className="platinum-pack" value="platinum-saver"  />
       <label htmlFor={`platinum-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 20%)</small></label>
       <br /><br />
-      <input type="radio" name="platinum-pack" id={`platinum-basic${num}`}  className="platinum-pack" value="platinum" />
+      <input type="radio" name="platinum-pack" id={`platinum-basic${num}`} className="platinum-pack" value="platinum" />
       <label htmlFor={`platinum-basic${num}`} className="payment-plan ms-1">One-Time Purchase</label>
     </div>
             <div className="price-text">

@@ -196,7 +196,7 @@ height: 100px;
 line-height: 100px; */
 padding: 2rem;
 border-radius: 6px;
-font-size: 3rem;
+font-size: 1.75rem;
 font-weight: 700;
 text-align: center;
 
@@ -385,8 +385,8 @@ padding-top: 5%;
 
 
   .step-number {
-    padding: 1.25rem;
-    font-size: 1.8rem;
+    padding: 1rem;
+    font-size: 1rem;
     font-weight: 600;
     top: -5%;
   }
@@ -472,10 +472,11 @@ padding-top: 5%;
   }
 
   .step-number {
-    padding: 1.5rem;
-    font-size: 2.2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     top: -6.5%;
+    left: 0;
   }
 
   .step-section section {
@@ -1455,16 +1456,18 @@ height:400px; width:250px;
 
   .step-section {
     width: 100%;
-    padding: 4rem 1rem;
+    padding: 0.5rem;
   }
   .step-number {
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     top: 0;
+    position: unset;
+    
   }
 
   .step-section section {
-    margin-left: 0.75rem;
+    margin-left: 0.25rem;
   }
 
 
@@ -1474,6 +1477,7 @@ height:400px; width:250px;
   }
 
   .step-section:nth-of-type(4) .step-number {
+    position: unset;
     top: 0 !important;
   }
 
