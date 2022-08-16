@@ -20,6 +20,8 @@ import PremiumPack from './Premium';
 import BasicPack from './Basic';
 import Bonuses from './Bonus';
 import Steps from './TransformationSteps';
+import Narrative from './Narrative';
+import Faq from './Faq';
 const Vid = () => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
@@ -583,9 +585,7 @@ const Vid = () => {
       }, "fast");
       }
     }
-    const Vote = (count) =>{
-      
-    }
+  
     return (
       <div className='container-fluid px-0 py-4'>
           <div className="container text-dark mb-4" id="review-banner">
@@ -779,7 +779,12 @@ function MoneyBackGuarantee(){
     
         <Reviews />
         {hook6 === true && (<Products num={3} />)}
-        <Steps />
+        {hook6 === true && (<Steps />)}
+        {hook6 === true && (<Products num={4} />)}
+        {hook6 === true && (<Narrative  />)}
+        {hook6 === true && (<Products num={5} />)}
+        
+        <Faq />
         <ShaneFooter />
        </div>
      

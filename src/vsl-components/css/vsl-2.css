@@ -205,9 +205,9 @@ border: 2px solid white;
 }
 
 .narrative-headline {
-padding: 1.5rem;
+padding: 1rem;
 /* border: 2px solid white; */
-font-size: 3rem;
+font-size: 1.5rem;
 font-weight: 700;
 border-radius: 6px;
 position: absolute;
@@ -223,11 +223,11 @@ top: -.7%;
 }
 
 #n-title-2 {
-top: -1.2%;
+top: -.6%;
 }
 
 #n-title-3 {
-top: -2.2%;
+top: -.6%;
 width: 95%;
 }
 
@@ -373,7 +373,7 @@ padding-top: 5%;
 
   .narrative-headline {
 
-    font-size: 1.5rem;
+    font-size: 1rem;
    
   }
 
@@ -452,7 +452,7 @@ padding-top: 5%;
     
   }
 
-@media (min-width: 481px)and (max-width: 768px) {
+@media (min-width: 481px)and (max-width: 767.98px) {
    
   .step-section {
     width: 90%;
@@ -467,7 +467,7 @@ padding-top: 5%;
   }
   .narrative-headline {
 
-    font-size: 2rem;
+    font-size: 1.25rem;
    
   }
 
@@ -476,11 +476,11 @@ padding-top: 5%;
     font-size: 1.2rem;
     font-weight: 600;
     top: -6.5%;
-    left: 0;
+    left: 4;
   }
 
   .step-section section {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 
   .step-section:nth-of-type(4) .step-number {
@@ -888,13 +888,13 @@ background-image: linear-gradient(to right, #cd7f32, white, #cd7f32);
 }
 
 
-@media (min-width: 768px)and (max-width: 991px) {
+@media (min-width: 768px)and (max-width: 990.98px) {
   /* rules for col-sm class */
 
 
     #n-title-3 {
       top: -.7%;
- 
+      
     }
 }
 
@@ -1019,12 +1019,25 @@ background-image: linear-gradient(to right, #cd7f32, white, #cd7f32);
 
 }
 
-@media (min-width: 769px)and (max-width: 991px) {
-
+@media (min-width: 769px)and (max-width: 991.98px) {
+  .step-section {
+    width: 90%;
+  }
+  .narrative {
+    width: 80%;
+  }
+  .step-img {
+    width: 100%;
+    height: auto;
+  }
      .narrative-headline {
 
-      font-size: 2.1rem;
+      font-size: 1.25rem;
      
+    }
+
+    #n-title-2 {
+      top: -.8%;
     }
 
     .bna-text {
@@ -1036,21 +1049,21 @@ background-image: linear-gradient(to right, #cd7f32, white, #cd7f32);
     }
 
 .step-number {
-padding: 1.5rem;
-font-size: 2.5rem;
+padding: 1rem;
+font-size: 1.5rem;
 font-weight: 600;
-top: -6%;
+top: -7%;
 }
 
 
 
 .step-section:nth-of-type(3) .step-number {
-top: -8% !important;
+top: -6% !important;
 
 }
 
 .step-section:nth-of-type(4) .step-number {
-top: -0.8% !important;
+top: -0.4% !important;
 
 }
 
@@ -1110,10 +1123,13 @@ top: -0.8% !important;
 }
 
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1200.98px) {
+  .step-section {
+    width: 80%;
+  }
   .step-number {
-    padding: 1.5rem;
-    font-size: 2.75rem;
+    padding: 1.2rem;
+    font-size: 2rem;
     font-weight: 600;
     /* top: -6%; */
   }
@@ -1122,6 +1138,10 @@ top: -0.8% !important;
   .bna-text {
     font-size: 2.5rem;                                
      /* transform: translate(0,40%);     */
+  }
+
+  #n-title-2 {
+    top: -.8%
   }
 
   #n-title-3 {
@@ -1133,14 +1153,14 @@ top: -0.8% !important;
 
   .narrative-headline {
 
-    font-size: 2.2rem;
+    font-size: 1.5rem;
    
   }
   
 
   
   .step-section:nth-of-type(4) .step-number {
-    top: -1% !important;
+    top: -0.5% !important;
     
   }
 }
@@ -1148,8 +1168,8 @@ top: -0.8% !important;
 
 @media (min-width: 1201px) and (max-width: 1400px) {
   .step-number {
-    padding: 1.5rem;
-    font-size: 2.75rem;
+    padding: 1rem;
+    font-size: 2.25rem;
     font-weight: 600;
     /* top: -6%; */
   }
@@ -1157,7 +1177,7 @@ top: -0.8% !important;
 
   
   .step-section:nth-of-type(4) .step-number {
-    top: -1.4% !important;
+    top: -1% !important;
     
   }
 }
@@ -1386,7 +1406,7 @@ height:400px; width:250px;
   }
 
   #n-title-3 {
-    width: 90%;
+    width: 100%;
     top: -.8%;
    }
 
@@ -1447,7 +1467,7 @@ height:400px; width:250px;
 
 
   .list-content {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .bundle-suggestion {
@@ -1488,13 +1508,15 @@ height:400px; width:250px;
   }
   .narrative {
     width: 100%;
+    padding:5rem .8rem;
   }
   .narrative-headline {
     padding: 1rem;
     /* border: 2px solid white; */
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 500;
     left: 0;
+    width: 100%;
   }
 
   #n-title-1{
@@ -1509,6 +1531,10 @@ height:400px; width:250px;
   }
   #app-screenshot {
     height:auto; width:100%;
+  }
+
+  .sm-full-70 {
+    width: 100%;
   }
 }
 

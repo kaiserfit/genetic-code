@@ -3,7 +3,7 @@ import React from "react";
 
 const Steps = () => {
     return (
-        <div className="container-fluid product-wrap pb-3" style={{backgroundColor: "#eeeeee"}}>
+        <div className="container-fluid product-wrap py-3" style={{backgroundColor: "#eeeeee"}}>
         <h1 className="text-center fw-bold mb-3" >Step By Step Guide To Your BEST Self Ever:</h1>
         <hr />
         <div className="container text-black step-section">
@@ -76,7 +76,7 @@ const Steps = () => {
         
         <hr />
         <div className="container text-black step-section">
-          <div className="step-number text-white bg-dark">Step 4- Get Customised Coaching and Help from the KaiserFit Team </div>
+          <div className="step-number text-white bg-dark text-start">Step 4- Get Customised Coaching and Help from the KaiserFit Team </div>
           <section className="fs-4">
         
             <img src={require('./vsl-components/images/screenshot-3.webp')} className="invisible text-center mx-auto " height="20" width="20" alt="Kaiser Coach" />
