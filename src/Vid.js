@@ -426,8 +426,8 @@ const Vid = () => {
               <div className="col-12 col-sm-12 col-md-4">
                   <div className="text-center">
                       <img src={require('./vsl-components/images/Shane5.webp')} className="img-fluid" alt="Coach Shane with lady"/>
-                  <button className="btn btn-lg btn-warning watch-btn gray-glow"><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-                  <h4 className="unlock-text text-center text-white">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+                  <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} ><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+                  <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`}>Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
                   </div>
               </div>
           </div>
@@ -544,7 +544,7 @@ const Vid = () => {
       </div>
     
       <div className="text-center">
-          <button className="btn btn-lg btn-warning watch-btn gray-glow"><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
           <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
        
       </div>
@@ -763,7 +763,7 @@ function MoneyBackGuarantee(){
       </div>
 
       <div className="container text-center mt-3">
-          <h4 className="unlock-text text-center text-white" style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+          <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`} style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
       </div>
     </div>
       
@@ -784,7 +784,8 @@ function MoneyBackGuarantee(){
         {hook6 === true && (<Narrative  />)}
         {hook6 === true && (<Products num={5} />)}
         
-        <Faq />
+        {hook6 === true && (<Faq  />)}
+    
         <ShaneFooter />
        </div>
      

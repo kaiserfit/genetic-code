@@ -76,6 +76,7 @@ img.unlock-object {
 
 .unlock-text {
   font-size: 1.5rem;
+  transition: all 0.3s ease-out;
 }
 .vjs-remaining-time-display {
   display: none !important;
@@ -1347,6 +1348,7 @@ top: -0.4% !important;
     font-size: 1.5rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    transition: all 0.3s ease-out;
     
   }
 
