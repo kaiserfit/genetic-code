@@ -25,19 +25,19 @@ function Header(){
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a href="https://kaizerfit.com/privacy-policy.html" target="_blank" className="dropdown-item">Privacy Policy</a>
+                <a href="/pages/privacy-policy.html" target="_blank" className="dropdown-item">Privacy Policy</a>
               </li>
       
               <li>
-                <a href="https://kaizerfit.com/terms-and-conditions.html" target="_blank" className="dropdown-item">Terms & Conditions</a>
+                <a href="/pages/terms-and-conditions.htmll" target="_blank" className="dropdown-item">Terms & Conditions</a>
               </li>
       
               <li>
-                <a href="https://kaizerfit.com/contact-us.html" target="_blank" className="dropdown-item">Support</a>
+                <a href="/pages/contact-us.html" target="_blank" className="dropdown-item">Support</a>
               </li>
       
               <li>
-                <a href="https://kaizerfit.com/disclaimer.html" target="_blank" className="dropdown-item">Disclaimer</a>
+                <a href="/pages/disclaimer.html" target="_blank" className="dropdown-item">Disclaimer</a>
               </li>
              
             </ul>
