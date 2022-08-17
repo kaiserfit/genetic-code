@@ -1,25 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './quiz.css';
 import "./vsl-components/css/product.css";
 import "./vsl-components/css/product-sm.css";
 import "./vsl-components/css/vsl-2.css"
 
 import "./vsl-components/css/comments.css"
+
+
 import Header from "./Header";
 import QuizComponent from './QuizComponent';
 import Footer from "./Footer";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Fathacks from "./Fathacks";
-
-
+import Checkout from './Checkout';
+import HeaderCheckout from './HeaderCheckout';
 function App() {
+  const [pageRoute, setRoute] = useState("");
   return (
     <div>
-      <Header />
+      {(pageRoute==="checkout") ?  <Header /> : <HeaderCheckout/>}
+ 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<QuizComponent />} />
-          <Route path="/fathacks" element={<Fathacks />} />
+          <Route path="/fathacks" element={<Fathacks setRoute={setRoute} />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     

@@ -3,11 +3,9 @@ import React from 'react';
 import Sticky from "./Sticky";
 import ResultPanel from "./vsl-components/Results";
 
-// import Vsl from "./Vsl";
-// import Testvid from "./Testvid";
-// import App from "./vsl-components/New";
+
 import Vid from './Vid';
-  function Fathacks(){
+  const Fathacks=({setRoute})=>{
    
     document.title="Fathacks";
     
@@ -15,8 +13,8 @@ import Vid from './Vid';
       <div>
         <Sticky />
         <ResultPanel />
-        <Vid />
-        {/* <VslContent vidWatched={vidWatched} /> */}
+        <Vid setRoute={setRoute} />
+
       </div>
       )
   }

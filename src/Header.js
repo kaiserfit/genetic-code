@@ -3,10 +3,12 @@ import logo from './kwhite.webp';
 
 import Row from "react-bootstrap/Row";
 import {BsFillGrid3X3GapFill} from "react-icons/bs"
+
 function Header(){
+  
     return (
         <div className="container-fluid bg-dark bg-gradient" id="top-banner">
-      
+        
         <Row className="row">
           
             <div className="col-6 col-sm-6 col-md-6 col-lg-6" id="logoContainer">

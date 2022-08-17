@@ -2,7 +2,10 @@ body {
   font-family: 'Open Sans', sans-serif; 
   }
 
-  
+  #klogo {
+    width: 246px;
+    height: 57px;
+  }
 #top-banner {
 
 color: #68029e;

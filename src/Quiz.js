@@ -9,8 +9,6 @@ import {useNavigate} from "react-router-dom";
 
 
 
-
-
 function Quiz(){
     
     const [state,setChange ] = useState(1);

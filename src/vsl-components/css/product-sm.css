@@ -82,12 +82,12 @@
     }
 
     .faq-title, .faq-question {
-        font-size: 1.6em;
+        font-size: 1.5rem;
     }
 
     .faq-answer {
        margin-left: .8rem;
-       font-size: 2rem;
+       font-size: 1.25rem;
     } 
 
     .faq-content {

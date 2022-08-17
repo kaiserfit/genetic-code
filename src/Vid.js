@@ -22,7 +22,7 @@ import Bonuses from './Bonus';
 import Steps from './TransformationSteps';
 import Narrative from './Narrative';
 import Faq from './Faq';
-const Vid = () => {
+const Vid = ({setRoute}) => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
@@ -40,6 +40,11 @@ const Vid = () => {
           veed.on('timeupdate', ()=> {
             if (veed.currentTime()>=10){
               if (hook6 === false) {
+                var x = $("#my-video").hasClass("vjs-fullscreen");
+                if (x) {
+                  $(".vjs-fullscreen-control").trigger("click");
+                    
+                }
                 $("#sticky").addClass("scrolled");             
                 setHook6(true);
               }
@@ -52,6 +57,25 @@ const Vid = () => {
     
     
     }, [userPlay, vslWatched, hook6, videoTime]);
+
+    function watchClick(){
+      console.log(userPlay);
+      const veed = videojs(document.getElementById("my-video"));
+
+      if (userPlay === false){
+        veed.muted(false);
+        veed.currentTime(0);
+        // $("#btnPlay").hide();
+        $(".video-js .vjs-control-bar").css({"visibility":"visible"});
+        $(".vjs-fullscreen-control").trigger("click");
+        setUserPlay(true);
+    
+      } else {
+        veed.play();
+        $(".vjs-fullscreen-control").trigger("click");
+        
+        }
+    }
     function timer_init(){
         var timeInSecs;
         var ticker;
@@ -96,7 +120,6 @@ const Vid = () => {
 
     
 
-
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
@@ -123,7 +146,7 @@ const Vid = () => {
       setTime(0);
       setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
       $(".video-js .vjs-control-bar").css({"visibility":"visible"});
-     //   $(".vjs-fullscreen-control").trigger("click");
+       $(".vjs-fullscreen-control").trigger("click");
  
     
     }
@@ -231,7 +254,7 @@ const Vid = () => {
                    
                        
  
-                           <BasicPack num={num} />
+                           <BasicPack num={num} setRoute={setRoute} />
                            <div style={{width: '90%', margin: 'auto'}}>
                            <img src={Cards} className="img-fluid " alt="stripe cards" />
                            </div>
@@ -295,7 +318,7 @@ const Vid = () => {
                        </ul>
  
                        
-                     <UltimatePack num={num} />
+                     <UltimatePack num={num} setRoute={setRoute} />
  
                        
                   
@@ -360,7 +383,7 @@ const Vid = () => {
                    
                        </ul>
                
-                       <PremiumPack num={num} />
+                       <PremiumPack num={num} setRoute={setRoute} />
                        
  
                        <div style={{width: '90%', margin: 'auto'}}>
@@ -426,7 +449,7 @@ const Vid = () => {
               <div className="col-12 col-sm-12 col-md-4">
                   <div className="text-center">
                       <img src={require('./vsl-components/images/Shane5.webp')} className="img-fluid" alt="Coach Shane with lady"/>
-                  <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} ><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+                  <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick} ><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
                   <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`}>Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
                   </div>
               </div>
@@ -544,8 +567,8 @@ const Vid = () => {
       </div>
     
       <div className="text-center">
-          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-          <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+          <h4 className={`unlock-text text-center ${(hook6===true) ? "d-none" : "d-block"}`}>Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
        
       </div>
     </div>
@@ -683,6 +706,9 @@ const Vid = () => {
         </nav>
 
   </div>
+
+
+
       </div>
     )
   }
@@ -755,7 +781,7 @@ function MoneyBackGuarantee(){
                {videoReady===true && (
                   <div id="btnPlay" onClick={clickPlay} className={`video-play vsl-play-desktop control-onload ${userPlay===false ? "d-block": "d-none"}`}>
                   <img src={Play} alt="play button" className="img-fluid video-play" style={{margin: 'auto'}} />
-              </div>
+                  </div>
                )}
                
         </div>
@@ -772,18 +798,25 @@ function MoneyBackGuarantee(){
         {hook6 === true && (<Products num={1} />)}
         {hook6 === true && (<MoneyBackGuarantee />)}
         <Section1 />
+        
         <Bna1 />
         
         {hook6 === true && (<Bonuses />)}
         {hook6 === true && (<Products num={2} />)}
     
         <Reviews />
+        <div className="text-center">
+          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+          <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+       
+      </div>
+
         {hook6 === true && (<Products num={3} />)}
         {hook6 === true && (<Steps />)}
         {hook6 === true && (<Products num={4} />)}
         {hook6 === true && (<Narrative  />)}
         {hook6 === true && (<Products num={5} />)}
-        
+     
         {hook6 === true && (<Faq  />)}
     
         <ShaneFooter />

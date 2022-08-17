@@ -29,7 +29,7 @@ const Faq = () => {
           </p>
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(0)}>
-                <span className="float-start"> Will the Kaiser Body Bundle work for me?</span>
+                <span className="float-start fw-bold"> Will the Kaiser Body Bundle work for me?</span>
                 <span className="faq-arrow fw-light float-end hoverable" ><BsFillPlusCircleFill  /></span>
               </div>
               <div className="faq-answer">
@@ -46,7 +46,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(1)}>
-                <span className="float-start"> What’s included in the Kaiser Body Bundle?</span>
+                <span className="float-start fw-bold"> What’s included in the Kaiser Body Bundle?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -62,7 +62,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(2)}>
-                <span className="float-start"> Which Package Should I Order?</span>
+                <span className="float-start fw-bold"> Which Package Should I Order?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -82,7 +82,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(3)}>
-                <span className="float-start">Is Queen Formula Safe?</span>
+                <span className="float-start fw-bold">Is Queen Formula Safe?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -94,7 +94,7 @@ const Faq = () => {
         
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(4)}>
-                <span className="float-start">How soon will I receive my order of Queen Formula?</span>
+                <span className="float-start fw-bold">How soon will I receive my order of Queen Formula?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -108,7 +108,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(5)}>
-                <span className="float-start">Is this a single, one time payment?</span>
+                <span className="float-start fw-bold">Is this a single, one time payment?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -120,7 +120,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(6)}>
-                <span className="float-start">What is the best way to take Queen Formula?</span>
+                <span className="float-start fw-bold">What is the best way to take Queen Formula?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -131,7 +131,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(7)}>
-                <span className="float-start"> If I want to lose weight and tone my body at the same time, can I do that with this?</span>
+                <span className="float-start fw-bold"> If I want to lose weight and tone my body at the same time, can I do that with this?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -141,7 +141,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(8)}>
-                <span className="float-start">How Fast Will I See Results?</span>
+                <span className="float-start fw-bold">How Fast Will I See Results?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -155,7 +155,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(9)}>
-                <span className="float-start">How soon can I use Kaiser Coach once I order the Kaiser Body Bundle?</span>
+                <span className="float-start fw-bold">How soon can I use Kaiser Coach once I order the Kaiser Body Bundle?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -166,7 +166,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(10)}>
-                <span className="float-start">Do I need to have a gym membership for this to work?</span>
+                <span className="float-start fw-bold">Do I need to have a gym membership for this to work?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -180,7 +180,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(11)}>
-                <span className="float-start">How is this different?</span>
+                <span className="float-start fw-bold">How is this different?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -190,7 +190,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(12)}>
-                <span className="float-start">What's so special about Queen Formula?</span>
+                <span className="float-start fw-bold">What's so special about Queen Formula?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -228,7 +228,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(13)}>
-                <span className="float-start">I Already Take Medication, Is There Anything Else Queen Formula Can Conflict With?</span>
+                <span className="float-start fw-bold">I Already Take Medication, Is There Anything Else Queen Formula Can Conflict With?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -238,7 +238,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(14)}>
-                <span className="float-start">What if this doesn’t work for me?</span>
+                <span className="float-start fw-bold">What if this doesn’t work for me?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">

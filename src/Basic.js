@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 import AddtoCart from "./vsl-components/images/add-cart.webp";
-
-function BasicPack({num}) {
+import {useNavigate} from "react-router-dom";
+function BasicPack({num, setRoute}) {
     const [basicPack, setBronze] = useState("")
-    
+    const navigate = useNavigate();
     const basicClick = event => {
       setBronze(event.target.value);
     }
 
 
     const checkoutClick = () => {
-      console.log(basicPack);
+      document.cookie="product="+basicPack+";path=/";
+      setRoute("checkout")
+      navigate("/checkout", { replace: true });
     }
   
   
@@ -29,7 +31,7 @@ function BasicPack({num}) {
                 {basicPack === "bronze" && (<p className="product-price">$69 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <a href="#0" className="checkout-button"  onClick={checkoutClick} >
+                            <a href="javascript:void(0);" className="checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </a>
 
