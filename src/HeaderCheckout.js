@@ -5,6 +5,16 @@ import guarantee from './Guarantee.webp';
 import $ from "jquery";
 import {ImQuotesLeft} from "react-icons/im";
 const HeaderCheckout=()=> {
+    const prices = [
+    
+        {id: "platinum",price_id: 'price_1JfHjQGEnOOm6AiQSwDAI7u1', name: 'KaiserBody Bundle Ultimate Pack + 6 Bottles Kaiser Burner', price: '294.00', code: '21142', alias:'ultimate', bottles:'6 Bottles Kaiser Burner', image: {ImQuotesLeft}},
+        {id: "gold",price_id: 'price_1Jx0nWGEnOOm6AiQ4OyoGTI5',name: 'KaiserBody Bundle Premium Pack + 3 Bottles Kaiser Burner', price: '177.00', code: '21141',alias:'premium', bottles:'3 Bottles Kaiser Burner'},
+        {id: "bronze",price_id: 'price_1Jx0nrGEnOOm6AiQO0f7ue5g',name: 'KaiserBody Bundle Basic Pack + 1 Bottle Kaiser Burner', price: '69.00', code: '21140',alias:'basic', bottles:'1 Bottle Kaiser Burner'},
+        {id: "platinum-saver",price_id: '25361', name: 'KaiserBody Bundle Ultimate Savers-Pack + 6 Bottles Kaiser Burner (Delivery Every 180 Days)', price: '234.00', code: '25361', alias:'ultimate-saver', bottles:'6 Bottles Kaiser Burner'},
+        {id: "gold-saver",price_id: '25360',name: 'KaiserBody Bundle Premium Savers-Pack + 3 Bottles Kaiser Burner (Delivery Every 90 Days)', price: '147.00', code: '25360',alias:'premium-saver', bottles:'3 Bottles Kaiser Burner'},
+        {id: "bronze-saver",price_id: '25359',name: 'KaiserBody Bundle Basic Savers-Pack + 1 Bottle Kaiser Burner (Delivery Every 30 Days)', price: '59.00', code: '25359',alias:'basic-saver', bottles:'1 Bottle Kaiser Burner'},
+       
+      ];
 function DivTimer() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -83,7 +93,7 @@ const today1 = ee + ' ' + mm + ' ' + yyyy;
                   <div className="row">
                       <div className="col-12 col-sm-6 col-md-6 col-lg-6">
                          
-                          <p className="fs-5">Queen Formula Stock: <span className="label label-danger p-1 rounded text-white">LOW</span></p>
+                          <p className="fs-5">Kaiser Burner Stock: <span className="label label-danger p-1 rounded text-white">LOW</span></p>
                       </div>
           
                       <div className="col-12 col-sm-6 col-md-6 col-lg-6">
@@ -211,7 +221,36 @@ function Section2(){
 }
 
 function ProductSection(){
-
+    return (
+        <div className="container my-3 text-center" id="guarantees">
+        <h2 className="display-3">KaiserBody Bundle <span id="dba" className="text-capitalize"></span> Pack</h2>
+        <div className="row">
+          <div className="col-12 col-sm-12 col-md-12 col-xxl-6 pt-1 pt-sm-5">
+            <img src="" id="img-bundle" alt="Dream Body in 90 bundle" className="img-fluid  mb-3 d-block mx-auto" />
+          </div>
+    
+          <div className="col-12 col-sm-12 col-md-12 col-xxl-6 fs-4 text-start">
+            <ul id="bonus-desc">
+              <li>Unlimited Lifetime Help And Support From World Class Coaches & Community Managers</li>
+              <li>Step By Step Fat Loss Videos Showing You How To Melt Fat Easily</li>
+              <li>Support & Accountability From Kaiserfit Women's Community</li>
+              <li>Meal Plans, Recipe Guides & Workout Plans</li>
+              <li>Secret Unadvertised Bonuses That Will Amaze You</li>
+              <li>1 on 1 Coaching DAILY to help you lose fat Easily</li>
+              <li>The EASIEST Transformation Of Your Life GUARANTEED</li>
+            </ul>
+           
+        
+          </div>
+        </div>
+        <hr />
+    
+    
+    
+        
+        
+      </div>
+    )
 }
     return (
         <>
