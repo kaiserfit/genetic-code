@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {commentsArray} from "./vsl-components/Comments";
 // This imports the functional component from the previous sample.
@@ -8,9 +8,9 @@ import Loading from "./vsl-components/images/loading.webp"
 import Play from "./vsl-components/images/customplay.webp"
 import {BsPlayBtnFill, BsHandThumbsUp, BsHandThumbsDown} from "react-icons/bs"
 import GetCookie from './Cookie';
-import Basic from "./vsl-components/images/Products/1-bottle.webp";
-import Premium from "./vsl-components/images/Products/3-bottles.webp";
-import Ultimate from "./vsl-components/images/Products/6-bottles.webp";
+import Basic from "./kaiser-burner/starter-p.webp";
+import Premium from "./kaiser-burner/premium-p.webp";
+import Ultimate from "./kaiser-burner/ultimate-p.webp";
 
 import Cards from "./vsl-components/images/visa-mastercard-icon.webp";
 import MoneyBackImage from "./vsl-components/images/moneyback-guarantee.webp"
@@ -27,7 +27,7 @@ const Vid = ({setRoute}) => {
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(false);
+    const [hook6, setHook6] = useState(true);
     const [videoTime, setTime] = useState(0);
     // const [timer, setExp] = useState("24:00:00");
     const [pageNum, setPage] = useState(1);
@@ -417,7 +417,7 @@ const Vid = ({setRoute}) => {
 
   function Bna1() {
     return (
-      <div className="container-fluid bg-black py-4" id='bna-con'>
+      <div className="container-fluid bg-black py-4" >
 
 
       <div className="container text-center" id="bna-con">

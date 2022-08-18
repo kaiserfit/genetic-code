@@ -151,7 +151,7 @@ font-family: 'Rubik', sans-serif;
 font-size: 3rem; background-color: #fff; padding: 0 10px; display: inline;font-weight: 700;
 }
 .bna-text {
-font-size: 3rem;
+font-size: 2rem;
 position: absolute;               
  top: 20%;                       
  /* transform: translate(0, 50%);  */

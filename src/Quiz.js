@@ -71,12 +71,12 @@ function Quiz(){
               <div className="d-grid gap-3" id="gender-grid">
                 <button className="btn btn-outline-dark btn-lg p-3 position-relative clearfix fs-1 ans-btn fw-bolder" onClick={handleClick1} data-question="Gender"  data-id="1" data-ans="Woman">
                
-                 <FaFemale className="fas fa-female display-2 position-absolute start-0 ms-2 ms-sm-4 ms-md-4 ms-lg-5 ms-xl-6"/>
+                 <FaFemale className="fas fa-female display-2 position-absolute start-0 ms-2 "/>
                  <span className="align-middle">Woman</span> 
                 </button>
           
                 <button className="btn btn-outline-dark btn-lg p-3 position-relative fs-1 ans-btn fw-bolder" onClick={handleClick1} data-question="Gender"  data-id="1" data-ans="Man">
-                  <FaMale className="fas fa-male display-2 position-absolute start-0 ms-3 ms-sm-4 ms-md-4 ms-lg-5 ms-xl-6" />
+                  <FaMale className="fas fa-male display-2 position-absolute start-0 ms-3 " />
                   <span className="align-middle">Man</span> 
                 </button>
               </div>

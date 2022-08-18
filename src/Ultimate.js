@@ -1,16 +1,22 @@
 import React, {useState} from "react";
 import AddtoCart from "./vsl-components/images/add-cart.webp";
-
+import {useNavigate} from "react-router-dom";
 function UltimatePack({num}) {
     const [platinumPack, setPlatinum] = useState("")
-    
+    const navigate = useNavigate();
     const ultimateClick = event => {
       setPlatinum(event.target.value);
     }
 
 
-    const checkoutClick = () => {
-      console.log(platinumPack);
+    const checkoutClick = (e) => {
+      if (platinumPack===""){
+        e.preventDefault();
+        return false
+      }
+      document.cookie="product="+platinumPack+";path=/";
+
+      navigate("/checkout", { replace: true });
     }
   
   
@@ -29,7 +35,7 @@ function UltimatePack({num}) {
                 {platinumPack === "platinum" && (<p className="product-price">$49 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <a href="#0" className="checkout-button"  onClick={checkoutClick} >
+                            <a href="#" className="checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </a>
       </>

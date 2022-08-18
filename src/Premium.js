@@ -1,16 +1,22 @@
 import React, {useState} from "react";
 import AddtoCart from "./vsl-components/images/add-cart.webp";
-
+import {useNavigate} from "react-router-dom";
 function PremiumPack({num}) {
     const [goldPack, setGold] = useState("")
-    
+    const navigate = useNavigate();
     const premiumClick = event => {
       setGold(event.target.value);
     }
 
 
-    const checkoutClick = () => {
-      console.log(goldPack);
+    const checkoutClick = (e) => {
+      if (goldPack===""){
+        e.preventDefault();
+        return false
+      }
+      document.cookie="product="+goldPack+";path=/";
+
+      navigate("/checkout", { replace: true });
     }
   
   
@@ -29,7 +35,7 @@ function PremiumPack({num}) {
                 {goldPack === "gold" && (<p className="product-price">$59 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <a href="#0" className="checkout-button"  onClick={checkoutClick} >
+                            <a href="#" className="checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </a>
 

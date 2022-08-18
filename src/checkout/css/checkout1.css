@@ -167,29 +167,13 @@ text-align: center;
     .pops:hover{
       cursor: pointer;
       }
-       .checkoutForm #buttonHolder #btnStripe  {
-			margin: 0 auto;
-       text-align: left;
-      padding: 2px;
-      	color: #fff;
-       border-radius: 5px !important;
+      #buttonHolder button  {
        border: 2px solid #ff8c00 !important;
        background-image: linear-gradient(#f7ab08,#f7ab08, #ff8c00) !important;
-      font-size: 40px;
-       font-weight: 900;
-       line-height: 0.7;
-  
-    
-}
-    
-.checkoutForm #buttonHolder #btnStripe img {
-       width: 70px;
-      height: 70px;
-      border-radius: 5px;
-      border: 2px solid #454545;
-      position: relative; 
-      left: 0;
-    } 
+       }
+        
+   
+
     @media (min-width: 992px) {
        #co-Container {
      width:50% !important;
@@ -224,108 +208,19 @@ text-align: center;
       max-width: 50%;
       margin-top: -90px;
     }
-    .stars {
-      
-    }
+
     .caption h3 {
      font-size: 22px;
       color: black;
     }
-    .container {
-      width: 65% !important;
-    }
+
     
-    @media (min-width: 1141px)and (max-width: 1332px) {
-           
-       .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-       
-        font-size: 32px;
-         line-height: 1;
-      
-      } 
-      
-       .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-       
-       font-size: 32px;
-         line-height: 1;
-      
-      } 
-      
-    }
-    @media (min-width: 1025px)and (max-width: 1140px) {
-           
-       .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-       
-        font-size: 28px;
-         line-height: 1;
-      
-      } 
-      
-        .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-       
-       font-size: 28px;
-         line-height: 1;
-      
-      } 
-      
-    }
     
-     @media (min-width: 992px)and (max-width: 1024px) {
-           
-       .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-       
-        font-size: 24px;
-         line-height: 1;
-      
-      } 
-       
-         .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-       
-       font-size: 24px;
-         line-height: 1;
-      
-      } 
-      
-    }
-    @media (max-width: 1025px) {
-       .checkoutForm #buttonHolder .kaiserCheckout img {
     
-       width: 50px; 
-         height: 50px; 
-      	float: left;
-       
-      }
-      
-          .checkoutForm #buttonHolder #btnStripe img {
     
-       width: 50px !important; 
-         height: 50px !important; 
-      	float: left;
-       
-      }
-      
-    }
-    @media (max-width: 562px){
-      
-    }
-    @media (min-width: 563px)and (max-width: 991px) {
+    
    
-      
-      .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-       
-       font-size: 22px;
-         line-height: 1;
-      
-      } 
-      
-        .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-       
-       font-size: 22px;
-         line-height: 1;
-      
-      } 
  
-      }
 
       @media (min-width: 280px) and (max-width: 480px) {
         #logoContainer {
@@ -344,44 +239,14 @@ text-align: center;
       }
       }
       
-        @media (min-width: 280px)and (max-width: 380px) {
-          .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-      
-      font-size: 18px;
-         line-height: 1;
-      
-      } 
-          
-            .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-       
-       font-size: 18px;
-         line-height: 1;
-      
-      } 
-    }
+ 
     
     
-    @media (min-width: 381px)and (max-width: 562px) {
-     
-  
-      
-      .checkoutForm #buttonHolder .kaiserCheckout #btnTxt { 
-      
-      font-size: 20px;
-         line-height: 1;
-      
-      } 
-      
-      .checkoutForm #buttonHolder #btnStripe #btnTxt { 
-      
-      font-size: 20px;
-         line-height: 1;
-      
-      } 
+
   
   
  
-    }
+    
 @media (min-width: 320px)and (max-width: 991px) {
   footer {
    font-size: 24px; 
@@ -598,11 +463,15 @@ text-align: center;
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  
   
   padding: 20px;
   border-top: none;
 }
+
+
+
+
   
 .checkli {
 	height: 50px;
@@ -615,43 +484,13 @@ text-align: center;
 	margin: 0 auto;
 	text-align: center;
 }
-.checkoutForm #buttonHolder {
-  text-align: center;
-    }
 
-.checkoutForm #buttonHolder .kaiserCheckout  {
-			
-       text-align: left;
-      padding: 2px;
-      	color: #fff;
-       border-radius: 5px !important;
-       border: 2px solid #ff8c00 !important;
-       background-image: linear-gradient(#f7ab08,#f7ab08, #ff8c00) !important;
-      font-size: 38px;
-       font-weight: 900;
-       line-height: 0.7;
-  
-  white-space: normal;
+
     
-}
-    
-.checkoutForm #buttonHolder  .kaiserCheckout img {
-       width: 70px;
-      height: 70px;
-      border-radius: 5px;
-      border: 2px solid #454545;
-      position: relative; 
-      left: 0;
-    }
+
     
  
 
-    .checkoutForm #buttonHolder button {
-  	transition: 0.3s ease;
-    }
-.checkoutForm #buttonHolder button:hover {
-  	color: inherit;
-    }
 .changeOpt {
 	width: 20%; 
 	position: absolute; 
@@ -739,12 +578,11 @@ text-align: center;
     position: absolute;
     color: #ccc;
 }
-    
-    /***********loader***************/
-    .loader-check {
-      
-      
+    .react-phone .form-control {
+      width: 100% !important;
     }
+    /***********loader***************/
+
     .loader {
   color: #410660;
   font-size: 8vh;

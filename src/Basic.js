@@ -9,9 +9,13 @@ function BasicPack({num, setRoute}) {
     }
 
 
-    const checkoutClick = () => {
+    const checkoutClick = (e) => {
+      if (basicPack===""){
+        e.preventDefault();
+        return false
+      }
       document.cookie="product="+basicPack+";path=/";
-      setRoute("checkout")
+
       navigate("/checkout", { replace: true });
     }
   
@@ -31,7 +35,7 @@ function BasicPack({num, setRoute}) {
                 {basicPack === "bronze" && (<p className="product-price">$69 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <a href="javascript:void(0);" className="checkout-button"  onClick={checkoutClick} >
+                            <a href="#" className="checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </a>
 
