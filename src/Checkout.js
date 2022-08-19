@@ -232,11 +232,11 @@ function ProductSection(){
     const img = Prices.filter((i)=>{
         return (i.id===dba && i.product===productType);
       });
-
+      const p = img[0].alias
       const d = img[0].img
     return (
         <div className="container w-75 my-3 text-center" id="guarantees">
-        <h2 className="display-3">KaiserBody Bundle <span id="dba" className="text-capitalize">{dba}</span> Pack</h2>
+        <h2 className="display-3">KaiserBody Bundle <span id="dba" className="text-capitalize">{p}</span> Pack</h2>
         <div className="row">
           <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xxl-6 pt-1">
             <img src={d} id="img-bundle" alt="Dream Body in 90 bundle" className="img-fluid  mb-3 d-block mx-auto" />
@@ -258,7 +258,7 @@ function ProductSection(){
         </div>
         <hr />
     
-        <img src={MoneyBackImage} class="img-fluid d-block mx-auto border-glow-blue" alt="100% money back guarantee" />
+        <img src={MoneyBackImage} className="img-fluid d-block mx-auto border-glow-blue" alt="100% money back guarantee" />
     
         
         
