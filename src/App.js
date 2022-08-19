@@ -10,7 +10,7 @@ import "./vsl-components/css/comments.css"
 import Header from "./Header";
 import QuizComponent from './QuizComponent';
 import Footer from "./Footer";
-import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Fathacks from "./Fathacks";
 import Checkout from './Checkout';
 import HeaderCheckout from './HeaderCheckout';

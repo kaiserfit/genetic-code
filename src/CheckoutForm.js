@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Cards from "./vsl-components/images/visa-mastercard-icon.webp";
 import Next from "./checkout/images/next-step.webp";
 import Final from "./checkout/images/final-step.webp";

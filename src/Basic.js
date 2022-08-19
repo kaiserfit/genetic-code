@@ -15,7 +15,7 @@ function BasicPack({num, setRoute}) {
         return false
       }
       document.cookie="product="+basicPack+";path=/";
-
+      setRoute("checkout")
       navigate("/checkout", { replace: true });
     }
   

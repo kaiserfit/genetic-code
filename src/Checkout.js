@@ -18,7 +18,7 @@ const Checkout = ({setRoute}) => {
     document.title = "Checkout"
     const [productType, setProduct] = useState("kb");
     const dba=GetCookie("product");
-    setRoute("checkout");
+    
 
 
    

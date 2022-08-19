@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import AddtoCart from "./vsl-components/images/add-cart.webp";
 import {useNavigate} from "react-router-dom";
-function PremiumPack({num}) {
+function PremiumPack({num, setRoute}) {
     const [goldPack, setGold] = useState("")
     const navigate = useNavigate();
     const premiumClick = event => {
@@ -15,7 +15,7 @@ function PremiumPack({num}) {
         return false
       }
       document.cookie="product="+goldPack+";path=/";
-
+      setRoute("checkout")
       navigate("/checkout", { replace: true });
     }
   
