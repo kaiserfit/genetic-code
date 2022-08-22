@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import {
   PaymentElement,
   useStripe,
-  useElements,CardNumberElement, CardExpiryElement, CardCvcElement
+  useElements,CardNumberElement, CardExpiryElement, CardCvcElement, CardElement
 } from "@stripe/react-stripe-js";
 import $ from "jquery"
 import {GoArrowRight} from "react-icons/go"
 import Purchase from "./checkout/images/purchase-button.webp";
+
 export default function StripeForm(cskey) {
   const stripe = useStripe();
   const elements = useElements();
@@ -18,7 +19,7 @@ export default function StripeForm(cskey) {
     if (!stripe) {
       return;
     }
-    setKey(cskey.clientSecret)
+    setKey(JSON.stringify(cskey.clientSecret))
    
     const clientSecret = new URLSearchParams(window.location.search).get(
       "payment_intent_client_secret"
@@ -58,34 +59,40 @@ export default function StripeForm(cskey) {
     }
 
     setIsLoading(true);
-    console.log(elements)
-  
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
+    // console.log(elements)
+    // var cardx = elements.getElement
+    console.log(cskey.clientSecret)
+    var piKey = cskey.clientSecret
+    // const { error } = await stripe.confirmPayment({
+    //   elements,
+    //   confirmParams: {
        
-        return_url: "http://localhost:3000",
-      },
-    });
+    //     return_url: "http://localhost:3000",
+    //   },
+    // });
 
-//     const { error } = await  stripe
-//   .confirmCardPayment(cskey, {
-//     payment_method: {
-//       card: elements,
-//       billing_details: {
-//         name: 'Jenny Rosen',
-//       },
-//     },
-//   })
-//   .then(function(result) {
-//     // Handle result.error or result.paymentIntent
-//   });
+
+    const { error } = await  stripe
+  .confirmCardPayment(piKey, {
+    payment_method: {
+      card: elements.getElement(CardNumberElement),
+      billing_details: {
+        name: 'Jenny Rosen',
+      },
+    },
+  })
+  .then(function(result) {
+    console.log(result)
+    // Handle result.error or result.paymentIntent
+  });
 
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
     // be redirected to an intermediate site first to authorize the payment, then
     // redirected to the `return_url`.
+
+    
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
     } else {
@@ -135,19 +142,21 @@ export default function StripeForm(cskey) {
       </div>
     )
    }
+   $("#Field-countryInput").hide()
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
-      <PaymentElement id="payment-element" className="mx-auto"/>
-            {/* <div>
-        <label htmlFor="stripecn">Card Number *</label>
+ 
+      {/* <PaymentElement id="payment-element" className="mx-auto"/> */}
+        <div>
+          <label htmlFor="stripecn">Card Number *</label>
         
-        <div id="stripecn" className="d-block mw-100 w-100">
-          <CardNumberElement className="input-lg border p-1" />
-        </div>
-            </div>
+          <div id="stripecn" className="d-block mw-100 w-100">
+            <CardNumberElement className="form-control input-lg border p-1" />
+          </div>
+            
     
-        <div className="row p-1">
+          <div className="row p-1">
         <div className="col-6 p-1">
           <label htmlFor="stripexpd">
                     Expiry Date
@@ -164,8 +173,8 @@ export default function StripeForm(cskey) {
                   <CardCvcElement className="input-lg border p-1" />
                   </div>
           </div>
-        </div> */}
-   
+          </div>
+        </div>
       <div className="d-grid w-75 mt-3 fw-bold mx-auto" id="buttonHolder"> 
           <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-warning display-1 position-relative p-0 clearfix text-center fw-bolder">
           <img src={Purchase} className="img-fluid" />

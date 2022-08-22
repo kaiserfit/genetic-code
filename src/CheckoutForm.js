@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Cards from "./vsl-components/images/visa-mastercard-icon.webp";
 import Next from "./checkout/images/next-step.webp";
 import Final from "./checkout/images/final-step.webp";
@@ -25,7 +25,8 @@ const CheckoutForm = ({dba, productType}) => {
     const [checkoutStep, setStep] = useState(1);
     const [validPhone, setValidPhone] = useState(true);
     const [phone, setPhone] = useState();
-    const [formattedPhone, formatPhone] = useState()
+    const [step1Flag, setFlag1] = useState(false)
+    const [step2Flag, setFlag2] = useState(false)
     const [email, setEmail] = useState();
     const [country, setCountry] = useState();
 
@@ -34,11 +35,27 @@ const CheckoutForm = ({dba, productType}) => {
     const [zipError, setZipError] = useState(false)
     const [countryError, setCountryError] = useState(false)
 
-
+    const [customerDetails, setCustomerDetails] = useState([{
+      name: "",
+      email: "",
+      phone:"",
+      shippingDetails : {
+        street:"",
+        city:"",
+        country:"",
+        state:"",
+        zip:"",
+      }
+    }])
     
-
-
-
+    const x = Prices.filter((i)=>{
+      return (i.id===dba && i.product===productType);
+    });
+    const priceId = x[0].price_id
+    const price = x[0].price
+      useEffect(()=>{
+          console.log(customerDetails)
+      }, [checkoutStep])
       function ProductTable(){
         const ProductArr = Prices.filter((i)=>{
           return (i.id===dba && i.product===productType);
@@ -152,6 +169,14 @@ const CheckoutForm = ({dba, productType}) => {
         }
 
         if (valid){
+          var cd = customerDetails;
+          cd[0].name = f;
+          cd[0].email = em;
+          cd[0].phone = phone;
+          setCustomerDetails(cd);
+          // setCustomerDetails(customerDetails => ({name:f}));
+      
+          
             setStep(checkoutStep=>checkoutStep+1)
             $('html, body').animate({
                       scrollTop: $("#payment-form").offset().top
@@ -179,7 +204,7 @@ const CheckoutForm = ({dba, productType}) => {
         const s = $("#sname"); //street
         const t = $("#ctown"); //town
         const p = $("#postCode"); //postcode
-        
+        const st = $("#cState").val()
         var valid = true;
 
         var inputArrs = [s, t, p];
@@ -211,6 +236,16 @@ const CheckoutForm = ({dba, productType}) => {
         }
 
         if (valid){
+          // setCustomerDetails(customerDetails, {...customerDetails, street: s.val(), town: t.val(), zip: p.val(), state: st, country: country});
+          var cd = customerDetails;
+          cd[0].shippingDetails.street = s.val();
+          cd[0].shippingDetails.city = t.val();
+          cd[0].shippingDetails.country = country
+          cd[0].shippingDetails.state = st;
+          cd[0].shippingDetails.zip = p.val();
+
+ 
+          setCustomerDetails(cd);
             setStep(checkoutStep=>checkoutStep+1)
             $('html, body').animate({
                 scrollTop: $("#payment-form").offset().top
@@ -398,7 +433,7 @@ const CheckoutForm = ({dba, productType}) => {
 
 
       
-      <Gorm />
+      <Gorm priceId={priceId} price={price}  />
        
  
      

@@ -24,6 +24,15 @@ form {
   margin-bottom: 24px;
 }
 
+#Field-countryInput {
+  display: none !important;
+}
+
+.p-Select-select {
+  display: none;
+  width: 100%;
+}
+
 /* Buttons and links */
 /* button {
   background: #5469d4;
