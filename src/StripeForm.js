@@ -24,12 +24,13 @@ export default function StripeForm(cskey) {
     const clientSecret = new URLSearchParams(window.location.search).get(
       "payment_intent_client_secret"
     );
+
+    console.log(clientSecret)
      
 
     if (!clientSecret) {
       return;
-    }
-
+    } 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
         console.log(paymentIntent)
       switch (paymentIntent.status) {
@@ -63,8 +64,9 @@ export default function StripeForm(cskey) {
     // var cardx = elements.getElement
     console.log(cskey.clientSecret)
     var piKey = cskey.clientSecret
+    // var card = elements.getElement(CardNumberElement)
     // const { error } = await stripe.confirmPayment({
-    //   elements,
+    //   card,
     //   confirmParams: {
        
     //     return_url: "http://localhost:3000",
@@ -85,7 +87,7 @@ export default function StripeForm(cskey) {
     console.log(result)
     // Handle result.error or result.paymentIntent
   });
-
+console.log(error);
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
@@ -180,6 +182,7 @@ export default function StripeForm(cskey) {
           <img src={Purchase} className="img-fluid" />
           </button>
           </div>
+          {message}
       <OrderBump />
       {message && <div id="payment-message">{message}</div>}
     </form>
