@@ -14,6 +14,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Fathacks from "./Fathacks";
 import Checkout from './Checkout';
 import HeaderCheckout from './HeaderCheckout';
+import ThankYou from './ThankYou';
 function App() {
   const [pageRoute, setRoute] = useState("");
   
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<QuizComponent />} />
           <Route path="/fathacks" element={<Fathacks setRoute={setRoute} />} />
           <Route path="/checkout" element={<Checkout setRoute={setRoute}/>} />
+          <Route path="/thankyou" element={<ThankYou />} />
         </Routes>
       </BrowserRouter>
     

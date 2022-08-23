@@ -53,9 +53,9 @@ const CheckoutForm = ({dba, productType}) => {
     });
     const priceId = x[0].price_id
     const price = x[0].price
-      useEffect(()=>{
-          console.log(customerDetails)
-      }, [checkoutStep])
+      // useEffect(()=>{
+      //     console.log(customerDetails)
+      // }, [checkoutStep])
       function ProductTable(){
         const ProductArr = Prices.filter((i)=>{
           return (i.id===dba && i.product===productType);
@@ -433,7 +433,7 @@ const CheckoutForm = ({dba, productType}) => {
 
 
       
-      <Gorm priceId={priceId} price={price}  />
+      <Gorm priceId={priceId} price={price} customerDetails={customerDetails}  />
        
  
      

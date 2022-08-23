@@ -7,48 +7,58 @@ import {
 import $ from "jquery"
 import {GoArrowRight} from "react-icons/go"
 import Purchase from "./checkout/images/purchase-button.webp";
-
-export default function StripeForm(cskey) {
+import {useNavigate} from "react-router-dom";
+export default function StripeForm( {clientSecret, customerDetails, setPaymentMethod, setOrderNumber, setOrderBump}) {
   const stripe = useStripe();
   const elements = useElements();
-
+  const navigate = useNavigate();
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [ckey, setKey] = useState("")
+  const [obCheck, setOb] = useState(true)
+  const [purchaseAmt, setAmount]=useState(null);
   useEffect(() => {
     if (!stripe) {
       return;
     }
-    setKey(JSON.stringify(cskey.clientSecret))
+    // setKey(JSON.stringify(cskey.clientSecret))
    
     const clientSecret = new URLSearchParams(window.location.search).get(
       "payment_intent_client_secret"
     );
 
-    console.log(clientSecret)
+   
      
 
     if (!clientSecret) {
       return;
     } 
-    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-        console.log(paymentIntent)
-      switch (paymentIntent.status) {
-        case "succeeded":
-          setMessage("Payment succeeded!");
-          break;
-        case "processing":
-          setMessage("Your payment is processing.");
-          break;
-        case "requires_payment_method":
-          setMessage("Your payment was not successful, please try again.");
-          break;
-        default:
-          setMessage("Something went wrong.");
-          break;
-      }
-    });
+    // stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+    //   console.log(paymentIntent)
+    //   switch (paymentIntent.status) {
+    //     case "succeeded":
+    //       setMessage("Payment succeeded!");
+    //       break;
+    //     case "processing":
+    //       setMessage("Your payment is processing.");
+    //       break;
+    //     case "requires_payment_method":
+    //       setMessage("Your payment was not successful, please try again.");
+    //       break;
+    //     default:
+    //       setMessage("Something went wrong.");
+    //       break;
+    //   }
+    // });
+    
   }, [stripe]);
+  useEffect(
+  ()=>{
+    var cb = $("#ob").is(':checked');
+  
+    setOrderBump(cb)
+
+  }, [obCheck]   
+  );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,10 +70,10 @@ export default function StripeForm(cskey) {
     }
 
     setIsLoading(true);
-    // console.log(elements)
-    // var cardx = elements.getElement
-    console.log(cskey.clientSecret)
-    var piKey = cskey.clientSecret
+
+
+ 
+    // var piKey = cskey.clientSecret
     // var card = elements.getElement(CardNumberElement)
     // const { error } = await stripe.confirmPayment({
     //   card,
@@ -75,19 +85,45 @@ export default function StripeForm(cskey) {
 
 
     const { error } = await  stripe
-  .confirmCardPayment(piKey, {
+  .confirmCardPayment(clientSecret, {
     payment_method: {
       card: elements.getElement(CardNumberElement),
       billing_details: {
-        name: 'Jenny Rosen',
+        name: customerDetails[0].email,
       },
+      
     },
+    
+    
+      setup_future_usage: 'off_session',
+      return_url: "http://localhost:3000"
+    
   })
-  .then(function(result) {
-    console.log(result)
+  .then(function(result, error) {
+      switch (result.paymentIntent.status) {
+        case "succeeded":
+          setPaymentMethod(result.paymentIntent.payment_method)
+          setOrderNumber(result.paymentIntent.id)
+          setAmount((result.paymentIntent)/100);
+          setMessage("Payment succeeded!");
+          break;
+        case "processing":
+          setMessage("Your payment is processing.");
+          break;
+        case "requires_payment_method":
+          setMessage("Your payment was not successful, please try again.");
+          setIsLoading(false);
+          break;
+        default:
+          setMessage("Something went wrong.");
+          setIsLoading(false);
+          break;
+      }
+    console.log(result.paymentIntent)
+ 
     // Handle result.error or result.paymentIntent
   });
-console.log(error);
+
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
@@ -96,8 +132,10 @@ console.log(error);
 
     
     if (error.type === "card_error" || error.type === "validation_error") {
+      console.log("sadf")
       setMessage(error.message);
     } else {
+      console.log("123123")
       setMessage("An unexpected error occurred.");
     }
 
@@ -106,20 +144,27 @@ console.log(error);
 
 
   function OrderBump(){
-    setTimeout(() => {
-      var cb = $("#ob").is(':checked');
-      if (cb){
-          return false
-      } else {
-          $("#ob").prop('checked', true);
-          $("#ob").trigger("change");
+    // setTimeout(() => {
+    //   // var cb = $("#ob").is(':checked');
+    //   // if (cb){
+    //   //     return false
+    //   // } else {
+    //   //     $("#ob").prop('checked', true);
+    //   //     $("#ob").trigger("change");
           
-      }
-    }, 1000);
+    //   // }
+    //   setOb(true)
+    // }, 1000);
+
+    const BumpCheck=(e)=>{
+      setOb(e.target.checked)
+      
+    
+    }
     return (
       <div id="orderbump">
       <div id="orderbumpBanner" className="clearfix position-relative" style={{backgroundColor: "#1c2634", padding:"10px"}}>
-        <input type="checkbox" id="ob" name="ob" className="ms-2"/>
+        <input type="checkbox" onChange={BumpCheck} id="ob" name="ob" checked={obCheck} className="ms-2"/>
         <GoArrowRight className="blink position-absolute start-0 red-text" style={{top: "25%"}} /><label className="text-white" htmlFor="ob">Yes! Another Free Bonus!! </label>
         
         <input type="hidden" id="obId" name="obId" value="79" />
@@ -144,7 +189,7 @@ console.log(error);
       </div>
     )
    }
-   $("#Field-countryInput").hide()
+  
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
@@ -179,12 +224,12 @@ console.log(error);
         </div>
       <div className="d-grid w-75 mt-3 fw-bold mx-auto" id="buttonHolder"> 
           <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-warning display-1 position-relative p-0 clearfix text-center fw-bolder">
-          <img src={Purchase} className="img-fluid" />
+          <img src={Purchase} alt="Checkout Button" className="img-fluid" />
           </button>
           </div>
           {message}
       <OrderBump />
-      {message && <div id="payment-message">{message}</div>}
+      {message && <div id="payment-message" className="text-center mt-3">{message}</div>}
     </form>
   );
 }
