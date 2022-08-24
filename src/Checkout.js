@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import GetCookie from "./Cookie";
 import "./checkout/css/checkout1.css";
@@ -14,12 +14,22 @@ import MoneyBackImage from "./vsl-components/images/moneyback-guarantee.webp"
 import $ from "jquery";
 import {ImQuotesLeft} from "react-icons/im";
 import CheckoutForm from "./CheckoutForm";
+import TiktokPixel from 'tiktok-pixel';
+import ReactPixel from 'react-facebook-pixel';
 const Checkout = ({setRoute}) => {
     document.title = "Checkout"
     const [productType, setProduct] = useState("kb");
     const dba=GetCookie("product");
     
+  useEffect(()=>{
+    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    TiktokPixel.pageView();
+    TiktokPixel.track('AddPaymentInfo');
 
+    ReactPixel.init('334082198751683')
+    ReactPixel.pageView();
+    ReactPixel.track('AddPaymentInfo')
+  },[])
 
    
 
@@ -27,6 +37,7 @@ function DivTimer() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
+
     const today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = monthNames[today.getMonth()];

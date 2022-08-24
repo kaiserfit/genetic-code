@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import $ from "jquery"
+
 import StripeForm from "./StripeForm";
 import "./App.css"
 import GetCookie from "./Cookie";
 import {useNavigate} from "react-router-dom";
+import TiktokPixel from 'tiktok-pixel';
+import ReactPixel from 'react-facebook-pixel'
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
-const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
+const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
+// const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
 
 export default function Gorm({priceId, price, customerDetails}) {
   const [clientSecret, setClientSecret] = useState("");
@@ -17,6 +20,10 @@ export default function Gorm({priceId, price, customerDetails}) {
   const [orderBump, setOrderBump] = useState(true)
   const [customerPaymentMethod, setPaymentMethod] = useState("");
   const navigate = useNavigate();
+  const hashVal  = [...crypto.getRandomValues(new Uint8Array(10))]
+  .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+  const timeStamp = Date.now();    
+  const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of visitor
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch("https://pay.kaiserfitapp.com/stripe/createPm.php", {
@@ -63,19 +70,40 @@ export default function Gorm({priceId, price, customerDetails}) {
         })
         .then((res) => res.json())
         .then((data)=>{
+          document.cookie="orderid="+customerOrderNumber+";path=/";
           document.cookie="cid="+data.customerid+";path=/";
           document.cookie="hash="+data.hash+";path=/";
           document.cookie="cEmail="+customerDetails[0].email+";path=/";
-          navigate("/thankyou", { replace: true });
+
+          //tiktok
+          TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+          TiktokPixel.track('CompletePayment',{
+            content_id: 'Kaiser Burner',
+            content_type: 'product',
+            quantity: 1,
+            price: parseFloat(price),
+            value: parseFloat(price),
+            currency: 'USD'});
+
+
+
+            //facebook
+            ReactPixel.init('334082198751683')
+            ReactPixel.track('Purchase', {
+              value: parseFloat(price),
+              currency: 'USD'
+            }, {eventID:event_id} )
+          setTimeout(() => {
+            
+            navigate("/thankyou", { replace: true });
+          }, 1000);
         })
       }
     
     
   }, [customerPaymentMethod])
 
-  useEffect(()=>{
-    console.log(orderBump)
-  }, [orderBump]);
+
 
   const appearance = {
     theme: 'stripe',

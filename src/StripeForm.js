@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {
-  PaymentElement,
+import { 
   useStripe,
-  useElements,CardNumberElement, CardExpiryElement, CardCvcElement, CardElement
+  useElements,CardNumberElement, CardExpiryElement, CardCvcElement, CardElement, PaymentElement
 } from "@stripe/react-stripe-js";
 import $ from "jquery"
 import {GoArrowRight} from "react-icons/go"
 import Purchase from "./checkout/images/purchase-button.webp";
-import {useNavigate} from "react-router-dom";
+
 export default function StripeForm( {clientSecret, customerDetails, setPaymentMethod, setOrderNumber, setOrderBump}) {
   const stripe = useStripe();
   const elements = useElements();
-  const navigate = useNavigate();
+
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [obCheck, setOb] = useState(true)
@@ -73,15 +72,6 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
 
 
  
-    // var piKey = cskey.clientSecret
-    // var card = elements.getElement(CardNumberElement)
-    // const { error } = await stripe.confirmPayment({
-    //   card,
-    //   confirmParams: {
-       
-    //     return_url: "http://localhost:3000",
-    //   },
-    // });
 
 
     const { error } = await  stripe
@@ -96,7 +86,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     
     
       setup_future_usage: 'off_session',
-      return_url: "http://localhost:3000"
+      
     
   })
   .then(function(result, error) {
@@ -144,17 +134,6 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
 
 
   function OrderBump(){
-    // setTimeout(() => {
-    //   // var cb = $("#ob").is(':checked');
-    //   // if (cb){
-    //   //     return false
-    //   // } else {
-    //   //     $("#ob").prop('checked', true);
-    //   //     $("#ob").trigger("change");
-          
-    //   // }
-    //   setOb(true)
-    // }, 1000);
 
     const BumpCheck=(e)=>{
       setOb(e.target.checked)

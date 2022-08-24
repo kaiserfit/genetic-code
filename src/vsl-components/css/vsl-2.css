@@ -767,7 +767,7 @@ text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rg
 */
 }
 
-#co-box #gold {
+ #gold {
  box-shadow: 0 0 15px 10px #FFD700;
  color: #000;
 background-image: linear-gradient(to right, #FFD700, white, #FFD700);

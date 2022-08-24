@@ -22,12 +22,16 @@ import Bonuses from './Bonus';
 import Steps from './TransformationSteps';
 import Narrative from './Narrative';
 import Faq from './Faq';
+
+import TiktokPixel from 'tiktok-pixel';
+import ReactPixel from 'react-facebook-pixel';
+
 const Vid = ({setRoute}) => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(true);
+    const [hook6, setHook6] = useState(false);
     const [videoTime, setTime] = useState(0);
     // const [timer, setExp] = useState("24:00:00");
     const [pageNum, setPage] = useState(1);
@@ -45,6 +49,7 @@ const Vid = ({setRoute}) => {
                   $(".vjs-fullscreen-control").trigger("click");
                     
                 }
+               
                 $("#sticky").addClass("scrolled");             
                 setHook6(true);
               }
@@ -53,6 +58,14 @@ const Vid = ({setRoute}) => {
       
      
       } 
+
+      if (hook6){
+        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+        TiktokPixel.track('InitiateCheckout');
+
+        ReactPixel.init('334082198751683')
+        ReactPixel.track('InitiateCheckout')
+      }
       
     
     
