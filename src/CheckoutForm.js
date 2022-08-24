@@ -15,7 +15,7 @@ import {Prices} from "./prices"
 import Gorm from "./Gorm";
 
 
-const CheckoutForm = ({dba, productType}) => {
+const CheckoutForm = ({dba, productType, setRoute}) => {
     const [hasErrors, setErrorFlag] = useState(false);
     const [hasNameError, setNameError] = useState(false);
     const [hasEmailError, setEmailError] = useState(false);
@@ -433,7 +433,7 @@ const CheckoutForm = ({dba, productType}) => {
 
 
       
-      <Gorm priceId={priceId} price={price} customerDetails={customerDetails}  />
+      <Gorm priceId={priceId} price={price} customerDetails={customerDetails} setRoute={setRoute} />
        
  
      

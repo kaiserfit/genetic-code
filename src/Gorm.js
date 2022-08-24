@@ -8,13 +8,14 @@ import GetCookie from "./Cookie";
 import {useNavigate} from "react-router-dom";
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel'
+
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
 // const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
 
-export default function Gorm({priceId, price, customerDetails}) {
+export default function Gorm({priceId, price, customerDetails, setRoute}) {
   const [clientSecret, setClientSecret] = useState("");
   const [customerOrderNumber, setOrderNumber] = useState("");
   const [orderBump, setOrderBump] = useState(true)
@@ -94,7 +95,7 @@ export default function Gorm({priceId, price, customerDetails}) {
               currency: 'USD'
             }, {eventID:event_id} )
           setTimeout(() => {
-            
+            setRoute("thankyou");
             navigate("/thankyou", { replace: true });
           }, 1000);
         })

@@ -281,7 +281,7 @@ function ProductSection(){
         <DivTimer />
         <Section2 />
         <ProductSection />
-        <CheckoutForm dba={dba} productType={productType} />
+        <CheckoutForm dba={dba} productType={productType} setRoute={setRoute} />
         </>
     )
 }

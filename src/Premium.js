@@ -17,6 +17,7 @@ function PremiumPack({num, setRoute}) {
       document.cookie="product="+goldPack+";path=/";
       setRoute("checkout")
       navigate("/checkout", { replace: true });
+      
     }
   
   
