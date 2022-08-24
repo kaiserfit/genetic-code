@@ -7,7 +7,7 @@ import NeuroDrive from "./thankyou/Neuro-Drive.webp"
 import CollagenMatrix from "./thankyou/Collagen-Matrix.webp"
 import appleStore from "./thankyou/applestore.webp"
 import playstore from "./thankyou/playstore.webp"
-import { BsFileBreakFill } from "react-icons/bs";
+import $ from "jquery"
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 const ThankYou =() =>{
@@ -26,7 +26,9 @@ const ThankYou =() =>{
     const timeStamp = Date.now();    
     const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of visitor
     useEffect(()=>{
-        
+        $('html, body').animate({
+            scrollTop: $("#topBanner").offset().top
+        }, "fast");
     TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
     TiktokPixel.pageView();
 
@@ -38,7 +40,7 @@ const ThankYou =() =>{
 
         return (
         <>
-            <div className="container text-center py-2 py-sm-4 my-4" style={{backgroundColor: "#fcffa6"}}>
+            <div className="container text-center py-2 py-sm-4 my-4" style={{backgroundColor: "#fcffa6"}} id="topBanner">
                 <h1 className="mb-1 text-decoration-underline" style={{color: '#b10000', fontWeight:"900"}}>
                 Congratulations, Your Order Is Complete!
                 </h1>
@@ -144,7 +146,7 @@ const ThankYou =() =>{
     }
     function StepColumn() {
         return (
-            <div className="col-12 col-sm-8 offset-sm-4 col-md-6 offset-md-3 p-2 p-sm-4 border border-dark">
+            <div className="col-12 col-sm-8 offset-sm-4 col-md-6 offset-md-3 p-2 p-sm-4 border border-dark" >
                 <section className="step mb-3 py-3 border-bottom">
                     <h4 className="red-text mb-3 fw-bolder">Step 1 – Check Your Email For Account Details & Tracking Number</h4>
                     <div className="my-3 my-sm-4">
