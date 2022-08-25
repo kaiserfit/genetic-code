@@ -1,5 +1,5 @@
 import React from "react";
-import {BsEnvelope, BsTelephoneFill, BsStopwatchFill} from "react-icons/bs"
+import {BsEnvelope, BsTelephoneFill} from "react-icons/bs"
 import logo from './kwhite.webp';
 import guarantee from './Guarantee.webp';
 

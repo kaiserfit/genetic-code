@@ -25,7 +25,7 @@ import Faq from './Faq';
 
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
-
+import WebHook from './WebHook';
 const Vid = ({setRoute}) => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
@@ -60,11 +60,18 @@ const Vid = ({setRoute}) => {
       } 
 
       if (hook6){
+
+        const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+      const timeStamp = Date.now();    
+      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
         TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
         TiktokPixel.track('InitiateCheckout');
 
         ReactPixel.init('334082198751683')
         ReactPixel.track('InitiateCheckout')
+
+        WebHook('InitiateCheckout', event_id)
       }
       
     
@@ -640,7 +647,7 @@ const Vid = ({setRoute}) => {
           </div>
 
           <div className="col-12 col-sm-4 col-md-4 col-lg-4 rev-col">
-          <img src={require('./vsl-components/images/rev-stars.webp')} className="img-fluid mx-auto"  />
+          <img src={require('./vsl-components/images/rev-stars.webp')} alt="five stars" className="img-fluid mx-auto"  />
           </div>
 
           <div className="col-12 col-sm-4 col-md-4 col-lg-4 rev-col">
@@ -806,8 +813,8 @@ function MoneyBackGuarantee(){
       </div> */}
     </div>
       
-       <div className="container-fluid" id="co-box">
-        
+       <div className={`container-fluid`} id="co-box">
+   
         {hook6 === true && (<Products num={1} />)}
         {hook6 === true && (<MoneyBackGuarantee />)}
         {hook6 === true && (<Section1 />)}

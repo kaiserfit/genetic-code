@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './quiz.css';
 import "./vsl-components/css/product.css";
 import "./vsl-components/css/product-sm.css";
@@ -15,9 +15,22 @@ import Fathacks from "./Fathacks";
 import Checkout from './Checkout';
 import HeaderCheckout from './HeaderCheckout';
 import ThankYou from './ThankYou';
+import axios from 'axios';
 function App() {
   const [pageRoute, setRoute] = useState("");
+  const getData = async () => {
+    const res = await axios.get('https://geolocation-db.com/json/')
+    console.log(res.data);
+    document.cookie="_uip="+res.data.IPv4+";path=/";
+    localStorage.setItem('_uip', res.data.IPv4);
+    localStorage.setItem('_country', res.data.country_code);
+  }
   
+  useEffect( () => {
+    //passing getData method to the lifecycle method
+    getData()
+
+  }, [])
   return (
     <div>
       {(pageRoute==="checkout") ?  <HeaderCheckout /> : <Header/>}

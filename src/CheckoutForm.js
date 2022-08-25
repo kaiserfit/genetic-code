@@ -53,9 +53,7 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
     });
     const priceId = x[0].price_id
     const price = x[0].price
-      // useEffect(()=>{
-      //     console.log(customerDetails)
-      // }, [checkoutStep])
+    
       function ProductTable(){
         const ProductArr = Prices.filter((i)=>{
           return (i.id===dba && i.product===productType);
@@ -357,6 +355,7 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
 
             <PhoneInput
             placeholder="Enter Phone Number"
+            country={localStorage.getItem('_country').toLowerCase()}
             value={phone}
             onChange={setPhone}
             className="react-phone"

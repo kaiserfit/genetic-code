@@ -19,9 +19,11 @@ const Checkout = ({setRoute}) => {
     document.title = "Checkout"
     const [productType, setProduct] = useState("kb");
     const dba=GetCookie("product");
-    
-
-
+    useEffect(()=>{
+      $('html, body').animate({
+        scrollTop: $("#timerBanner").offset().top
+    }, "fast");
+    },[])
    
 function DivTimer() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -91,7 +93,7 @@ const today1 = ee + ' ' + mm + ' ' + yyyy;
     
     startTimer(25*60);
     return (
-        <div className="my-3 p-1" >
+        <div className="my-3 p-1" id="timerBanner">
         <div  className="container-fluid text-dark py-4 " style={{border: "2px dashed red"}} >
           <div  className="text-center">       
               <p className="fs-4"><span className="label label-danger p-1 rounded text-white"><strong>Warning</strong></span>: Due to unexpected demand, we cannot guarantee The Dream Body Bundle after <br /><span className="label label-danger p-1 rounded text-white" id="curdate">{today1}</span>. Sign up immediately to secure your spot before Membership is FULL</p>

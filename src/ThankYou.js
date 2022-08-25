@@ -11,6 +11,7 @@ import $ from "jquery"
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 import { useLocation } from "react-router-dom";
+import WebHook from "./WebHook";
 const ThankYou =() =>{
     const url = window.location.href;
     const botCount = 3;
@@ -24,14 +25,16 @@ const ThankYou =() =>{
     const {state} = useLocation();
     const { price } = state;
     console.log(price);
-    const hashVal  = [...crypto.getRandomValues(new Uint8Array(10))]
-    .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-    const timeStamp = Date.now();    
-    const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of visitor
+   
     useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("#topBanner").offset().top
         }, "fast");
+
+        const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+      const timeStamp = Date.now();    
+      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
     TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
     TiktokPixel.pageView();
           
@@ -52,6 +55,8 @@ const ThankYou =() =>{
         value: price,
         currency: 'USD'
       }, {eventID:event_id} )
+
+      WebHook('Purchase', event_id)
     }, [])
 
     function YellowTops(){
@@ -107,7 +112,11 @@ const ThankYou =() =>{
         .then((res) => res.json())
         .then((data)=>{
           if (data.result){
-
+              const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+              .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+              const timeStamp = Date.now();    
+              const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+              console.log(data)
             //tiktok
                 TiktokPixel.track('CompletePayment',{
                 content_id: set.content,
@@ -124,6 +133,8 @@ const ThankYou =() =>{
                 currency: 'USD'
               }, {eventID:event_id} )
 
+
+              WebHook('Purchase', event_id)
               // 2 is code for successful purchase
                 switch(set.id){
                     case "25201":
@@ -352,12 +363,12 @@ const ThankYou =() =>{
                     <div className="row mb-3">
                         <div className="col-12 col-sm-4 offset-sm-2 mb-3">
                         <a href="https://play.google.com/store/apps/details?id=com.app.kaiserfitqueens">
-                            <img src={playstore} alt="playstore button" class="img-fluid storelinks" />
+                            <img src={playstore} alt="playstore button" className="img-fluid storelinks" />
                         </a>
                         </div>
                         <div className="col-12 col-sm-4">
                         <a href="https://apps.apple.com/ph/app/kaiserfit/id1527051183">
-                            <img src={appleStore} alt="applestore button" class="img-fluid storelinks" />
+                            <img src={appleStore} alt="applestore button" className="img-fluid storelinks" />
                         </a>
                         </div>
                     </div>
@@ -371,8 +382,8 @@ const ThankYou =() =>{
                     </h4>
                     <div className="text-center w-75 mx-auto mt-3">
                       
-                        <div class="d-grid gap-2">
-                          <a role="button" target="_blank" without rel="noreferrer" href="https://www.facebook.com/groups/510393336135512" type="button" name="" id="gold" class="btn text-decoration-none fw-bolder fs-3">
+                        <div className="d-grid gap-2">
+                          <a role="button" target="_blank" without rel="noreferrer" href="https://www.facebook.com/groups/510393336135512" type="button" name="" id="gold" className="btn text-decoration-none fw-bolder fs-3">
                             Join VIP Group
                             </a>
                         </div>

@@ -8,7 +8,7 @@ import GetCookie from "./Cookie";
 import {useNavigate} from "react-router-dom";
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel'
-
+import WebHook from "./WebHook";
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
@@ -21,10 +21,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
   const [orderBump, setOrderBump] = useState(true)
   const [customerPaymentMethod, setPaymentMethod] = useState("");
   const navigate = useNavigate();
-  const hashVal  = [...crypto.getRandomValues(new Uint8Array(10))]
-  .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-  const timeStamp = Date.now();    
-  const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of visitor
+ 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch("https://pay.kaiserfitapp.com/stripe/createPm.php", {
@@ -36,6 +33,11 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
 
+
+      const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+      const timeStamp = Date.now();    
+      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
       TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
       TiktokPixel.pageView();
       TiktokPixel.track('AddPaymentInfo');
@@ -44,12 +46,11 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
       ReactPixel.pageView();
       ReactPixel.track('AddPaymentInfo')
 
-     
+     WebHook('AddPaymentInfo', event_id)
   }, []);
 
   useEffect(()=> {
-    console.log("checkout complete")
-    console.log(customerPaymentMethod)
+  
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
         fetch('https://pay.kaiserfitapp.com/stripe/createCustomer.php', {
@@ -85,7 +86,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
       
           setTimeout(() => {
             setRoute("thankyou");
-            navigate("/thankyou", { replace: true, state: { price: parseFloat(price) } });
+            navigate("/thankyou", { push: true, state: { price: parseFloat(price) } });
           }, 1000);
         })
       }

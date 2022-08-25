@@ -14,7 +14,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [obCheck, setOb] = useState(true)
-  const [purchaseAmt, setAmount]=useState(null);
+  
   useEffect(() => {
     if (!stripe) {
       return;
@@ -74,7 +74,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
  
 
 
-    const { error } = await  stripe
+    const { error } =   stripe
   .confirmCardPayment(clientSecret, {
     payment_method: {
       card: elements.getElement(CardNumberElement),
@@ -89,13 +89,13 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       
     
   })
-  .then(function(result, error) {
+  .then(function(result) {
       switch (result.paymentIntent.status) {
         case "succeeded":
           setPaymentMethod(result.paymentIntent.payment_method)
           setOrderNumber(result.paymentIntent.id)
-          setAmount((result.paymentIntent)/100);
-          setMessage("Payment succeeded!");
+       
+          setMessage("Payment succeeded! Please wait while we setup your KaiserCoach Account");
           break;
         case "processing":
           setMessage("Your payment is processing.");
@@ -119,15 +119,14 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     // your `return_url`. For some payment methods like iDEAL, your customer will
     // be redirected to an intermediate site first to authorize the payment, then
     // redirected to the `return_url`.
-
-    
-    if (error.type === "card_error" || error.type === "validation_error") {
-      console.log("sadf")
-      setMessage(error.message);
-    } else {
-      console.log("123123")
-      setMessage("An unexpected error occurred.");
-    }
+ 
+    // if (error.type === "card_error" || error.type === "validation_error") {
+    //   console.log("sadf")
+    //   setMessage(error.message);
+    // } else {
+    //   console.log("123123")
+    //   setMessage("An unexpected error occurred.");
+    // }
 
     setIsLoading(false);
   };
@@ -150,7 +149,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
         <input type="hidden" id="page" name="page" value="checkout" />
         </div >
         <div className="p-2">
-        <img src={require('./checkout/images/79.webp')} className="img-fluid" />
+        <img src={require('./checkout/images/79.webp')} alt="crossed out price" className="img-fluid" />
         <p><strong>One time Offer:</strong>
           Join our most successful members who lose
           the most weight <b>EFFORTLESSLY</b> in the <b>Kaiser Coach Platinum</b>
@@ -174,7 +173,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     <form id="payment-form" onSubmit={handleSubmit}>
  
       {/* <PaymentElement id="payment-element" className="mx-auto"/> */}
-        <div>
+        <div className="mb-4">
           <label htmlFor="stripecn">Card Number *</label>
         
           <div id="stripecn" className="d-block mw-100 w-100">
@@ -201,14 +200,14 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
           </div>
           </div>
         </div>
+      <OrderBump />
+      {message && <div id="payment-message" className="text-center my-3">{message}</div>}
       <div className="d-grid w-75 mt-3 fw-bold mx-auto" id="buttonHolder"> 
           <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-warning display-1 position-relative p-0 clearfix text-center fw-bolder">
           <img src={Purchase} alt="Checkout Button" className="img-fluid" />
           </button>
           </div>
-          {message}
-      <OrderBump />
-      {message && <div id="payment-message" className="text-center mt-3">{message}</div>}
+      
     </form>
   );
 }
