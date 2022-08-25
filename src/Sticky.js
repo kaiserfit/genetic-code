@@ -4,7 +4,7 @@ import $ from "jquery";
 function Sticky(){
     const handleClick = () => {
         $('html, body').animate({
-            scrollTop: $("#wrap-1").offset().top
+            scrollTop: $("#co-box").offset().top
         }, "slow");
     }
     return (

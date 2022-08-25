@@ -36,7 +36,13 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
 
-
+      TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+      TiktokPixel.pageView();
+      TiktokPixel.track('AddPaymentInfo');
+  
+      ReactPixel.init('334082198751683')
+      ReactPixel.pageView();
+      ReactPixel.track('AddPaymentInfo')
 
      
   }, []);
@@ -77,7 +83,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
           document.cookie="cEmail="+customerDetails[0].email+";path=/";
 
           //tiktok
-          TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+         
           TiktokPixel.track('CompletePayment',{
             content_id: 'Kaiser Burner',
             content_type: 'product',
@@ -89,7 +95,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
 
 
             //facebook
-            ReactPixel.init('334082198751683')
+            
             ReactPixel.track('Purchase', {
               value: parseFloat(price),
               currency: 'USD'

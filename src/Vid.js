@@ -780,7 +780,7 @@ function MoneyBackGuarantee(){
     <div className="container-fluid bg-black text-center" id="ff5">
  
       <div id="col-video">
-        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-2 offset-lg-5 position-relative">
+        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-4 offset-lg-4 position-relative">
     
           <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                 {paused===true && (
@@ -801,28 +801,34 @@ function MoneyBackGuarantee(){
 
       </div>
 
-      <div className="container text-center mt-3">
+      {/* <div className="container text-center mt-3">
           <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`} style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
-      </div>
+      </div> */}
     </div>
       
        <div className="container-fluid" id="co-box">
-                <hr id="wrap-1"></hr>
+        
         {hook6 === true && (<Products num={1} />)}
         {hook6 === true && (<MoneyBackGuarantee />)}
-        <Section1 />
+        {hook6 === true && (<Section1 />)}
+        {hook6 === true && (<Bna1 />)}
         
-        <Bna1 />
+        
+        
         
         {hook6 === true && (<Bonuses />)}
         {hook6 === true && (<Products num={2} />)}
+        {hook6 === true && (<Reviews />)}
+        {hook6 === true && (
+           <div className="text-center">
+           <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
+           <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+        
+          </div>
+        )}
     
-        <Reviews />
-        <div className="text-center">
-          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-          <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+        
        
-      </div>
 
         {hook6 === true && (<Products num={3} />)}
         {hook6 === true && (<Steps />)}
@@ -831,8 +837,9 @@ function MoneyBackGuarantee(){
         {hook6 === true && (<Products num={5} />)}
      
         {hook6 === true && (<Faq  />)}
+        {hook6 === true && (<ShaneFooter />)}
     
-        <ShaneFooter />
+        
        </div>
      
     </>
