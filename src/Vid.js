@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import {commentsArray} from "./vsl-components/Comments";
 // This imports the functional component from the previous sample.
@@ -35,7 +35,7 @@ const Vid = ({setRoute}) => {
     const [videoTime, setTime] = useState(0);
     // const [timer, setExp] = useState("24:00:00");
     const [pageNum, setPage] = useState(1);
-    
+
     useEffect(() => {
      
       
@@ -77,6 +77,11 @@ const Vid = ({setRoute}) => {
     
     
     }, [userPlay, vslWatched, hook6, videoTime]);
+
+
+
+
+
 
     function watchClick(){
       console.log(userPlay);
@@ -148,7 +153,7 @@ const Vid = ({setRoute}) => {
     controls: true,
   
     fluid: true,
-    preload: "true",
+    // preload: "true",
     poster: Loading,
     sources: [{
       src: 'https://d2rvo1g7c89cun.cloudfront.net',
@@ -157,7 +162,7 @@ const Vid = ({setRoute}) => {
     
   };
 
-  const clickPlay = (e) => {
+  const clickPlay = () => {
     const veed = videojs(document.getElementById("my-video"));
     
    
@@ -171,12 +176,31 @@ const Vid = ({setRoute}) => {
     
     }
 
-  
+    const initialOptions = {
+      aspectRatio: "4:3",
+      controls: true,
+      fluid: true,
+      // fill: true,
+      preload: "auto",
+      sources: [
+        {
+          src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-2.mp4",
+          type: "video/mp4",
+        },
+      ],
+      controlBar: {
+        volumePanel: {
+          inline: false,
+        },
+        progressControl: false,
+        remainingTimeDisplay: false,
+      },
+    };
  
   const handlePlayerReady = (player) => {
     playerRef.current = player;
     
-
+    
     // You can handle player events here, for example:
     player.on('waiting', () => {
       videojs.log('player is waiting');
@@ -192,6 +216,7 @@ const Vid = ({setRoute}) => {
 
     player.on('ready', () => {
       timer_init();
+ 
         videojs.log('player is asdfasdf');
           $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
         });
@@ -788,7 +813,13 @@ function MoneyBackGuarantee(){
  
       <div id="col-video">
         <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-4 offset-lg-4 position-relative">
-    
+        {/* <video
+          // onClick={handleClickVideo}
+          ref={videoRef}
+          className="video-js vjs-big-play-centered "
+        /> */}
+
+
           <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                 {paused===true && (
                     <div id="btnResume" onClick={pauseButton} className="text-center">

@@ -16,17 +16,16 @@ export const VideoJS = (props) => {
       if (!videoElement) return;
 
       const player = playerRef.current = videojs(videoElement, options, () => {
-       
+
+        // console.log("asdf")
+    
         onReady && onReady(player);
       });
 
-    // You could update an existing player in the `else` block here
+  // You could update an existing player in the `else` block here
     // on prop change, for example:
     } else {
-      // const player = playerRef.current;
-
-      // player.autoplay(options.autoplay);
-      // player.src(options.sources);
+      
     }
   }, [options, videoRef]);
 

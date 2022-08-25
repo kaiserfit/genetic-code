@@ -167,6 +167,7 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
         }
 
         if (valid){
+          setFlag1(true)
           var cd = customerDetails;
           cd[0].name = f;
           cd[0].email = em;
@@ -234,6 +235,7 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
         }
 
         if (valid){
+          setFlag2(true)
           // setCustomerDetails(customerDetails, {...customerDetails, street: s.val(), town: t.val(), zip: p.val(), state: st, country: country});
           var cd = customerDetails;
           cd[0].shippingDetails.street = s.val();
@@ -255,7 +257,11 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
                 scrollTop: $("#form_errors").offset().top
             }, "fast");
         }
+
+      
     }
+
+    
     const CheckoutStepCheck = (e) => {
         e.preventDefault();
 
@@ -294,7 +300,18 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
 
  
 
+function Tabs(){
+  
 
+return (
+  <div className="tab" id="tabgroup">
+  <button className={`tablinks ${(checkoutStep===1) ? "active": ""}`} id="firstStep"><span>1</span><br />Enter Details</button>
+  <button className={`tablinks ${(checkoutStep===2) ? "active": ""}`} id="2ndStep"><span>2</span><br />Confirm Order</button>
+  <button className={`tablinks ${(checkoutStep===3) ? "active": ""}`} id="3rdStep"><span>3</span><br />Payment</button>
+</div>
+)
+
+}
 
   
     return (
@@ -304,11 +321,7 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
       <h1 className="text-white"><b>Complete Secure Order Now</b></h1>
       </div>
      
-  <div className="tab" id="tabgroup">
-    <button className={`tablinks ${(checkoutStep===1) ? "active": ""}`} id="firstStep" data-idx="1" data-targetx = "2ndStep" ><span>1</span><br />Enter Details</button>
-    <button className={`tablinks ${(checkoutStep===2) ? "active": ""}`} id="2ndStep" data-idx="2" data-targetx = "3rdStep"><span>2</span><br />Confirm Order</button>
-    <button className={`tablinks ${(checkoutStep===3) ? "active": ""}`} id="3rdStep" data-idx="3" data-targetx = "4"><span>3</span><br />Payment</button>
-  </div>
+      <Tabs />
   <div id="payment-form" name="payment-form">
   <div id="form_errors" className={`tabcontent ${(hasErrors===true) ? "": "invisible"}`}>
         {(hasNameError===true) && (
