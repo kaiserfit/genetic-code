@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom";
 function BasicPack({num, setRoute}) {
     const [basicPack, setBronze] = useState("")
     const navigate = useNavigate();
+
+    
     const basicClick = event => {
       setBronze(event.target.value);
     }

@@ -293,7 +293,7 @@ function Quiz(){
         {state === 4 && <Question4 />}
         {state === 5 && <Question5 />}
         {state === 6 && <Question6 />}
-        <video width="320" height="240" controls autoPlay muted className='position-absolute bottom-0 end-0'>
+        <video width="320" height="240" controls autoPlay muted className='position-absolute bottom-0 end-0 invisible' style={{zIndex: "-10"}}>
           <source src="https://d2rvo1g7c89cun.cloudfront.net" type="video/mp4" />
           
             Your browser does not support the video tag.

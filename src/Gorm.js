@@ -81,28 +81,11 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
           document.cookie="cid="+data.customerid+";path=/";
           document.cookie="hash="+data.hash+";path=/";
           document.cookie="cEmail="+customerDetails[0].email+";path=/";
-
-          //tiktok
-         
-          TiktokPixel.track('CompletePayment',{
-            content_id: 'Kaiser Burner',
-            content_type: 'product',
-            quantity: 1,
-            price: parseFloat(price),
-            value: parseFloat(price),
-            currency: 'USD'});
-
-
-
-            //facebook
             
-            ReactPixel.track('Purchase', {
-              value: parseFloat(price),
-              currency: 'USD'
-            }, {eventID:event_id} )
+      
           setTimeout(() => {
             setRoute("thankyou");
-            navigate("/thankyou", { replace: true });
+            navigate("/thankyou", { replace: true, state: { price: parseFloat(price) } });
           }, 1000);
         })
       }

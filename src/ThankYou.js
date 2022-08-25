@@ -10,6 +10,7 @@ import playstore from "./thankyou/playstore.webp"
 import $ from "jquery"
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
+import { useLocation } from "react-router-dom";
 const ThankYou =() =>{
     const url = window.location.href;
     const botCount = 3;
@@ -20,7 +21,9 @@ const ThankYou =() =>{
     const [burner, setBurner] = useState(1)
     const [lean, setLean] = useState(1)
     const [collagen, setCollagen] = useState(1)
-
+    const {state} = useLocation();
+    const { price } = state;
+    console.log(price);
     const hashVal  = [...crypto.getRandomValues(new Uint8Array(10))]
     .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
     const timeStamp = Date.now();    
@@ -31,9 +34,24 @@ const ThankYou =() =>{
         }, "fast");
     TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
     TiktokPixel.pageView();
+          
+    TiktokPixel.track('CompletePayment',{
+        content_id: 'Kaiser Burner',
+        content_type: 'product',
+        quantity: 1,
+        price:price,
+        value: price,
+        currency: 'USD'});
+
+
+
 
     ReactPixel.init('334082198751683')
     ReactPixel.pageView();
+    ReactPixel.track('Purchase', {
+        value: price,
+        currency: 'USD'
+      }, {eventID:event_id} )
     }, [])
 
     function YellowTops(){

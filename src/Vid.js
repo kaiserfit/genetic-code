@@ -787,7 +787,7 @@ function MoneyBackGuarantee(){
                     <div id="btnResume" onClick={pauseButton} className="text-center">
                     <h4 className="text-white">Resume Watching Video</h4>
                     <BsPlayBtnFill className='display-1 text-danger' />
-                </div>
+                    </div>
                 )}
                
            
