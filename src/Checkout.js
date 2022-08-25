@@ -14,22 +14,13 @@ import MoneyBackImage from "./vsl-components/images/moneyback-guarantee.webp"
 import $ from "jquery";
 import {ImQuotesLeft} from "react-icons/im";
 import CheckoutForm from "./CheckoutForm";
-import TiktokPixel from 'tiktok-pixel';
-import ReactPixel from 'react-facebook-pixel';
+
 const Checkout = ({setRoute}) => {
     document.title = "Checkout"
     const [productType, setProduct] = useState("kb");
     const dba=GetCookie("product");
     
-  useEffect(()=>{
-    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-    TiktokPixel.pageView();
-    TiktokPixel.track('AddPaymentInfo');
 
-    ReactPixel.init('334082198751683')
-    ReactPixel.pageView();
-    ReactPixel.track('AddPaymentInfo')
-  },[])
 
    
 function DivTimer() {
