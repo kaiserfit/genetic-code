@@ -42,7 +42,7 @@ const Vid = ({setRoute}) => {
         if (userPlay){
           const veed = videojs(document.getElementById("my-video"));
           veed.on('timeupdate', ()=> {
-            if (veed.currentTime()>=10){
+            if (veed.currentTime()>=2940){
               if (hook6 === false) {
                 var x = $("#my-video").hasClass("vjs-fullscreen");
                 if (x) {
