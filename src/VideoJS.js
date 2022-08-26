@@ -14,7 +14,7 @@ export const VideoJS = (props) => {
     preload: "auto",
     sources: [
       {
-        src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-2.mp4",
+        src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-3.mp4",
         type: "video/mp4",
       },
     ],
