@@ -10,7 +10,7 @@ function Footer(){
 
   <div className="float-none float-sm-end float-md-end float-lg-end float-xl-end float-xxl-end text-center">
 
-    <a href="/pages/privacy-policy.html" target="_blank" className="text-white">Privacy Policy</a>  |  <a href="/pages/terms-and-conditions.htmll" target="_blank" className="text-white">Terms & Conditions</a>  |  <a href="/pages/contact-us.html" target="_blank" className="text-white">Support</a>  |  <a href="/pages/disclaimer.html" target="_blank" className="text-white">Disclaimer</a>
+    <a href="/privacy-policy" target="_blank" className="text-white">Privacy Policy</a>  |  <a href="/terms-conditions" target="_blank" className="text-white">Terms & Conditions</a>  |  <a href="/contact-us" target="_blank" className="text-white">Support</a>  |  <a href="/disclaimer" target="_blank" className="text-white">Disclaimer</a>
   </div>
 </div>
     );

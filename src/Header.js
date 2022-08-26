@@ -27,19 +27,19 @@ function Header(){
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a href="/pages/privacy-policy.html" target="_blank" className="dropdown-item">Privacy Policy</a>
+                <a href="/privacy-policy" target="_blank" className="dropdown-item">Privacy Policy</a>
               </li>
       
               <li>
-                <a href="/pages/terms-and-conditions.htmll" target="_blank" className="dropdown-item">Terms & Conditions</a>
+                <a href="/terms-conditions" target="_blank" className="dropdown-item">Terms & Conditions</a>
               </li>
       
               <li>
-                <a href="/pages/contact-us.html" target="_blank" className="dropdown-item">Support</a>
+                <a href="/contact-us" target="_blank" className="dropdown-item">Support</a>
               </li>
       
               <li>
-                <a href="/pages/disclaimer.html" target="_blank" className="dropdown-item">Disclaimer</a>
+                <a href="/disclaimer" target="_blank" className="dropdown-item">Disclaimer</a>
               </li>
              
             </ul>

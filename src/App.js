@@ -16,6 +16,10 @@ import Checkout from './Checkout';
 import HeaderCheckout from './HeaderCheckout';
 import ThankYou from './ThankYou';
 import axios from 'axios';
+import ContactUs from './ContactUs';
+import Disclaimer from './Disclaimer';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsConditions from './TermsConditions';
 function App() {
   const [pageRoute, setRoute] = useState("");
   const getData = async () => {
@@ -42,6 +46,10 @@ function App() {
           <Route path="/fathacks" element={<Fathacks setRoute={setRoute} />} />
           <Route path="/checkout" element={<Checkout setRoute={setRoute}/>} />
           <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
       </BrowserRouter>
     
