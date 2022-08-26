@@ -14,7 +14,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [obCheck, setOb] = useState(true)
-  
+  const [paymentStatus, setPaymentStatus] = useState(true)
   useEffect(() => {
     if (!stripe) {
       return;
@@ -61,21 +61,21 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
+    setMessage(null);
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
 
-    setIsLoading(true);
+    
 
 
  
 
 
-    const { error } =  await stripe
-  .confirmCardPayment(clientSecret, {
+     stripe.confirmCardPayment(clientSecret, {
     payment_method: {
       card: elements.getElement(CardNumberElement),
       billing_details: {
@@ -90,7 +90,17 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     
   })
   .then(function(result) {
-      switch (result.paymentIntent.status) {
+     
+    // Handle result.error or result.paymentIntent
+    console.log(result)
+    if (result.error){
+      setPaymentStatus(false)
+        setMessage(result.error.message)
+    }
+
+    if (result.paymentIntent){
+      setPaymentStatus(true)
+          switch (result.paymentIntent.status) {
         case "succeeded":
           setPaymentMethod(result.paymentIntent.payment_method)
           setOrderNumber(result.paymentIntent.id)
@@ -109,9 +119,10 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
           setIsLoading(false);
           break;
       }
-    console.log(result.paymentIntent)
+    }
  
-    // Handle result.error or result.paymentIntent
+  
+
   });
 
     // This point will only be reached if there is an immediate error when
@@ -201,9 +212,9 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
           </div>
         </div>
       <OrderBump />
-      {message && <div id="payment-message" className="text-center my-3">{message}</div>}
-      <div className="d-grid w-75 mt-3 fw-bold mx-auto" id="buttonHolder"> 
-          <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-warning display-1 position-relative p-0 clearfix text-center fw-bolder">
+     <div id="payment-message" className={`text-center my-3 ${(message!==null) ? "" : "invisible"} ${(paymentStatus===true) ? "text-success":"text-danger"}`}>{message}</div>
+      <div className="d-grid mt-3 fw-bold mx-auto" id="buttonHolder"> 
+          <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-link display-1 position-relative p-0 clearfix text-center fw-bolder">
           <img src={Purchase} alt="Checkout Button" className="img-fluid" />
           </button>
           </div>

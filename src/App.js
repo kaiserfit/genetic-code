@@ -38,6 +38,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<QuizComponent />} />
+          <Route path="/genetic-quiz" element={<QuizComponent />} />
           <Route path="/fathacks" element={<Fathacks setRoute={setRoute} />} />
           <Route path="/checkout" element={<Checkout setRoute={setRoute}/>} />
           <Route path="/thankyou" element={<ThankYou />} />

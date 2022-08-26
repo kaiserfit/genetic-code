@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import {commentsArray} from "./vsl-components/Comments";
 // This imports the functional component from the previous sample.
-import VideoJS from './VideoJS';
+// import VideoJS from './VideoJS';
 import videojs from 'video.js';
 import Loading from "./vsl-components/images/loading.webp"
 import Play from "./vsl-components/images/customplay.webp"
@@ -11,7 +11,7 @@ import GetCookie from './Cookie';
 import Basic from "./kaiser-burner/starter-p.webp";
 import Premium from "./kaiser-burner/premium-p.webp";
 import Ultimate from "./kaiser-burner/ultimate-p.webp";
-
+import 'video.js/dist/video-js.css';
 import Cards from "./vsl-components/images/visa-mastercard-icon.webp";
 import MoneyBackImage from "./vsl-components/images/moneyback-guarantee.webp"
 import $ from "jquery";
@@ -33,28 +33,37 @@ const Vid = ({setRoute}) => {
     const [vslWatched, setWatch] = useState(false);
     const [hook6, setHook6] = useState(false);
     const [videoTime, setTime] = useState(0);
-    // const [timer, setExp] = useState("24:00:00");
+   
     const [pageNum, setPage] = useState(1);
-
+    const [playState, setPlayState] = useState(false)
+    const videoRef = useRef(null);
+    
     useEffect(() => {
      
       
         if (userPlay){
+          
+          var t = localStorage.getItem('visit');
           const veed = videojs(document.getElementById("my-video"));
+          
           veed.on('timeupdate', ()=> {
-            if (veed.currentTime()>=2940){
+            if (veed.currentTime()>=10){
               if (hook6 === false) {
                 var x = $("#my-video").hasClass("vjs-fullscreen");
                 if (x) {
                   $(".vjs-fullscreen-control").trigger("click");
-                    
+                    localStorage.setItem('visit', '1')
                 }
+
+                // veed.isFullscreen(false);
                
                 $("#sticky").addClass("scrolled");             
                 setHook6(true);
               }
             }
-          })
+          });
+       
+          
       
      
       } 
@@ -83,138 +92,170 @@ const Vid = ({setRoute}) => {
 
 
 
-    function watchClick(){
-      console.log(userPlay);
-      const veed = videojs(document.getElementById("my-video"));
-
-      if (userPlay === false){
-        veed.muted(false);
-        veed.currentTime(0);
-        // $("#btnPlay").hide();
-        $(".video-js .vjs-control-bar").css({"visibility":"visible"});
-        $(".vjs-fullscreen-control").trigger("click");
-        setUserPlay(true);
-    
-      } else {
-        veed.play();
-        $(".vjs-fullscreen-control").trigger("click");
-        
-        }
-    }
-    function timer_init(){
-        var timeInSecs;
-        var ticker;
+    // function timer_init(){
+    //     var timeInSecs;
+    //     var ticker;
       
-      function startTimer(secs) {
-      timeInSecs = parseInt(secs);
-      ticker = setInterval(tick, 1000); 
-      }
+    //   function startTimer(secs) {
+    //   timeInSecs = parseInt(secs);
+    //   ticker = setInterval(tick, 1000); 
+    //   }
       
-      function tick() {
+    //   function tick() {
   
-      var secs = timeInSecs;
+    //   var secs = timeInSecs;
     
-      if (secs > 0) {
-      timeInSecs--; 
-      }
-      else {
+    //   if (secs > 0) {
+    //   timeInSecs--; 
+    //   }
+    //   else {
   
        
-      clearInterval(ticker);
-      startTimer(1440*60); 
-      }
+    //   clearInterval(ticker);
+    //   startTimer(1440*60); 
+    //   }
       
       
-      secs %= 86400;
-      var hours= Math.floor(secs/3600);
-      secs %= 3600;
-      var mins = Math.floor(secs/60);
-      secs %= 60;
+    //   secs %= 86400;
+    //   var hours= Math.floor(secs/3600);
+    //   secs %= 3600;
+    //   var mins = Math.floor(secs/60);
+    //   secs %= 60;
      
-      var xhours = ( (hours < 10 ) ? "0" : "" ) + hours;
-      var xmins = ( (mins < 10) ? "0" : "" ) + mins;
-        var xsec = ( (secs < 10) ? "0" : "" ) + secs;
+    //   var xhours = ( (hours < 10 ) ? "0" : "" ) + hours;
+    //   var xmins = ( (mins < 10) ? "0" : "" ) + mins;
+    //     var xsec = ( (secs < 10) ? "0" : "" ) + secs;
        
-      // setExp(xhours+":"+xmins+":"+xsec);
-        $(".unlock-timer").text(xhours+":"+xmins+":"+xsec);
+    //   // setExp(xhours+":"+xmins+":"+xsec);
+    //     $(".unlock-timer").text(xhours+":"+xmins+":"+xsec);
   
-      }
+    //   }
       
-      startTimer(1440*60);
-    }
+    //   startTimer(1440*60);
+    // }
 
     
 
-  const playerRef = React.useRef(null);
 
-  const videoJsOptions = {
-    // autoplay: true,
-    // muted: true,
+  const initialOptions = {
+   
     controls: true,
-  
     fluid: true,
-    // preload: "true",
-    poster: Loading,
-    sources: [{
-      src: 'https://d2rvo1g7c89cun.cloudfront.net',
-      type: 'video/mp4'
-    }],
-    
+    // fill: true,
+    preload: "auto",
+    sources: [
+      {
+        src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-2.mp4",
+        type: "video/mp4",
+      },
+    ],
+    controlBar: {
+      volumePanel: {
+        inline: false,
+      },
+      progressControl: false,
+      remainingTimeDisplay: false,
+    },
   };
 
-  const clickPlay = () => {
-    const veed = videojs(document.getElementById("my-video"));
+
+
+
+    
+    useEffect(() => {
+     
+      
+        videojs(videoRef.current, initialOptions).ready(() => {
+          var t = localStorage.getItem('visit')
+
+          if (t==="1"){
+            setUserPlay(true)
+                // $("#sticky").addClass("scrolled"); 
+                // setHook6(true)
+          } else {
+          setTimeout(async () => {
+            await videoRef.current.play();
+            $(".vjs-fullscreen-control").trigger("click");
+            setUserPlay({userPlay:!userPlay}, console.log(userPlay)); 
+          }, 1000);
+
+        }
+          
+        });
+      
+      
+
+      
+
+    }, [])
+  // const videoJsOptions = {
+  //   // autoplay: true,
+  //   // muted: true,
+  //   controls: true,
+  
+  //   fluid: true,
+  //   // preload: "true",
+  //   poster: Loading,
+  //   sources: [{
+  //     src: 'https://d2rvo1g7c89cun.cloudfront.net',
+  //     type: 'video/mp4'
+  //   }],
+    
+  // };
+
+  // const clickPlay = () => {
+  //   const veed = videojs(document.getElementById("my-video"));
     
    
-      veed.muted(false);
-      veed.currentTime(0);
-      setTime(0);
-      setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
-      $(".video-js .vjs-control-bar").css({"visibility":"visible"});
-       $(".vjs-fullscreen-control").trigger("click");
+  //     veed.muted(false);
+  //     veed.currentTime(0);
+  //     setTime(0);
+  //     setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
+  //     $(".video-js .vjs-control-bar").css({"visibility":"visible"});
+  //      $(".vjs-fullscreen-control").trigger("click");
  
     
-    }
+  //   }
 
     
- 
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
+  //   const playerRef = React.useRef(null);
+  // const handlePlayerReady = (player) => {
+  //   playerRef.current = player;
     
     
-    // You can handle player events here, for example:
-    player.on('waiting', () => {
-      videojs.log('player is waiting');
-    });
+  //   // You can handle player events here, for example:
+  //   player.on('waiting', () => {
+  //     videojs.log('player is waiting');
+  //   });
 
-    player.on('pause',()=>{
-        setPaused(paused=>true);
-    });
+  //   player.on('pause',()=>{
+  //       setPaused(paused=>true);
+  //   });
 
-    player.on('timeupdate',()=>{   
+  //   player.on('timeupdate',()=>{   
      
-    });
+  //   });
 
-    player.on('ready', () => {
-      $("#ff5").trigger("click")
-      timer_init();
+  //   player.on('ready', () => {
+  //     $("#ff5").trigger("click")
+  //     timer_init();
    
       
 
-        videojs.log('player is ready');
-          $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
-        });
+  //       videojs.log('player is ready');
+  //         $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
+  //       });
 
-    player.on('dispose', () => {
-      videojs.log('player will dispose');
+  //   player.on('dispose', () => {
+  //     videojs.log('player will dispose');
 
-    });
+  //   });
 
-    player.on('play', () => {
-        setPaused(paused=>false);
-        // setState(videoReady=>true);
-      });
-  };
+  //   player.on('play', () => {
+  //       setPaused(paused=>false);
+  //       setState(videoReady=>true);
+  //     });
+  // };
   
   
 
@@ -478,8 +519,7 @@ const Vid = ({setRoute}) => {
               <div className="col-12 col-sm-12 col-md-4">
                   <div className="text-center">
                       <img src={require('./vsl-components/images/Shane5.webp')} className="img-fluid" alt="Coach Shane with lady"/>
-                  <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick} ><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-                  <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`}>Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
+                 
                   </div>
               </div>
           </div>
@@ -595,11 +635,7 @@ const Vid = ({setRoute}) => {
         <div className="bna-line">&nbsp;</div>
       </div>
     
-      <div className="text-center">
-          <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-          <h4 className={`unlock-text text-center ${(hook6===true) ? "d-none" : "d-block"}`}>Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
-       
-      </div>
+   
     </div>
     )
       
@@ -803,9 +839,14 @@ function MoneyBackGuarantee(){
           className="video-js vjs-big-play-centered "
         /> */}
 
-
-          <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
-                {paused===true && (
+      <video
+          id="my-video"
+          // onClick={handleClickVideo}
+          ref={videoRef}
+          className="video-js vjs-big-play-centered "
+        />
+          {/* <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> */}
+                {/* {paused===true && (
                     <div id="btnResume" onClick={pauseButton} className="text-center">
                     <h4 className="text-white">Resume Watching Video</h4>
                     <BsPlayBtnFill className='display-1 text-danger' />
@@ -817,15 +858,13 @@ function MoneyBackGuarantee(){
                   <div id="btnPlay" onClick={clickPlay} className={`video-play vsl-play-desktop control-onload ${userPlay===false ? "d-block": "d-none"}`}>
                   <img src={Play} alt="play button" className="img-fluid video-play" style={{margin: 'auto'}} />
                   </div>
-               )}
+               )} */}
                
         </div>
 
       </div>
 
-      {/* <div className="container text-center mt-3">
-          <h4 className={`unlock-text text-center text-white ${(hook6===true) ? "d-none" : "d-block"}`} style={{display: "inline-block"}} >Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
-      </div> */}
+
     </div>
       
        <div className={`container-fluid`} id="co-box">
@@ -841,13 +880,7 @@ function MoneyBackGuarantee(){
         {hook6 === true && (<Bonuses />)}
         {hook6 === true && (<Products num={2} />)}
         {hook6 === true && (<Reviews />)}
-        {hook6 === true && (
-           <div className="text-center">
-           <button className={`btn btn-lg btn-warning watch-btn gray-glow ${(hook6===true) ? "d-none" : "d-block"}`} onClick={watchClick}><BsPlayBtnFill className='display-5 me-1' /> WATCH MY CUSTOM PLAN VIDEO</button>
-           <h4 className="unlock-text text-center">Custom Plan Video Expires In: <span className="unlock-timer"></span></h4>
         
-          </div>
-        )}
     
         
        

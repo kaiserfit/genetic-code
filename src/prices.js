@@ -1,4 +1,4 @@
-import React from "react";
+
 import Basic from "./kaiser-burner/starter-p.webp";
 import Premium from "./kaiser-burner/premium-p.webp";
 import Ultimate from "./kaiser-burner/ultimate-p.webp";
@@ -12,10 +12,10 @@ export const Prices = [
     {id: "bronze-saver",price_id: '25359',name: 'KaiserBody Bundle Basic Savers-Pack + 1 Bottle Queen Formula (Delivery Every 30 Days)', price: '59.00', code: '25359',alias:'basic-saver', bottles:'1 Bottle Queen Formula', product:'qf'},
     {id: "platinum",price_id: '25175', name: 'KaiserBody Bundle Ultimate Pack + 6 Bottles Kaiser Burner', price: '294.00', code: '25175', alias:'ultimate', bottles:'6 Bottles Kaiser Burner', product:'kb', img: Ultimate},
     {id: "gold",price_id: '25174',name: 'KaiserBody Bundle Premium Pack + 3 Bottles Kaiser Burner', price: '177.00', code: '25174',alias:'premium', bottles:'3 Bottles Kaiser Burner', product:'kb', img: Premium},
-    {id: "bronze",price_id: '25169',name: 'KaiserBody Bundle Basic Pack + 1 Bottle Kaiser Burner', price: '69.00', code: '25169',alias:'basic', bottles:'1 Bottle Kaiser Burner', product:'kb', img: Basic},
+    {id: "bronze",price_id: '25169',name: 'KaiserBody Bundle Basic Pack + 1 Bottle Kaiser Burner', price: '78.95', code: '25169',alias:'basic', bottles:'1 Bottle Kaiser Burner', product:'kb', img: Basic},
     {id: "platinum-saver",price_id: '25370', name: 'KaiserBody Bundle Ultimate Savers-Pack + 6 Bottles Kaiser Burner (Delivery Every 180 Days)', price: '234.00', code: '25370', alias:'ultimate-saver', bottles:'6 Bottles Kaiser Burner', product:'kb', img: Ultimate},
     {id: "gold-saver",price_id: '25369',name: 'KaiserBody Bundle Premium Savers-Pack + 3 Bottles Kaiser Burner(Delivery Every 90 Days)', price: '147.00', code: '25369',alias:'premium-saver', bottles:'3 Bottles Kaiser Burner', product:'kb', img: Premium},
-    {id: "bronze-saver",price_id: '25368',name: 'KaiserBody Bundle Basic Savers-Pack + 1 Bottle Kaiser Burner (Delivery Every 30 Days)', price: '59.00', code: '25368',alias:'basic-saver', bottles:'1 Bottle Kaiser Burner', product:'kb', img: Basic},
+    {id: "bronze-saver",price_id: '25368',name: 'KaiserBody Bundle Basic Savers-Pack + 1 Bottle Kaiser Burner (Delivery Every 30 Days)', price: '68.95', code: '25368',alias:'basic-saver', bottles:'1 Bottle Kaiser Burner', product:'kb', img: Basic},
    
   ];
 

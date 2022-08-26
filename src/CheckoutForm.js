@@ -374,8 +374,8 @@ return (
             className="react-phone"
                     isValid={validPhone}
             />
-          <div className="d-grid w-75 fw-bold mx-auto" id="buttonHolder">
-            <button className="btn btn-lg btn-warning display-1 position-relative p-0 mt-3 clearfix text-center fw-bolder" onClick={CheckoutStepCheck}>
+          <div className="d-grid fw-bold mx-auto" id="buttonHolder">
+            <button className="btn btn-lg btn-link display-1 position-relative p-0 mt-3 clearfix text-center fw-bolder" onClick={CheckoutStepCheck}>
            <img src={Next} className="img-fluid" />
            </button>
            </div>
@@ -425,8 +425,8 @@ return (
     </div>
     </div>
     </div>
-    <div className="d-grid w-75 fw-bold mx-auto" id="buttonHolder">
-            <button className="btn btn-lg btn-warning display-1 position-relative p-0 mt-3 clearfix text-center fw-bolder" onClick={CheckoutStepCheck}>
+    <div className="d-grid fw-bold mx-auto" id="buttonHolder">
+            <button className="btn btn-lg btn-link display-1 position-relative p-0 mt-3 clearfix text-center fw-bolder" onClick={CheckoutStepCheck}>
            <img src={Final} className="img-fluid" />
            </button>
            </div>

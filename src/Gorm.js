@@ -50,7 +50,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
   }, []);
 
   useEffect(()=> {
-  
+   
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
         fetch('https://pay.kaiserfitapp.com/stripe/createCustomer.php', {
@@ -83,7 +83,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute}) {
           document.cookie="hash="+data.hash+";path=/";
           document.cookie="cEmail="+customerDetails[0].email+";path=/";
             
-      
+         
           setTimeout(() => {
             setRoute("thankyou");
             navigate("/thankyou", { push: true, state: { price: parseFloat(price) } });
