@@ -832,7 +832,7 @@ function MoneyBackGuarantee(){
     <div className="container-fluid bg-black text-center" id="ff5">
  
       <div id="col-video">
-        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-4 offset-lg-4 position-relative">
+        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-2 offset-lg-5 position-relative">
         {/* <video
           // onClick={handleClickVideo}
           ref={videoRef}
