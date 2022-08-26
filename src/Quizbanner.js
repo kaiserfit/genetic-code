@@ -13,7 +13,7 @@ function BannerImg(){
 
 function BannerText(){
     return (
-        <div className="d-block p-1 p-sm-4 p-md-4 p-lg-4 fs-2 bg-dark rounded-pill text-white w-100 text-center fjalla-font" id="genetic-banner">
+        <div className="d-block p-1 p-sm-4 p-md-4 p-lg-4 fs-2 bg-dark rounded-pill text-white w-100 text-center fjalla-font">
         Discover Your <span style={{color: "yellow"}}>Genetic Code</span> & Unlock Your Custom Plan
       </div>
     )

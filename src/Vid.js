@@ -7,7 +7,7 @@ import videojs from 'video.js';
 import Loading from "./vsl-components/images/loading.webp"
 import Play from "./vsl-components/images/customplay.webp"
 import {BsPlayBtnFill, BsHandThumbsUp, BsHandThumbsDown} from "react-icons/bs"
-import GetCookie from './Cookie';
+
 import Basic from "./kaiser-burner/starter-p.webp";
 import Premium from "./kaiser-burner/premium-p.webp";
 import Ultimate from "./kaiser-burner/ultimate-p.webp";
@@ -22,7 +22,7 @@ import Bonuses from './Bonus';
 import Steps from './TransformationSteps';
 import Narrative from './Narrative';
 import Faq from './Faq';
-
+import GetCookie from './Cookie';
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 import WebHook from './WebHook';
@@ -43,7 +43,7 @@ const Vid = ({setRoute}) => {
       
         if (userPlay){
           
-          var t = localStorage.getItem('visit');
+          var t = GetCookie('visit')
           const veed = videojs(document.getElementById("my-video"));
           
           veed.on('timeupdate', ()=> {
@@ -52,7 +52,8 @@ const Vid = ({setRoute}) => {
                 var x = $("#my-video").hasClass("vjs-fullscreen");
                 if (x) {
                   $(".vjs-fullscreen-control").trigger("click");
-                    localStorage.setItem('visit', '1')
+                   
+                    document.cookie="visit=1;path-/"
                 }
 
                 // veed.isFullscreen(false);
@@ -166,7 +167,7 @@ const Vid = ({setRoute}) => {
      
       
         videojs(videoRef.current, initialOptions).ready(() => {
-          var t = localStorage.getItem('visit')
+          var t = GetCookie('visit')
 
           if (t==="1"){
             setUserPlay(true)
