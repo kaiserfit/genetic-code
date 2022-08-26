@@ -20,7 +20,7 @@ function App() {
   const [pageRoute, setRoute] = useState("");
   const getData = async () => {
     const res = await axios.get('https://geolocation-db.com/json/')
-    console.log(res.data);
+  
     document.cookie="_uip="+res.data.IPv4+";path=/";
     localStorage.setItem('_uip', res.data.IPv4);
     localStorage.setItem('_country', res.data.country_code);

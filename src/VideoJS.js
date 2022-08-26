@@ -1,12 +1,31 @@
 import React from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-
+import $ from "jquery"
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null);
   const playerRef = React.useRef(null);
   const {options, onReady} = props;
-
+  const initialOptions= {
+    aspectRatio: "4:3",
+    controls: true,
+    fluid: true,
+    // fill: true,
+    preload: "auto",
+    sources: [
+      {
+        src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-2.mp4",
+        type: "video/mp4",
+      },
+    ],
+    controlBar: {
+      volumePanel: {
+        inline: false,
+      },
+      progressControl: false,
+      remainingTimeDisplay: false,
+    },
+  };
   React.useEffect(() => {
 
     // Make sure Video.js player is only initialized once
@@ -15,10 +34,16 @@ export const VideoJS = (props) => {
 
       if (!videoElement) return;
 
-      const player = playerRef.current = videojs(videoElement, options, () => {
-
-        // console.log("asdf")
-    
+      const player = playerRef.current = videojs(videoElement, initialOptions, () => {
+        $("#ff5").trigger("click")
+        setTimeout(async () => {
+          const veed = videojs(document.getElementById("my-video"));
+          console.log(veed.paused())
+          await veed.play();
+          // await videoRef.current?.play();
+      
+        }, 1000);
+          // console.log(videoElement)
         onReady && onReady(player);
       });
 

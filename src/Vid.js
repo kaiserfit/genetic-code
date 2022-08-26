@@ -148,8 +148,8 @@ const Vid = ({setRoute}) => {
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
-    autoplay: true,
-    muted: true,
+    // autoplay: true,
+    // muted: true,
     controls: true,
   
     fluid: true,
@@ -176,26 +176,7 @@ const Vid = ({setRoute}) => {
     
     }
 
-    const initialOptions = {
-      aspectRatio: "4:3",
-      controls: true,
-      fluid: true,
-      // fill: true,
-      preload: "auto",
-      sources: [
-        {
-          src: "https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-2.mp4",
-          type: "video/mp4",
-        },
-      ],
-      controlBar: {
-        volumePanel: {
-          inline: false,
-        },
-        progressControl: false,
-        remainingTimeDisplay: false,
-      },
-    };
+    
  
   const handlePlayerReady = (player) => {
     playerRef.current = player;
@@ -215,9 +196,12 @@ const Vid = ({setRoute}) => {
     });
 
     player.on('ready', () => {
+      $("#ff5").trigger("click")
       timer_init();
- 
-        videojs.log('player is asdfasdf');
+   
+      
+
+        videojs.log('player is ready');
           $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
         });
 
@@ -228,7 +212,7 @@ const Vid = ({setRoute}) => {
 
     player.on('play', () => {
         setPaused(paused=>false);
-        setState(videoReady=>true);
+        // setState(videoReady=>true);
       });
   };
   
