@@ -27,7 +27,6 @@ const HeaderCheckout=()=> {
               
             </div>
             
-          
     
             </div>
             </div>
