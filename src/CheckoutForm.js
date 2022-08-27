@@ -53,7 +53,8 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
     });
     const priceId = x[0].price_id
     const price = x[0].price
-    
+    const bot = x[0].bottles
+    const p = x[0].product
       function ProductTable(){
         const ProductArr = Prices.filter((i)=>{
           return (i.id===dba && i.product===productType);
@@ -445,7 +446,7 @@ return (
 
 
       
-      <Gorm priceId={priceId} price={price} customerDetails={customerDetails} setRoute={setRoute} />
+      <Gorm priceId={priceId} price={price} customerDetails={customerDetails} setRoute={setRoute} bot={bot} p={p} />
        
  
      

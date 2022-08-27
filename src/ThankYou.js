@@ -17,6 +17,7 @@ const ThankYou =() =>{
     const botCount = 3;
     const orderid=GetCookie('orderid');
     document.title = "Thank You!"
+    
     const [loading, isLoading] = useState(false)
     const [neuro, setNeuro] = useState(1)
     const [burner, setBurner] = useState(1)

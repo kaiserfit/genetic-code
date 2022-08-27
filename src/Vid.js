@@ -31,7 +31,8 @@ const Vid = ({setRoute}) => {
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(false);
+    const [hook6, setHook6] = useState(true);
+    const [hook1, setHook1] = useState(true);
     const [videoTime, setTime] = useState(0);
    
     const [pageNum, setPage] = useState(1);
@@ -47,7 +48,13 @@ const Vid = ({setRoute}) => {
           const veed = videojs(document.getElementById("my-video"));
           
           veed.on('timeupdate', ()=> {
+            if (veed.currentTime() >= 60){
+              if (hook1===false){
+                setHook1(true);
+              }
+            }
             if (veed.currentTime()>=2535){
+
               if (hook6 === false) {
                 var x = $("#my-video").hasClass("vjs-fullscreen");
                 if (x) {
@@ -69,7 +76,7 @@ const Vid = ({setRoute}) => {
      
       } 
 
-      if (hook6){
+      if (hook1){
 
         const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
       .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
@@ -86,7 +93,7 @@ const Vid = ({setRoute}) => {
       
     
     
-    }, [userPlay, vslWatched, hook6, videoTime]);
+    }, [userPlay, vslWatched, hook6, hook1, videoTime]);
 
 
 

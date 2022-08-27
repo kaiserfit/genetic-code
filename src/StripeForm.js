@@ -7,7 +7,7 @@ import $ from "jquery"
 import {GoArrowRight} from "react-icons/go"
 import Purchase from "./checkout/images/purchase-button.webp";
 
-export default function StripeForm( {clientSecret, customerDetails, setPaymentMethod, setOrderNumber, setOrderBump}) {
+export default function StripeForm( {clientSecret, customerDetails, setPaymentMethod, setOrderNumber, setOrderBump, setAmount}) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -104,7 +104,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
         case "succeeded":
           setPaymentMethod(result.paymentIntent.payment_method)
           setOrderNumber(result.paymentIntent.id)
-       
+          setAmount(result.paymentIntent.amount)
           setMessage("Payment succeeded! Please wait while we setup your KaiserCoach Account");
           break;
         case "processing":
