@@ -17,7 +17,7 @@ const ThankYou =() =>{
     const botCount = 3;
     const orderid=GetCookie('orderid');
     document.title = "Thank You!"
-    
+
     const [loading, isLoading] = useState(false)
     const [neuro, setNeuro] = useState(1)
     const [burner, setBurner] = useState(1)
@@ -93,7 +93,7 @@ const ThankYou =() =>{
     }
     const handleClick=(e)=>{
         e.target.disabled = true;
-        console.log(e.target.dataset);
+        
        var set = e.target.dataset
         fetch('https://pay.kaiserfitapp.com/stripe/upsell.php', {
           method: 'POST',

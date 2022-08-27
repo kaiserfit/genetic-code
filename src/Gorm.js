@@ -91,8 +91,8 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
             navigate("/thankyou", { push: true, state: { price: parseFloat(price) } });
             
             
-            // setRoute("optimize");
-            // navigate("/optimize", { push: true, state: { price: amount, bot: bot, product: p } });
+            // setRoute("dreamy-lean");
+            // navigate("/dreamy-lean", { push: true, state: { price: amount, bot: bot, product: p } });
 
           }, 1000);
         })

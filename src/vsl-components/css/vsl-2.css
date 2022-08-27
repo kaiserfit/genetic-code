@@ -6,6 +6,8 @@ body {
     width: 246px;
     height: 57px;
   }
+
+  
 #top-banner {
 
 color: #68029e;
@@ -113,11 +115,12 @@ color: red;
 
 .bonus-summary {
 font-size: 1.25rem;
+text-align: left;
 }
 
 .bullets {
-margin-top: 8px;
-margin-bottom: 8px;
+margin-top: 1rem;
+margin-bottom: 1rem;
 }
 
 .be-3{
@@ -354,6 +357,10 @@ padding-top: 5%;
   .bundle-suggestion {
     font-size: 3rem;
    
+  }
+
+  .bonus-summary{
+    text-align: center;
   }
 
   .bna-text {
@@ -669,10 +676,14 @@ padding-top: 5%;
       font-weight: 700;
  }
 
+
+
  .day-supply {
    font-size: 3rem;
    font-weight: 700;
  }
+
+
 
  .product-price {
    font-size: 5rem;
@@ -1199,6 +1210,13 @@ top: -0.4% !important;
     margin-bottom: 1.75rem;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px){
+  .bundle-name {
+    padding: 0.8rem;
+    font-size: 1.25rem;
+  }
+}
+
 .bundle-name.bundle-ultimate{
   background-color: #212529;
   box-shadow: 0 0 10px 5px #005e55;
@@ -1440,6 +1458,7 @@ height:400px; width:250px;
   }
 
   .bonus-summary {
+    text-align: center;
     font-size: 1rem;
   }
 
@@ -1564,3 +1583,36 @@ height:400px; width:250px;
 .vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
   display: none;
 }
+
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .bottle {
+    font-size: 2rem;
+   
+}
+
+.day-supply {
+  font-size: 1.75rem;
+ 
+}
+
+.bonus-summary {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.bullets {
+  margin:1rem auto;
+}
+
+.product-price {
+  font-size: 3rem;
+}
+.per-bottle {
+  top: -1rem
+}
+
+.payment-plan {
+  font-size: 1rem;
+}
+ }

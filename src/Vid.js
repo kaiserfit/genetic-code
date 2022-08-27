@@ -288,23 +288,23 @@ const Vid = ({setRoute}) => {
            
                <div className="row">
                
-               <div className="col-12 col-sm-4 col-md-4 padding-2 order-3 order-sm-1">
-                   <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
+               <div className="col-12 col-sm-4 col-md-4 p-3 p-lg-5 order-3 order-sm-1">
+                   <div className="gray bordered p-3 p-lg-4 border-default product-pack lh-1 text-center">
                            <div className="bundle-name">BASIC</div>
                            <span className="bottle">1 BOTTLE</span><br />
                            <span className="day-supply mb-3">30 Day Supply</span><br />
-                           <img src={Basic} className="img-fluid " alt="1 bottle queen formula" />
+                           <img src={Basic} className="img-fluid my-3" alt="1 bottle Kaiser Burner" />
  
                        
  
                    
  
-                           <ul className="list-unstyled text-start bonus-summary" >
+                           <ul className="list-unstyled bonus-summary" >
                            <li className="bullets">
                                <span className="be-3 red-text">&#x2718;</span> Shipping NOT Included
                            </li>
                            <li className="bullets">
-                               <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                               <span className="be-3 bright-green">&#10004;</span> Kaiser Burner
                            </li>
                            <li className="bullets">
                                <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
@@ -347,18 +347,18 @@ const Vid = ({setRoute}) => {
                        
                    </div>
                </div>
-               <div className="col-12 col-sm-4 col-md-4 padding-2 order-1 order-sm-2">
-                   <div className="green bordered padding-2 border-green product-pack lh-1 text-center text-black">
+               <div className="col-12 col-sm-4 col-md-4 p-3 p-lg-5 order-1 order-sm-2">
+                   <div className="green bordered p-3 p-lg-4 border-green product-pack lh-1 text-center text-black">
                    <div className="bundle-name bundle-ultimate">ULTIMATE</div>
                        <span className="bottle">6 BOTTLES</span><br />
                        <span className="day-supply mb-3">180 Day Supply</span><br />
-                       <img src={Ultimate} className="img-fluid " alt="6 bottles queen formula" />
+                       <img src={Ultimate} className="img-fluid my-3" alt="6 bottles Kaiser Burner" />
                    
  
  
                        
  
-                       <ul className="list-unstyled text-start bonus-summary text-black" >
+                       <ul className="list-unstyled bonus-summary text-black" >
                            <li className="bullets">
                            <span className="be-3 bright-green">&#10004;</span><strong>BEST Bundle For Your Goal: <span className="wg-text">{GetCookie("goal")}</span></strong>
                            </li>
@@ -369,7 +369,7 @@ const Vid = ({setRoute}) => {
                            <span className="be-3 bright-green">&#10004;</span> Shipping Included
                            </li>
                            <li className="bullets">
-                           <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                           <span className="be-3 bright-green">&#10004;</span> Kaiser Burner
                            </li>
                            <li className="bullets">
                            <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
@@ -402,7 +402,7 @@ const Vid = ({setRoute}) => {
                   
  
                        <div style={{width: '90%', margin: 'auto'}}>
-                           <img src={Cards} className="img-fluid " alt="stripe cards" />
+                           <img src={Cards} className="img-fluid my-3" alt="stripe cards" />
                        </div>
  
                            <div className="bottom-strike d-none">
@@ -417,25 +417,25 @@ const Vid = ({setRoute}) => {
                    </div>
                </div>
  
-               <div className="col-12 col-sm-4 col-md-4 padding-2 order-2 order-sm-3">
-               <div className="gray bordered padding-2 border-default product-pack lh-1 text-center">
+               <div className="col-12 col-sm-4 col-md-4 p-3 p-lg-5 order-2 order-sm-3">
+               <div className="gray bordered p-3 p-lg-4 border-default product-pack lh-1 text-center">
                    <div className="bundle-name">PREMIUM</div>
                        <span className="bottle">3 BOTTLES</span><br />
                        <span className="day-supply mb-3">90 Day Supply</span><br />
-                       <img src={Premium} className="img-fluid " alt="3 bottles queen formula" />
+                       <img src={Premium} className="img-fluid " alt="3 bottles Kaiser Burner" />
                    
  
                    
                        
                        
                    
-                       <ul className="list-unstyled text-start bonus-summary text-black" >
+                       <ul className="list-unstyled bonus-summary text-black" >
                    
                        <li className="bullets">
                            <span className="be-3 bright-green">&#10004;</span> Shipping Included
                        </li>
                        <li className="bullets">
-                           <span className="be-3 bright-green">&#10004;</span> Queen Formula
+                           <span className="be-3 bright-green">&#10004;</span> Kaiser Burner
                        </li>
                        <li className="bullets">
                            <span className="be-3 bright-green">&#10004;</span> Kaiser Coach
@@ -704,7 +704,7 @@ const Vid = ({setRoute}) => {
           </div>
 
           <div className="col-12 col-sm-4 col-md-4 col-lg-4 rev-col">
-              <img alt="Customers using Queen Formula" src={require('./vsl-components/images/lady-customers.webp')} className="img-fluid mx-auto" />
+              <img alt="Customers using Kaiser Burner" src={require('./vsl-components/images/lady-customers.webp')} className="img-fluid mx-auto" />
           </div>
       </div>
   </div>

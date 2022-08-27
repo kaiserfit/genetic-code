@@ -23,8 +23,12 @@ import ContactUs from './ContactUs';
 import Disclaimer from './Disclaimer';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsConditions from './TermsConditions';
+import DreamyLean from './upsells/DreamyLean';
+import CollagenMatrix from './upsells/CollagenMatrix';
+import InnerRestore from './upsells/InnerRestore';
 function App() {
   const [pageRoute, setRoute] = useState("");
+
   const getData = async () => {
     const res = await axios.get('https://geolocation-db.com/json/')
   
@@ -38,6 +42,8 @@ function App() {
     getData()
 
   }, [])
+
+ 
   return (
     <div>
       {(pageRoute==="checkout") ?  <HeaderCheckout /> : <Header/>}
@@ -50,6 +56,9 @@ function App() {
           <Route path="/checkout" element={<Checkout setRoute={setRoute}/>} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/optimize" element={<Upsell />} />
+          <Route path="/dreamy-lean" element={<DreamyLean />} />
+          <Route path="/collagen-matrix" element={<CollagenMatrix />} />
+          <Route path="/inner-restore" element={<InnerRestore />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
