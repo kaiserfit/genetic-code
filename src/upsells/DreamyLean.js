@@ -24,13 +24,50 @@ const DreamyLean = () => {
     const bot = state.bot
     const product = state.product
 
+
+    useEffect(()=>{
+        $('html, body').animate({
+            scrollTop: $("html, body").offset().top
+        }, "fast");
+        localStorage.setItem('skipCount', "0");
+             const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+      const timeStamp = Date.now();    
+      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    TiktokPixel.pageView();
+          
+    TiktokPixel.track('CompletePayment',{
+        content_id: 'Kaiser Burner',
+        content_type: 'product',
+        quantity: 1,
+        price:price,
+        value: price,
+        currency: 'USD'});
+
+
+
+
+    ReactPixel.init('334082198751683')
+    ReactPixel.pageView();
+    ReactPixel.track('Purchase', {
+        value: price,
+        currency: 'USD'
+      }, {eventID:event_id} )
+
+      WebHook('Purchase', event_id)
+    }, []);
+
     const skip = (e) => {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
         }, "slow");
+        var s = parseInt(localStorage.getItem('skipCount'))
+        
+        s++
 
-
+        localStorage.setItem('skipCount', s);
         setTimeout(() => {
             navigate("/collagen-matrix", { push: true });
         }, 500);
@@ -49,7 +86,6 @@ const DreamyLean = () => {
 
                     
 
-                
 
                         <ul className="list-unstyled bonus-summary" >
                         <li className="bullets">
@@ -180,6 +216,12 @@ const DreamyLean = () => {
         <>
         <UpsellBanner />
         <div className="container mw-100">
+            <div className="w-75 mx-auto">
+                <h3 className="text-center my-3 fw-bold">...Burn Fat 5 Times FASTER
+                    By Unlocking The Power Of 24/7 Fat Loss
+                    By Melting Fat While You Sleep
+                 </h3>
+            </div>
             <Product num={1} />
             <div className="w-100 d-block text-center my-3">
                 <img src={MoneyBack} alt="money back guarantee" className="img-fluid"></img>

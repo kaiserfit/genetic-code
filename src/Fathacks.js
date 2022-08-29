@@ -6,6 +6,7 @@ import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 import Vid from './Vid';
 import WebHook from './WebHook';
+
   const Fathacks=({setRoute})=>{
     useEffect(()=>{
       //tiktok pixel 1
@@ -31,7 +32,7 @@ import WebHook from './WebHook';
         <Sticky />
         <ResultPanel />
         <Vid setRoute={setRoute} />
-
+        
       </div>
       )
   }

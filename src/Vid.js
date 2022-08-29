@@ -7,7 +7,7 @@ import videojs from 'video.js';
 import Loading from "./vsl-components/images/loading.webp"
 import Play from "./vsl-components/images/customplay.webp"
 import {BsPlayBtnFill, BsHandThumbsUp, BsHandThumbsDown} from "react-icons/bs"
-
+import LiveChat from './LiveChat';
 import Basic from "./kaiser-burner/starter-p.webp";
 import Premium from "./kaiser-burner/premium-p.webp";
 import Ultimate from "./kaiser-burner/ultimate-p.webp";
@@ -31,7 +31,7 @@ const Vid = ({setRoute}) => {
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(false);
+    const [hook6, setHook6] = useState(true);
     const [hook1, setHook1] = useState(false);
     const [videoTime, setTime] = useState(0);
    
@@ -183,8 +183,8 @@ const Vid = ({setRoute}) => {
           } else {
           setTimeout(async () => {
             await videoRef.current.play();
-            $(".vjs-fullscreen-control").trigger("click");
             setUserPlay({userPlay:!userPlay}, console.log(userPlay)); 
+            $(".vjs-fullscreen-control").trigger("click");
           }, 1000);
 
         }
@@ -334,7 +334,7 @@ const Vid = ({setRoute}) => {
  
                            <BasicPack num={num} setRoute={setRoute} />
                            <div style={{width: '90%', margin: 'auto'}}>
-                           <img src={Cards} className="img-fluid " alt="stripe cards" />
+                           <img src={Cards} className="img-fluid my-3" alt="stripe cards" />
                            </div>
  
                            <div className="bottom-strike gray d-none">
@@ -465,7 +465,7 @@ const Vid = ({setRoute}) => {
                        
  
                        <div style={{width: '90%', margin: 'auto'}}>
-                       <img src={Cards} className="img-fluid " alt="stripe cards" />
+                       <img src={Cards} className="img-fluid my-3" alt="stripe cards" />
                        </div>
  
                        <div className="bottom-strike gray d-none">
@@ -901,6 +901,7 @@ function MoneyBackGuarantee(){
      
         {hook6 === true && (<Faq  />)}
         {hook6 === true && (<ShaneFooter />)}
+        {hook6 === true && (<LiveChat />)}
     
         
        </div>

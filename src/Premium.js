@@ -26,7 +26,7 @@ function PremiumPack({num, setRoute}) {
       <div className="text-center my-3 subscribe-plan" onChange={premiumClick} >
         {/* <p className={`text-info ${(goldPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p> */}
       <input type="radio"  name={`gold-pack${num}`} id={`gold-saver${num}`} onChange={premiumClick}  className="gold-pack" value="gold-saver" checked={goldPack==="gold-saver"}  />
-      <label htmlFor={`gold-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 20%)</small></label>
+      <label htmlFor={`gold-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 17%)</small></label>
       <br /><br />
       <input type="radio" name={`gold-pack${num}`} id={`gold-basic${num}`} onChange={premiumClick} className="gold-pack" value="gold" checked={goldPack==="gold"} />
       <label htmlFor={`gold-basic${num}`} className="payment-plan ms-1">One-Time Purchase</label>
@@ -36,7 +36,7 @@ function PremiumPack({num, setRoute}) {
                 {goldPack === "gold" && (<p className="product-price">$59 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <button className="btn btn-link checkout-button"  onClick={checkoutClick} >
+                            <button className="btn btn-link p-0 checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </button>
 

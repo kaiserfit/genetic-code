@@ -60,16 +60,17 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
   );
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     setIsLoading(true);
+    e.preventDefault();
     setMessage(null);
+
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
 
-    
+  
 
 
  
@@ -139,7 +140,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     //   setMessage("An unexpected error occurred.");
     // }
 
-    setIsLoading(false);
+    
   };
 
 
@@ -214,10 +215,10 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       <OrderBump />
      <div id="payment-message" className={`text-center my-3 ${(message!==null) ? "" : "invisible"} ${(paymentStatus===true) ? "text-success":"text-danger"}`}>{message}</div>
       <div className="d-grid mt-3 fw-bold mx-auto" id="buttonHolder"> 
-          <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-link display-1 position-relative p-0 clearfix text-center fw-bolder">
-          <img src={Purchase} alt="Checkout Button" className="img-fluid" />
+          <button disabled={isLoading || !stripe || !elements} className="btn btn-lg btn-link p-0 clearfix text-center fw-bolder">
+            <img src={Purchase} alt="Checkout Button" className="img-fluid" />
           </button>
-          </div>
+      </div>
       
     </form>
   );

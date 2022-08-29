@@ -35,7 +35,7 @@ function UltimatePack({num, setRoute}) {
                 {platinumPack === "platinum" && (<p className="product-price">$49 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <button className="btn btn-link checkout-button"  onClick={checkoutClick} >
+                            <button className="btn btn-link p-0 checkout-button"  onClick={checkoutClick} >
                                 <img src={AddtoCart} className="img-fluid "  alt="cart button" />
                             </button>
       </>

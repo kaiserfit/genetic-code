@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import WebHook from "../WebHook";
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel'
-import FaShippingFast from "react-icons/fa";
+
 import Cards from "../vsl-components/images/visa-mastercard-icon.webp";
 import Collagen1 from "../collagen-matrix/Collagen-1.webp"
 import Collagen3 from "../collagen-matrix/Collagen-3.webp"
@@ -24,16 +24,38 @@ const CollagenMatrix = () => {
     // const  price  = state.price;
     // const bot = state.bot
     // const product = state.product
+    useEffect(()=>{
+        $('html, body').animate({
+            scrollTop: $("html, body").offset().top
+        }, "fast");
 
+        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+        TiktokPixel.pageView();
+  
+        ReactPixel.init('334082198751683')
+        ReactPixel.pageView();
+    }, []);
     const skip = (e) => {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
         }, "slow");
 
-        setTimeout(() => {
-            navigate("/inner-restore", { push: true });
-        }, 500);
+        var s = parseInt(localStorage.getItem('skipCount'))
+        s++
+      
+        if (s===2){
+            setTimeout(() => {
+                navigate("/thankyou", { push: true });
+            }, 500);
+        } else {
+            setTimeout(() => {
+                navigate("/inner-restore", { push: true });
+            }, 500);
+        }
+
+
+        
        
     }
     function Product({num}){
@@ -185,6 +207,12 @@ const CollagenMatrix = () => {
         <>
         <UpsellBanner />
         <div className="container mw-100">
+        <div className="w-75 mx-auto">
+                <h3 className="text-center my-3 fw-bold">
+                ...PREVENT Loose Skin & TIGHTEN Your Skin
+                    While You Lose Fat 
+                 </h3>
+            </div>
             <Product num={1} />
             <div className="w-100 d-block text-center my-3">
                 <img src={MoneyBack} alt="money back guarantee" className="img-fluid"></img>

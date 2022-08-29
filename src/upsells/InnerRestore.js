@@ -25,12 +25,23 @@ const InnerRestore = () => {
     // const  price  = state.price;
     // const bot = state.bot
     // const product = state.product
-
-    const skip = (e) => {
-        e.preventDefault();
+    useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
-        }, "slow");
+        }, "fast");
+
+        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+        TiktokPixel.pageView();
+  
+        ReactPixel.init('334082198751683')
+        ReactPixel.pageView();
+    }, []);
+    const skip = (e) => {
+        e.preventDefault();
+       
+        setTimeout(() => {
+            navigate("/thankyou", { push: true });
+        }, 500);
        
     }
     function Product({num}){
@@ -182,6 +193,12 @@ const InnerRestore = () => {
         <>
         <UpsellBanner />
         <div className="container mw-100">
+        <div className="w-75 mx-auto">
+                <h3 className="text-center my-3 fw-bold">
+                ...Bad Stomach Bacteria Is Killing Your Progress<br />
+Turn ON The Fat Loss Switch With Good Bacteria 
+                 </h3>
+            </div>
             <Product num={1} />
             <div className="w-100 d-block text-center my-3">
                 <img src={MoneyBack} alt="money back guarantee" className="img-fluid"></img>

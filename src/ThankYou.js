@@ -23,41 +23,41 @@ const ThankYou =() =>{
     const [burner, setBurner] = useState(1)
     const [lean, setLean] = useState(1)
     const [collagen, setCollagen] = useState(1)
-    const {state} = useLocation();
-    const { price } = state;
-    console.log(price);
+    // const {state} = useLocation();
+    // const { price } = state;
+    
    
     useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("#topBanner").offset().top
         }, "fast");
 
-        const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
-      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-      const timeStamp = Date.now();    
-      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-    TiktokPixel.pageView();
+    //     const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+    //   .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+    //   const timeStamp = Date.now();    
+    //   const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+    // TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    // TiktokPixel.pageView();
           
-    TiktokPixel.track('CompletePayment',{
-        content_id: 'Kaiser Burner',
-        content_type: 'product',
-        quantity: 1,
-        price:price,
-        value: price,
-        currency: 'USD'});
+    // TiktokPixel.track('CompletePayment',{
+    //     content_id: 'Kaiser Burner',
+    //     content_type: 'product',
+    //     quantity: 1,
+    //     price:price,
+    //     value: price,
+    //     currency: 'USD'});
 
 
 
 
-    ReactPixel.init('334082198751683')
-    ReactPixel.pageView();
-    ReactPixel.track('Purchase', {
-        value: price,
-        currency: 'USD'
-      }, {eventID:event_id} )
+    // ReactPixel.init('334082198751683')
+    // ReactPixel.pageView();
+    // ReactPixel.track('Purchase', {
+    //     value: price,
+    //     currency: 'USD'
+    //   }, {eventID:event_id} )
 
-      WebHook('Purchase', event_id)
+    //   WebHook('Purchase', event_id)
     }, [])
 
     function YellowTops(){
@@ -117,7 +117,7 @@ const ThankYou =() =>{
               .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
               const timeStamp = Date.now();    
               const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-              console.log(data)
+             
             //tiktok
                 TiktokPixel.track('CompletePayment',{
                 content_id: set.content,
@@ -226,7 +226,7 @@ const ThankYou =() =>{
                                 {neuro===2 && (<PurchaseSuccess />)}
                                 {neuro===3 && (<PurchaseFail />)}
                             </p>
-                            <button className="btn btn-lg btn-warning text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
+                            <button className="btn btn-lg btn-warning btn-outline-dark text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
                             data-desc="ty-NeuroDrive"
                             data-id="25201"
                             onClick={handleClick}
@@ -253,7 +253,7 @@ const ThankYou =() =>{
                                 {lean===2 && (<PurchaseSuccess />)}
                                 {lean===3 && (<PurchaseFail />)}
                             </p>
-                            <button className="btn btn-lg btn-warning text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
+                            <button className="btn btn-lg btn-warning btn-outline-dark text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
                             data-desc="ty-DreamyLean"
                             data-id="25181"
                             onClick={handleClick}
@@ -283,7 +283,7 @@ const ThankYou =() =>{
                                 {burner===2 && (<PurchaseSuccess />)}
                                 {burner===3 && (<PurchaseFail />)}
                             </p>
-                            <button className="btn btn-lg btn-warning text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
+                            <button className="btn btn-lg btn-warning btn-outline-dark text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
                             data-desc="ty-KaiserBurner"
                             data-id="25174"
                             onClick={handleClick}
@@ -311,7 +311,7 @@ const ThankYou =() =>{
                                 {collagen===2 && (<PurchaseSuccess />)}
                                 {collagen===3 && (<PurchaseFail />)}
                             </p>
-                            <button className="btn btn-lg btn-warning text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
+                            <button className="btn btn-lg btn-warning btn-outline-dark text-capitalize fs-3 py-3 px-3 px-sm-4 py-sm-2 fw-bolder"
                             data-desc="ty-CollagenMatrix"
                             data-id="25266"
                             onClick={handleClick}
@@ -384,12 +384,12 @@ const ThankYou =() =>{
                     <div className="text-center w-75 mx-auto mt-3">
                       
                         <div className="d-grid gap-2">
-                          <a role="button" target="_blank" without rel="noreferrer" href="https://www.facebook.com/groups/510393336135512" type="button" name="" id="gold" className="btn text-decoration-none fw-bolder fs-3">
+                          <a role="button" target="_blank" without rel="noreferrer" href="https://www.facebook.com/groups/510393336135512" type="button" className="btn btn-lg btn-warning btn-outline-dark text-decoration-none fw-bolder fs-3">
                             Join VIP Group
                             </a>
                         </div>
                         </div>
-                
+                        
                   
                 </section>
 

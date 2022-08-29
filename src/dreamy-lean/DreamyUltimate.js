@@ -1,19 +1,95 @@
-import React, {useState} from "react";
-import AddtoCart from "../vsl-components/images/add-cart.webp";
+import React, {useState, useEffect} from "react";
+import GetCookie from "../Cookie";
 import {useNavigate} from "react-router-dom";
+
+import WebHook from "../WebHook";
+import TiktokPixel from 'tiktok-pixel';
+import ReactPixel from 'react-facebook-pixel'
+
+
 export default function DreamyUltimate({num}) {
     const [platinumPack, setPlatinum] = useState("platinum-saver")
+    const [purchaseError, setError] = useState(null)
+    const orderid = GetCookie('orderid');
    const navigate = useNavigate()
     const ultimateClick = event => {
       setPlatinum(event.target.value);
     }
 
 
+    const dlData = [
+      {id: "platinum-saver", itemid: "dls6", botCount: 6, desc: "dl-upsell"},
+      {id: "platinum", itemid: "dl6", botCount: 6, desc: "dl-upsell"}
+      
+    ]
     const checkoutClick = (e) => {
       if (platinumPack===""){
         e.preventDefault();
         return false
       }
+
+      e.target.disabled = true;
+      var x = dlData.filter(x=>x.id===platinumPack);
+    
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          cid: GetCookie('cid'),
+          orderid: orderid,
+          itemid: x[0].itemid,
+          desc: x[0].desc,
+          bot: x[0].botCount,
+          url: window.location.href
+        })
+      })
+      .then((res) => res.json())
+      .then((data)=>{
+        console.log(data)
+        if (data.result){
+          
+            // const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+            // .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+            // const timeStamp = Date.now();    
+            // const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+           
+          //tiktok
+              // TiktokPixel.track('CompletePayment',{
+              // content_id: set.content,
+              // content_type: 'product',
+              // quantity: 1,
+              // price: 97.00,
+              // value: 97.00,
+              // currency: 'USD'});
+
+
+          //facebook
+          // ReactPixel.track('Purchase', {
+          //     value: 97.00,
+          //     currency: 'USD'
+          //   }, {eventID:event_id} )
+
+
+          //   WebHook('Purchase', event_id)
+
+          e.target.innerText = "Purchase Successful!"
+          e.target.classList.remove('btn-warning')
+          e.target.classList.add('btn-success')
+          e.target.classList.remove('btn-outline-dark')
+          e.target.classList.add('btn-outline-success')
+          setTimeout(() => {
+            navigate("/collagen-matrix", { push: true});
+          }, 1000);
+        } else {
+          setError(data.message)
+          e.target.disabled = false
+        }
+       
+        
+      })
    
     }
   
@@ -33,9 +109,14 @@ export default function DreamyUltimate({num}) {
                 {platinumPack === "platinum" && (<p className="product-price">$49 <span className="per-bottle"> / bottle</span></p>)}   
                 
             </div>
-                            <button className="btn btn-link checkout-button"  onClick={checkoutClick} >
-                                <img src={AddtoCart} className="img-fluid "  alt="cart button" />
-                            </button>
+            <p className={`text-center text-danger ${(purchaseError!==null) ? "visible":"invisible"}`}>{purchaseError}</p>
+                          <div className="d-grid gap-2">
+                            <button className="btn btn-lg btn-warning btn-outline-dark text-capitalize fs-4 py-3 px-3 px-sm-4 py-sm-2 mb-3 fw-bolder"
+                          
+                            onClick={checkoutClick}
+                           
+                            >Yes! add this to my Order!</button>
+                            </div>
       </>
     ) 
   }
