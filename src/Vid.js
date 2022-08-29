@@ -31,7 +31,7 @@ const Vid = ({setRoute}) => {
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(true);
+    const [hook6, setHook6] = useState(false);
     const [hook1, setHook1] = useState(false);
     const [videoTime, setTime] = useState(0);
    
