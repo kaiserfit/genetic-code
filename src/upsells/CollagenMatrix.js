@@ -24,16 +24,20 @@ const CollagenMatrix = () => {
     // const  price  = state.price;
     // const bot = state.bot
     // const product = state.product
+
+    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    TiktokPixel.pageView();
+
+    ReactPixel.init('334082198751683')
+    ReactPixel.pageView();
+
+    
     useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
         }, "fast");
 
-        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-        TiktokPixel.pageView();
-  
-        ReactPixel.init('334082198751683')
-        ReactPixel.pageView();
+    
     }, []);
     const skip = (e) => {
         e.preventDefault();

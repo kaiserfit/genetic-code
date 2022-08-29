@@ -19,7 +19,7 @@ export default function RestorePremium({num}) {
 
     const irData = [
       {id: "gold-saver", itemid: "irs3", botCount: 3, desc: "ir-upsell"},
-      {id: "gold", itemid: "ir3", botCount: 3, desc: "ir-upsell"}
+      {id: "gold", itemid: "25186", botCount: 3, desc: "ir-upsell"}
     ]
     const checkoutClick = (e) => {
       if (goldPack===""){
@@ -30,7 +30,7 @@ export default function RestorePremium({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===goldPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -56,7 +56,7 @@ export default function RestorePremium({num}) {
            
             //tiktok
             TiktokPixel.track('CompletePayment',{
-              content_id: 'Dreamy Lean',
+              content_id: 'Inner Restore',
               content_type: 'product',
               quantity: 1,
               price: data.price,

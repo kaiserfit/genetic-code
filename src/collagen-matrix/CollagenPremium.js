@@ -20,7 +20,7 @@ export default function CollagenPremium({num}) {
 
     const cmData = [
       {id: "gold-saver", itemid: "cms3", botCount: 3, desc: "cm-upsell"},
-      {id: "gold", itemid: "cm3", botCount: 3, desc: "cm-upsell"}
+      {id: "gold", itemid: "25266", botCount: 3, desc: "cm-upsell"}
     ]
 
     const checkoutClick = (e) => {
@@ -32,7 +32,7 @@ export default function CollagenPremium({num}) {
       e.target.disabled = true;
       var x = cmData.filter(x=>x.id===goldPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -51,29 +51,30 @@ export default function CollagenPremium({num}) {
       .then((data)=>{
         console.log(data)
         if (data.result){
-            // const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
-            // .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-            // const timeStamp = Date.now();    
-            // const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-           
-          //tiktok
-              // TiktokPixel.track('CompletePayment',{
-              // content_id: set.content,
-              // content_type: 'product',
-              // quantity: 1,
-              // price: 97.00,
-              // value: 97.00,
-              // currency: 'USD'});
+          const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+          .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+          const timeStamp = Date.now();    
+          const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+         
+        //tiktok
+        TiktokPixel.track('CompletePayment',{
+          content_id: 'Collagen Matrix',
+          content_type: 'product',
+          quantity: 1,
+          price: data.price,
+          value: data.price,
+          currency: 'USD'});
 
 
-          //facebook
-          // ReactPixel.track('Purchase', {
-          //     value: 97.00,
-          //     currency: 'USD'
-          //   }, {eventID:event_id} )
+      //facebook
+      ReactPixel.track('Purchase', {
+          value: data.price,
+          currency: 'USD'
+        }, {eventID:event_id} )
 
 
-          //   WebHook('Purchase', event_id)
+        WebHook('Purchase', event_id)  
+
           e.target.innerText = "Purchase Successful!"
           e.target.classList.remove('btn-warning')
           e.target.classList.add('btn-success')

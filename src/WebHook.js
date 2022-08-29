@@ -4,9 +4,9 @@ import GetCookie from "./Cookie";
 import axios from "axios"
 export default function WebHook(eventName, event_id){
    
-        if (window.location.hostname === 'localhost') {
-          return false;
-        }
+        // if (window.location.hostname === 'localhost') {
+        //   return false;
+        // }
     
     
         var url = window.location.href;

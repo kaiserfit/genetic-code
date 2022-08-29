@@ -19,7 +19,7 @@ export default function RestoreUltimate({num}) {
 
     const irData = [
       {id: "platinum-saver", itemid: "irs6", botCount: 6, desc: "ir-upsell"},
-      {id: "platinum", itemid: "ir6", botCount: 6, desc: "ir-upsell"}
+      {id: "platinum", itemid: "25188", botCount: 6, desc: "ir-upsell"}
     ]
 
     const checkoutClick = (e) => {
@@ -31,7 +31,7 @@ export default function RestoreUltimate({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===platinumPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -57,7 +57,7 @@ export default function RestoreUltimate({num}) {
            
        //tiktok
        TiktokPixel.track('CompletePayment',{
-        content_id: 'Dreamy Lean',
+        content_id: 'Inner Restore',
         content_type: 'product',
         quantity: 1,
         price: data.price,
@@ -66,7 +66,7 @@ export default function RestoreUltimate({num}) {
 
 
     //facebook
-    ReactPixel.track('Purchase', {
+      ReactPixel.track('Purchase', {
         value: data.price,
         currency: 'USD'
       }, {eventID:event_id} )

@@ -19,7 +19,7 @@ export default function RestoreBasic({num}) {
 
     const irData = [
       {id: "bronze-saver", itemid: "irs1", botCount: 1, desc: "ir-upsell"},
-      {id: "bronze", itemid: "ir1", botCount: 1, desc: "ir-upsell"}
+      {id: "bronze", itemid: "25182", botCount: 1, desc: "ir-upsell"}
     ]
 
     const checkoutClick= (e) => {
@@ -32,7 +32,7 @@ export default function RestoreBasic({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===basicPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -58,7 +58,7 @@ export default function RestoreBasic({num}) {
            
           //tiktok
               TiktokPixel.track('CompletePayment',{
-              content_id: 'Dreamy Lean',
+              content_id: 'Inner Restore',
               content_type: 'product',
               quantity: 1,
               price: data.price,
@@ -98,10 +98,10 @@ export default function RestoreBasic({num}) {
       <>
       <div className="text-center my-3 subscribe-plan" >
         {/* <p className={`text-info ${(basicPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p> */}
-      <input type="radio"  name={`bronze-pack${num}`} Id={`bronze-saver${num}`} onChange={basicClick}  className="bronze-pack" value="bronze-saver" checked={basicPack==="bronze-saver"}  />
+      <input type="radio"  name={`bronze-pack${num}`} id={`bronze-saver${num}`} onChange={basicClick}  className="bronze-pack" value="bronze-saver" checked={basicPack==="bronze-saver"}  />
       <label htmlFor={`bronze-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 20%)</small></label>
       <br /><br />
-      <input type="radio" name={`bronze-pack${num}`} Id={`bronze-basic${num}`} onChange={basicClick} className="bronze-pack" value="bronze" checked={basicPack==="bronze"} />
+      <input type="radio" name={`bronze-pack${num}`} id={`bronze-basic${num}`} onChange={basicClick} className="bronze-pack" value="bronze" checked={basicPack==="bronze"} />
       <label htmlFor={`bronze-basic${num}`}  className="payment-plan ms-1">One-Time Purchase</label>
     </div>
             <div className="price-text">

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import WebHook from "../WebHook";
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel'
-import FaShippingFast from "react-icons/fa";
+
 import Cards from "../vsl-components/images/visa-mastercard-icon.webp";
 import Restore1 from "../inner-restore/Restore-1.webp"
 import Restore3 from "../inner-restore/Restore-3.webp"
@@ -25,16 +25,18 @@ const InnerRestore = () => {
     // const  price  = state.price;
     // const bot = state.bot
     // const product = state.product
+    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    TiktokPixel.pageView();
+
+    ReactPixel.init('334082198751683')
+    ReactPixel.pageView();
+
     useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
         }, "fast");
 
-        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-        TiktokPixel.pageView();
-  
-        ReactPixel.init('334082198751683')
-        ReactPixel.pageView();
+     
     }, []);
     const skip = (e) => {
         e.preventDefault();

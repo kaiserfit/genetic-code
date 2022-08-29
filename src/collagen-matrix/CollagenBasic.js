@@ -20,7 +20,7 @@ export default function CollagenBasic({num}) {
 
     const cmData = [
       {id: "bronze-saver", itemid: "cms1", botCount: 1, desc: "cm-upsell"},
-      {id: "bronze", itemid: "cm1", botCount: 1, desc: "cm-upsell"}
+      {id: "bronze", itemid: "25205", botCount: 1, desc: "cm-upsell"}
     ]
 
     const checkoutClick= (e) => {
@@ -32,7 +32,7 @@ export default function CollagenBasic({num}) {
       e.target.disabled = true;
       var x = cmData.filter(x=>x.id===basicPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -51,29 +51,31 @@ export default function CollagenBasic({num}) {
       .then((data)=>{
         console.log(data)
         if (data.result){
-            // const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
-            // .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-            // const timeStamp = Date.now();    
-            // const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+            const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+            .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+            const timeStamp = Date.now();    
+            const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
            
           //tiktok
-              // TiktokPixel.track('CompletePayment',{
-              // content_id: set.content,
-              // content_type: 'product',
-              // quantity: 1,
-              // price: 97.00,
-              // value: 97.00,
-              // currency: 'USD'});
+          TiktokPixel.track('CompletePayment',{
+            content_id: 'Collagen Matrix',
+            content_type: 'product',
+            quantity: 1,
+            price: data.price,
+            value: data.price,
+            currency: 'USD'});
 
 
-          //facebook
-          // ReactPixel.track('Purchase', {
-          //     value: 97.00,
-          //     currency: 'USD'
-          //   }, {eventID:event_id} )
+        //facebook
+        ReactPixel.track('Purchase', {
+            value: data.price,
+            currency: 'USD'
+          }, {eventID:event_id} )
 
 
-          //   WebHook('Purchase', event_id)
+          WebHook('Purchase', event_id)
+
+
           e.target.innerText = "Purchase Successful!"
           e.target.classList.remove('btn-warning')
           e.target.classList.add('btn-success')
@@ -97,10 +99,10 @@ export default function CollagenBasic({num}) {
       <>
       <div className="text-center my-3 subscribe-plan" >
         {/* <p className={`text-info ${(basicPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p> */}
-      <input type="radio"  name={`bronze-pack${num}`} Id={`bronze-saver${num}`} onChange={basicClick}  className="bronze-pack" value="bronze-saver" checked={basicPack==="bronze-saver"}  />
+      <input type="radio"  name={`bronze-pack${num}`} id={`bronze-saver${num}`} onChange={basicClick}  className="bronze-pack" value="bronze-saver" checked={basicPack==="bronze-saver"}  />
       <label htmlFor={`bronze-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 20%)</small></label>
       <br /><br />
-      <input type="radio" name={`bronze-pack${num}`} Id={`bronze-basic${num}`} onChange={basicClick} className="bronze-pack" value="bronze" checked={basicPack==="bronze"} />
+      <input type="radio" name={`bronze-pack${num}`} id={`bronze-basic${num}`} onChange={basicClick} className="bronze-pack" value="bronze" checked={basicPack==="bronze"} />
       <label htmlFor={`bronze-basic${num}`}  className="payment-plan ms-1">One-Time Purchase</label>
     </div>
             <div className="price-text">

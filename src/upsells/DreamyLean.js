@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import WebHook from "../WebHook";
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel'
-import FaShippingFast from "react-icons/fa";
+
 import Cards from "../vsl-components/images/visa-mastercard-icon.webp";
 import Dreamy1 from "../dreamy-lean/Dreamy-Lean-1-Bottle.webp"
 import Dreamy3 from "../dreamy-lean/Dreamy-Lean-3-Bottle.webp"
@@ -20,22 +20,30 @@ const DreamyLean = () => {
     document.title="Dreamy Lean"
     const navigate = useNavigate();
     const {state} = useLocation();
-    const  price  = state.price;
+    const  price  =(state.price/100);
     const bot = state.bot
     const product = state.product
 
+    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    TiktokPixel.pageView();
+
+    ReactPixel.init('334082198751683')
+    ReactPixel.pageView();
 
     useEffect(()=>{
         $('html, body').animate({
             scrollTop: $("html, body").offset().top
         }, "fast");
         localStorage.setItem('skipCount', "0");
-             const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+
+        var r = GetCookie('ini_purchase')
+      
+        if (r==="") {
+            const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
       .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
       const timeStamp = Date.now();    
       const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-    TiktokPixel.pageView();
+    
           
     TiktokPixel.track('CompletePayment',{
         content_id: 'Kaiser Burner',
@@ -48,14 +56,15 @@ const DreamyLean = () => {
 
 
 
-    ReactPixel.init('334082198751683')
-    ReactPixel.pageView();
     ReactPixel.track('Purchase', {
         value: price,
         currency: 'USD'
       }, {eventID:event_id} )
 
       WebHook('Purchase', event_id)
+      document.cookie="ini_purchase=1;path=/"
+        }
+             
     }, []);
 
     const skip = (e) => {
