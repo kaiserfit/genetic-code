@@ -12,8 +12,8 @@ import WebHook from "./WebHook";
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
-const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
-// const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
+// const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
+const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
 
 export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}) {
   const [clientSecret, setClientSecret] = useState("");
@@ -25,7 +25,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://pay.kaiserfitapp.com/stripe/createPm.php", {
+    fetch("https://pay.kaiserfitapp.com/stripe/createPm2.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId: priceId, price: price })
@@ -54,7 +54,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
    
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
-        fetch('https://pay.kaiserfitapp.com/stripe/createCustomer.php', {
+        fetch('https://pay.kaiserfitapp.com/stripe/createCustomer2.php', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

@@ -32,7 +32,7 @@ export default function RestoreBasic({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===basicPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

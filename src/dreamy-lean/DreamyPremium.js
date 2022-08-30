@@ -40,7 +40,7 @@ export default function DreamyPremium({num}) {
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===goldPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

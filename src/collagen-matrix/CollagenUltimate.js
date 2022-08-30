@@ -32,7 +32,7 @@ export default function CollagenUltimate({num}) {
       e.target.disabled = true;
       var x = cmData.filter(x=>x.id===platinumPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

@@ -31,7 +31,7 @@ export default function RestoreUltimate({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===platinumPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain.php', {
+      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
