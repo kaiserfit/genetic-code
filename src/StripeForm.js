@@ -95,7 +95,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
     // Handle result.error or result.paymentIntent
     console.log(result)
     if (result.error){
-      setPaymentStatus(false)
+        setPaymentStatus(false)
         setMessage(result.error.message)
     }
 
@@ -103,6 +103,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       setPaymentStatus(true)
           switch (result.paymentIntent.status) {
         case "succeeded":
+          console.log(result.paymentIntent)
           setPaymentMethod(result.paymentIntent.payment_method)
           setOrderNumber(result.paymentIntent.id)
           setAmount(result.paymentIntent.amount)
