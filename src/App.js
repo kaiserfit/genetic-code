@@ -43,11 +43,22 @@ function App() {
 
   }, [])
 
- 
+ function setHeader(){
+  if (pageRoute==="checkout") {
+    return (
+      <HeaderCheckout />
+    )
+    } else if (pageRoute==="fathacks"){
+      return
+    } else {
+      return(
+        <Header/>
+      )
+    }
+ }
   return (
     <div>
-      {(pageRoute==="checkout") ?  <HeaderCheckout /> : <Header/>}
- 
+     {setHeader()}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<QuizComponent />} />

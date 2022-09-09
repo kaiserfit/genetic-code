@@ -7,12 +7,12 @@ const Steps = () => {
         <h1 className="text-center fw-bold mb-3" >Step By Step Guide To Your BEST Self Ever:</h1>
         <hr />
         <div className="container text-black step-section">
-          <div className="step-number text-white bg-dark">Step 1 - Take Queen Formula first thing in the Morning</div>
+          <div className="step-number text-white bg-dark">Step 1 - Take Kaiser Burner first thing in the Morning</div>
           <section className="fs-4">
           
-            <img src={require('./vsl-components/images/qfbanner.webp')} className="img-fluid rounded mx-auto " alt="Women holding queen formula" />
+            <img src={require('./vsl-components/images/qfbanner.webp')} className="img-fluid rounded mx-auto " alt="Women holding Kaiser Burner" />
             <p>
-              Get your body in the Optimal Weight Loss State first thing in the morning with 2 small capsules of Queen Formula. 
+              Get your body in the Optimal Weight Loss State first thing in the morning with 2 small capsules of Kaiser Burner. 
         
               <br />
               Activate your weight loss hormones and start your day by:

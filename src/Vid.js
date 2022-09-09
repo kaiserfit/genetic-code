@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import {commentsArray} from "./vsl-components/Comments";
 // This imports the functional component from the previous sample.
-// import VideoJS from './VideoJS';
+import VideoJS from './VideoJS';
 import videojs from 'video.js';
-import Loading from "./vsl-components/images/loading.webp"
+import Loading from "./preview.webp"
 import Play from "./vsl-components/images/customplay.webp"
 import {BsPlayBtnFill, BsHandThumbsUp, BsHandThumbsDown} from "react-icons/bs"
 import LiveChat from './LiveChat';
@@ -20,18 +20,20 @@ import PremiumPack from './Premium';
 import BasicPack from './Basic';
 import Bonuses from './Bonus';
 import Steps from './TransformationSteps';
-import Narrative from './Narrative';
+// import Narrative from './Narrative';
 import Faq from './Faq';
 import GetCookie from './Cookie';
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 import WebHook from './WebHook';
+
+import ResultPanel from "./vsl-components/Results";
 const Vid = ({setRoute}) => {
     const [videoReady, setState] = useState(false);
     const [userPlay, setUserPlay] = useState(false);
     const [paused, setPaused] = useState(false);
     const [vslWatched, setWatch] = useState(false);
-    const [hook6, setHook6] = useState(true);
+    const [hook6, setHook6] = useState(false);
     const [hook1, setHook1] = useState(false);
     const [videoTime, setTime] = useState(0);
    
@@ -56,13 +58,7 @@ const Vid = ({setRoute}) => {
             if (veed.currentTime()>=10){
 
               if (hook6 === false) {
-                var x = $("#my-video").hasClass("vjs-fullscreen");
-                if (x) {
-                  $(".vjs-fullscreen-control").trigger("click");
-                   
-                    document.cookie="visit=1;path-/"
-                }
-
+           
                 // veed.isFullscreen(false);
                
                 $("#sticky").addClass("scrolled");             
@@ -170,100 +166,93 @@ const Vid = ({setRoute}) => {
 
 
     
-    useEffect(() => {
+    // useEffect(() => {
      
       
-        videojs(videoRef.current, initialOptions).ready(() => {
-          var t = GetCookie('visit')
+    //     videojs(videoRef.current, initialOptions).ready(() => {
+    //       var t = GetCookie('visit')
 
-          if (t==="1"){
-            setUserPlay(true)
-                // $("#sticky").addClass("scrolled"); 
-                // setHook6(true)
-          } else {
-          setTimeout(async () => {
-            await videoRef.current.play();
-            setUserPlay({userPlay:!userPlay}, console.log(userPlay)); 
-            $(".vjs-fullscreen-control").trigger("click");
-          }, 1000);
-
-        }
+    //       if (t==="1"){
+    //         setUserPlay(true)
+    //             // $("#sticky").addClass("scrolled"); 
+    //             // setHook6(true)
+    //       } else {
+    //       setTimeout(async () => {
+    //         await videoRef.current.play();
+    //         setUserPlay({userPlay:!userPlay}, console.log(userPlay)); 
           
-        });
+    //       }, 1000);
+
+    //     }
+          
+    //     });
       
       
 
       
 
-    }, [])
-  // const videoJsOptions = {
-  //   // autoplay: true,
-  //   // muted: true,
-  //   controls: true,
+    // }, [])
+  const videoJsOptions = {
+    // autoplay: true,
+    // muted: true,
+    controls: true,
   
-  //   fluid: true,
-  //   // preload: "true",
-  //   poster: Loading,
-  //   sources: [{
-  //     src: 'https://d2rvo1g7c89cun.cloudfront.net',
-  //     type: 'video/mp4'
-  //   }],
+    fluid: true,
+    // preload: "true",
+    poster: Loading,
+    sources: [{
+      src: 'https://d2rvo1g7c89cun.cloudfront.net/KaiserBurner-3.mp4',
+      type: 'video/mp4'
+    }],
     
-  // };
+  };
 
-  // const clickPlay = () => {
-  //   const veed = videojs(document.getElementById("my-video"));
-    
-   
-  //     veed.muted(false);
-  //     veed.currentTime(0);
-  //     setTime(0);
-  //     setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
-  //     $(".video-js .vjs-control-bar").css({"visibility":"visible"});
-  //      $(".vjs-fullscreen-control").trigger("click");
- 
-    
-  //   }
-
-    
-  //   const playerRef = React.useRef(null);
-  // const handlePlayerReady = (player) => {
-  //   playerRef.current = player;
-    
-    
-  //   // You can handle player events here, for example:
-  //   player.on('waiting', () => {
-  //     videojs.log('player is waiting');
-  //   });
-
-  //   player.on('pause',()=>{
-  //       setPaused(paused=>true);
-  //   });
-
-  //   player.on('timeupdate',()=>{   
+  const clickPlay = () => {
+    const veed = videojs(document.getElementById("my-video"));
+        
      
-  //   });
-
-  //   player.on('ready', () => {
-  //     $("#ff5").trigger("click")
-  //     timer_init();
-   
+      veed.play();
+      setUserPlay({userPlay:!userPlay}, console.log(userPlay));    
+      $(".video-js .vjs-control-bar").css({"visibility":"visible"});
       
+    
+    }
 
-  //       videojs.log('player is ready');
-  //         $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
-  //       });
+    
+    const playerRef = React.useRef(null);
+  const handlePlayerReady = (player) => {
+    playerRef.current = player;
+    
+    
+    // You can handle player events here, for example:
+    player.on('waiting', () => {
+      videojs.log('player is waiting');
+    });
 
-  //   player.on('dispose', () => {
-  //     videojs.log('player will dispose');
+    player.on('pause',()=>{
+        setPaused(paused=>true);
+    });
 
-  //   });
+    player.on('timeupdate',()=>{   
+     
+    });
 
-  //   player.on('play', () => {
-  //       setPaused(paused=>false);
-  //       setState(videoReady=>true);
-  //     });
-  // };
+    player.on('ready', () => {
+      setState(videoReady=>true);
+        videojs.log('player is ready');
+          $(".video-js .vjs-control-bar").css({"visibility":"hidden"});
+        });
+
+    player.on('dispose', () => {
+      videojs.log('player will dispose');
+
+    });
+
+    player.on('play', () => {
+        setPaused(paused=>false);
+        setState(videoReady=>true);
+      });
+  };
   
   
 
@@ -551,10 +540,10 @@ const Vid = ({setRoute}) => {
             </h1>
           </div>
           <div className="row p-2 " >
-                <div className="col-12 col-sm-4 text-center">
-                  <img src={require('./vsl-components/images/bna/jeanna-bna.webp')} className="img-fluid rounded mx-auto"  alt="Jeanna BnA" />
+                <div className="col-12 col-sm-5 p-3 text-center">
+                  <img src={require('./vsl-components/images/bna/jeanna-bna.webp')} className="fluid-2 rounded mx-auto"  alt="Jeanna BnA" />
                 </div>
-                <div className="col-12 col-sm-8 position-relative">
+                <div className="col-12 col-sm-7 ps-0 ps-sm-4 position-relative">
                       <p className="bna-text text-black fw-bold">"I can still eat my ice cream every night. I'm full of energy and living life again!!!"</p>
                 </div>
               </div>
@@ -576,10 +565,10 @@ const Vid = ({setRoute}) => {
             </h1>
           </div>
             <div className="row p-2">
-                <div className="col-12 col-sm-4 col-sm-push-8 text-center">
-                  <img src={require('./vsl-components/images/bna/carly-bna.webp')} className="img-fluid rounded mx-auto"  alt="carly BnA" />
+                <div className="col-12 col-sm-5 p-3 text-center">
+                  <img src={require('./vsl-components/images/bna/carly-bna.webp')} className="fluid-2 rounded mx-auto"  alt="carly BnA" />
                   </div>
-                <div className="col-12 col-sm-8 col-sm-pull-4 position-relative">
+                <div className="col-12 col-sm-7 ps-0 ps-sm-4 position-relative">
                   
                   <p className="bna-text text-black fw-bold">"Here I am at a weight and pants size that I haven’t seen since middle school."</p>
                 </div>
@@ -603,10 +592,10 @@ const Vid = ({setRoute}) => {
             </h1>
           </div>
           <div className="row p-2 " >
-                <div className="col-12 col-sm-4 text-center">
-                  <img src={require('./vsl-components/images/bna/Cath.webp')} className="img-fluid rounded mx-auto"  alt="Catherine BnA" />
+                <div className="col-12 col-sm-5 text-center">
+                  <img src={require('./vsl-components/images/bna/Cath.webp')} className="fluid-2 rounded mx-auto"  alt="Catherine BnA" />
                 </div>
-                <div className="col-12 col-sm-8 position-relative">
+                <div className="col-12 col-sm-7 ps-0 ps-sm-4 position-relative">
                       <p className="bna-text text-black fw-bold">"For the first time in 13 years I finally found something that can help me lose weight."</p>
                 </div>
               </div>
@@ -628,10 +617,10 @@ const Vid = ({setRoute}) => {
             </h1>
           </div>
             <div className="row p-2">
-                <div className="col-12 col-sm-4 col-sm-push-8 text-center">
-                  <img src={require('./vsl-components/images/bna/tess-bna.webp')} className="img-fluid rounded mx-auto"  alt="Tess BnA" />
+                <div className="col-12 col-sm-5 p-3 text-center">
+                  <img src={require('./vsl-components/images/bna/tess-bna.webp')} className="fluid-2 rounded mx-auto"  alt="Tess BnA" />
                   </div>
-                <div className="col-12 col-sm-8 col-sm-pull-4 position-relative">
+                <div className="col-12 col-sm-7 ps-0 ps-sm-4 position-relative">
                   
                   <p className="bna-text text-black fw-bold">"It is because of this program that I am now asked to sponsor various brands! Thank you KaiserFit.!"</p>
                 </div>
@@ -657,6 +646,7 @@ const Vid = ({setRoute}) => {
       return formattedDate;
     }
     var ca = commentsArray.filter(x=>x.page===pageNum);
+    
     const PageReview = (e) => {     
       var p = parseInt(e.target.text);
       setPage(p);
@@ -725,6 +715,7 @@ const Vid = ({setRoute}) => {
             <img src={require('./vsl-components/images/stars.webp')} className="me-2" alt="stars" height="15" width="85"/>
             <br className="d-block d-sm-none"/>
             <strong>{data.title}</strong>
+            
             </p>
             <div className="rev-content">
               {data.content}
@@ -815,7 +806,88 @@ const Vid = ({setRoute}) => {
   </div>
     )
   }
+function LastNotes(){
+  return (
+    <div className="container sm-full-70 mt-3" >
+    <section>
+  
+      <h3 className="text-center mb-2">We Have ONE Mission</h3>
+      
+      <h1 className="text-center mb-3 fw-bold"><u>To Help You BECOME Your True Self</u></h1>
+  
+      <p className="list-content">
+        Think back to your life as a kid… 
+        <br /><br />
+        Remember what you thought life would look like when you grew up? 
+        <br /><br />
+        I used to imagine growing up to be a confident, happy and powerful man living with his dream body. 
+        <br /><br />
+        But…I grew up to be this guy: 
+      </p>
+      <div className="text-center">
 
+      <img src={require('./vsl-components/images/fat-shane.webp')} className="img-fluid rounded mx-auto" alt="Fat Coach Shane" />
+      </div>
+  
+      <p className="list-content">
+        This guy isn’t the real me. 
+        <br /><br />
+        This is the FAKE ME. 
+        <br /><br />
+        And chances are if you are here on this page…
+        <br /><br />
+        You are just like me and millions of other men and women around the world. 
+        <br /><br />
+        Full of dreams as a kid to become your BEST Self. 
+        <br /><br />
+        But instead, you became your FAKE Self.
+      </p>
+      <img src={require('./vsl-components/images/fakes-2.webp')} className="img-fluid mb-2 " alt="Fake Personas" />
+    
+        <p className="list-content">
+          But here is the great news…
+          <br /><br />
+        You are on this page. 
+        <br /><br />
+        And that means you are about to find a NEW way. 
+        <br /><br />
+        The REAL way to becoming your TRUE SELF. 
+  
+        </p>
+        
+        <img src={require('./vsl-components/images/bna/linda-bna.webp')} alt="linda" className="img-fluid mx-auto mb-3 " />
+        <div className="row mb-3">
+          <div className="col-12 col-sm-6">
+            <img src={require('./vsl-components/images/bna/Cath.webp')} className="row-img mx-auto " alt="Cath bna" />
+          </div>
+          <div className="col-12 col-sm-6">
+            <img src={require('./vsl-components/images/bna/Renee.webp')} className="row-img mx-auto " alt="renee bna" />
+          </div>
+        </div>
+          <div className="text-center">
+
+        <img src={require('./vsl-components/images/bna/naiara-bna.webp')} alt="naiara" className="img-fluid mx-auto mb-3 " />
+        <img src={require('./vsl-components/images/bna/carly-bna.webp')} alt="carly" className="img-fluid mx-auto mb-3 " />
+          </div>
+        <div className="row mb-3">
+          <div className="col-12 col-sm-6">
+            <img src={require('./vsl-components/images/bna/jeanna-bna.webp')} className="row-img mx-auto " alt="jeanna bna" />
+          </div>
+          <div className="col-12 col-sm-6">
+            <img src={require('./vsl-components/images/bna/joie-bna.webp')} className="row-img mx-auto " alt="joie bna" />
+          </div>
+        </div>
+        
+  
+        <p className="list-content">
+          If you are ready to become your TRUE Self (the person you were ALWAYS meant to be) 
+          <br /><br />
+          Then choose your Bundle below
+        </p>
+    </section>
+  </div>
+  )
+}
 
 
 
@@ -837,24 +909,24 @@ function MoneyBackGuarantee(){
   return (
     <>
 
-    <div className="container-fluid bg-black text-center" id="ff5">
+    <div className="container-fluid bg-black text-center min-vh-100 py-3" id="ff5">
  
-      <div id="col-video">
-        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-2 offset-lg-5 position-relative">
+      <div >
+        <div className="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 col-lg-4 offset-lg-4 position-relative">
         {/* <video
           // onClick={handleClickVideo}
           ref={videoRef}
           className="video-js vjs-big-play-centered "
         /> */}
 
-      <video
+      {/* <video
           id="my-video"
           // onClick={handleClickVideo}
           ref={videoRef}
           className="video-js vjs-big-play-centered "
-        />
-          {/* <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> */}
-                {/* {paused===true && (
+        /> */}
+          <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+                {paused===true && (
                     <div id="btnResume" onClick={pauseButton} className="text-center">
                     <h4 className="text-white">Resume Watching Video</h4>
                     <BsPlayBtnFill className='display-1 text-danger' />
@@ -866,7 +938,7 @@ function MoneyBackGuarantee(){
                   <div id="btnPlay" onClick={clickPlay} className={`video-play vsl-play-desktop control-onload ${userPlay===false ? "d-block": "d-none"}`}>
                   <img src={Play} alt="play button" className="img-fluid video-play" style={{margin: 'auto'}} />
                   </div>
-               )} */}
+               )}
                
         </div>
 
@@ -874,6 +946,7 @@ function MoneyBackGuarantee(){
 
 
     </div>
+    <ResultPanel />
       
        <div className={`container-fluid`} id="co-box">
    
@@ -895,12 +968,13 @@ function MoneyBackGuarantee(){
 
         {hook6 === true && (<Products num={3} />)}
         {hook6 === true && (<Steps />)}
+        
+        {hook6 === true && (<LastNotes  />)}
         {hook6 === true && (<Products num={4} />)}
-        {hook6 === true && (<Narrative  />)}
-        {hook6 === true && (<Products num={5} />)}
-     
+               
         {hook6 === true && (<Faq  />)}
         {hook6 === true && (<ShaneFooter />)}
+        {hook6 === true && (<Products num={5} />)}
         {hook6 === true && (<LiveChat />)}
     
         

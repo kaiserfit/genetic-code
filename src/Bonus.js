@@ -15,7 +15,7 @@ const Bonuses = () => {
 
             <div className="col-12 col-sm-10 col-md-8 col-lg-8">
                 <p className="list-head blue-text">
-                    Queen Formula
+                    Kaiser Burner
                 </p>
                 <p className="list-content">
                   A Formulation sourced from 10 of the MOST EFFECTIVE Metabolism BOOSTING NUTRIENTS around the world, COMBINED inside one Amazing capsule.                           
@@ -44,13 +44,13 @@ const Bonuses = () => {
             </div>
 
             <div className="col-12 col-sm-12 col-md-3 col-lg-3 text-center" >
-                <img src={require('./vsl-components/images/Bonuses/formula-white.webp')} className="img-fluid rounded" />
+                <img src={require('./kaiser-burner/burner-1-bottle.webp')} className="img-fluid rounded" />
                 <p className="price text-muted">Normally $99.00</p>
                 <p className="list-content green-text"><strong>INCLUDED</strong></p>
             </div>
         </div> 
         <p className="list-content">
-          Some of the Incredible Nutrients inside Queen Formula include:
+          Some of the Incredible Nutrients inside Kaiser Burner include:
         </p>
 
         <div className="gray-glow clearfix mb-3">

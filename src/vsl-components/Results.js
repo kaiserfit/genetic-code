@@ -6,7 +6,9 @@ function ResultPanel(){
 
     return(
       <div>
-
+ <div className="container" id="vslDescription">
+       <span className="label-danger text-white rounded p-1" >Very Important:</span> This Short Video Contains Your Custom Transformation Plan from Coach Shane, World Class Transformation Coach & Celebrity Trainer
+      </div>
         <div className="container-fluid bg-gray barlow-font text-center pt-0 pb-1" id="result-panel" >
         
 
@@ -20,9 +22,7 @@ function ResultPanel(){
         </div>
            
        </div>
-       <div className="container" id="vslDescription">
-       <span className="label-danger text-white rounded p-1" >Very Important:</span> This Short Video Contains Your Custom Transformation Plan from Coach Shane, World Class Transformation Coach & Celebrity Trainer
-      </div>
+      
       </div>
     )
 }

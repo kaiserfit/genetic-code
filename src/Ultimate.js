@@ -25,7 +25,7 @@ function UltimatePack({num, setRoute}) {
       <div className="text-center my-3 subscribe-plan"  >
         {/* <p className={`text-info ${(platinumPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p> */}
       <input type="radio"  name={`platinum-pack${num}`} id={`platinum-saver${num}`} onChange={ultimateClick} className="platinum-pack" value="platinum-saver" checked={platinumPack==="platinum-saver"}  />
-      <label htmlFor={`platinum-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 20%)</small></label>
+      <label htmlFor={`platinum-saver${num}`} className="payment-plan ms-1">Subscribe & Save 20% Off</label>
       <br /><br />
       <input type="radio" name={`platinum-pack${num}`} id={`platinum-basic${num}`} onChange={ultimateClick} className="platinum-pack" value="platinum" checked={platinumPack==="platinum"} />
       <label htmlFor={`platinum-basic${num}`} className="payment-plan ms-1">One-Time Purchase</label>

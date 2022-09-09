@@ -28,7 +28,7 @@ function BasicPack({num, setRoute}) {
       <div className="text-center my-3 subscribe-plan" >
         {/* <p className={`text-info ${(basicPack==="") ? "" : "invisible"}`}>Please Choose Your Purchase Plan</p> */}
       <input type="radio"  name={`bronze-pack${num}`} id={`bronze-saver${num}`} onChange={basicClick}  className="bronze-pack" value="bronze-saver" checked={basicPack==="bronze-saver"}  />
-      <label htmlFor={`bronze-saver${num}`} className="payment-plan ms-1">Subscribe & Save <small className="fw-light">(Save 15%)</small></label>
+      <label htmlFor={`bronze-saver${num}`} className="payment-plan ms-1">Subscribe & Save 15% Off</label>
       <br /><br />
       <input type="radio" name={`bronze-pack${num}`} id={`bronze-basic${num}`} onChange={basicClick} className="bronze-pack" value="bronze" checked={basicPack==="bronze"} />
       <label htmlFor={`bronze-basic${num}`}  className="payment-plan ms-1">One-Time Purchase</label>

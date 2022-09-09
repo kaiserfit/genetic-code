@@ -52,7 +52,7 @@ const Faq = () => {
               <div className="faq-answer">
                 So for starters you’ll be getting the device I promised called Kaiser Coach and this is actually a FREE bonus that you’ll be getting, this usually goes for $299 per month but if you buy the Kaiser Body Bundle for a limited time you’ll get Kaiser Coach for FREE.
                 <br /><br />
-                Next up you get Queen Formula which contains 12 of the most powerful ingredients to MELT FAT 5 X FASTER and basically GUARANTEE your life changing transformation when using it with Kaiser Coach.
+                Next up you get Kaiser Burner which contains 12 of the most powerful ingredients to MELT FAT 5 X FASTER and basically GUARANTEE your life changing transformation when using it with Kaiser Coach.
                 <br /><br />                
                 Also included are recipes, cookbooks, meal plans, our KaiserFit VIP Coaching Group, Shopping Lists for Success, Home Workouts and even our Bikini Body Blueprint to help sculpt your body!
                 
@@ -68,25 +68,25 @@ const Faq = () => {
               <div className="faq-answer">
                 The women who achieve the best PERMANENT transformations order the Kaiser Body Bundle UTIMATE Bundle.
                 <br /><br />
-                This is because you receive a FULL 6 month supply of Queen Formula. To achieve optimal results, Queen Formula should be taken consistently for at least 90-180 days as the longer you take these incredible 12 ingredients, the faster your metabolism becomes and the better your body naturally becomes at maintaining your new figure. This is why we strongly recommend you take advantage of the Kaiser Body Bundle ULTIMATE Bundle.
+                This is because you receive a FULL 6 month supply of Kaiser Burner. To achieve optimal results, Kaiser Burner should be taken consistently for at least 90-180 days as the longer you take these incredible 12 ingredients, the faster your metabolism becomes and the better your body naturally becomes at maintaining your new figure. This is why we strongly recommend you take advantage of the Kaiser Body Bundle ULTIMATE Bundle.
     
                 <br /><br />
-                Another very important reason why you should stock up on the 90-180 day options is because more and more women are finding out about Queen Formula every day and we are consistently running out of stock...And the last thing you want is to find yourself losing an incredible amount of fat only to run out and not be able to purchase Queen Formula for months…
+                Another very important reason why you should stock up on the 90-180 day options is because more and more women are finding out about Kaiser Burner every day and we are consistently running out of stock...And the last thing you want is to find yourself losing an incredible amount of fat only to run out and not be able to purchase Kaiser Burner for months…
                 <br /><br />
                 Also- With this bundle we throw in over $3000+ dollars worth of Bonus Meal Plans, Coaching, VIP Support Group, Recipe Books and much much more. 
                 <br /><br />
-                Lastly...Queen Formula is still in it’s ‘Special Launch Price’...So I guarantee you’ll never be able to buy Queen Formula cheaper than today. Which is another important reason why picking up at least 90 -180 days worth is definitely the smart option. 
+                Lastly...Kaiser Burner is still in it’s ‘Special Launch Price’...So I guarantee you’ll never be able to buy Kaiser Burner cheaper than today. Which is another important reason why picking up at least 90 -180 days worth is definitely the smart option. 
     
               </div>
             </div>
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(3)}>
-                <span className="float-start fw-bold">Is Queen Formula Safe?</span>
+                <span className="float-start fw-bold">Is Kaiser Burner Safe?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                Absolutely. Thousands of women are taking Queen Formula each and every single day and achieving the body of their dreams effortlessly with no reported side effects. Every capsule of Queen Formula is manufactured here in the USA in our state of the art, best in the world facility which is FDA approved and GMP (good manufacturing practices) certified.
+                Absolutely. Thousands of women are taking Kaiser Burner each and every single day and achieving the body of their dreams effortlessly with no reported side effects. Every capsule of Kaiser Burner is manufactured here in the USA in our state of the art, best in the world facility which is FDA approved and GMP (good manufacturing practices) certified.
                 As always, if you have a medical condition it's recommended to consult with your doctor. 
               </div>
             </div>
@@ -94,11 +94,11 @@ const Faq = () => {
         
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(4)}>
-                <span className="float-start fw-bold">How soon will I receive my order of Queen Formula?</span>
+                <span className="float-start fw-bold">How soon will I receive my order of Kaiser Burner?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                United States & Canada- You Can expect Queen Formula to arrive in 3-7 Days if you live in the United States & Canada.
+                United States & Canada- You Can expect Kaiser Burner to arrive in 3-7 Days if you live in the United States & Canada.
                 <br /><br />
                 Outside the United States- Please allow 10-14 days for international shipping and custom clearance.             
               </div>
@@ -120,7 +120,7 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(6)}>
-                <span className="float-start fw-bold">What is the best way to take Queen Formula?</span>
+                <span className="float-start fw-bold">What is the best way to take Kaiser Burner?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
@@ -135,7 +135,7 @@ const Faq = () => {
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                Yes it is and we even give you our Bikini Body Blueprint to do just that! Now it’s entirely up to you if you want to sculpt your body and tone it to perfection, but if this is something you want to do then you can with the Bikini Body Blueprint, Kaiser Coach and Queen Formula. You’ll have access to everything you need to get the body of your dreams. 👍
+                Yes it is and we even give you our Bikini Body Blueprint to do just that! Now it’s entirely up to you if you want to sculpt your body and tone it to perfection, but if this is something you want to do then you can with the Bikini Body Blueprint, Kaiser Coach and Kaiser Burner. You’ll have access to everything you need to get the body of your dreams. 👍
               </div>
             </div>
   
@@ -159,7 +159,7 @@ const Faq = () => {
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                You will get immediate access to Kaiser Coach as well as all of your bonuses included in the Kaiser Body Bundle, an email will be sent to you with instructions as well as your login details so you can access everything. Kaiser Coach is available with the Kaiser Body Bundle FREE of charge only for a limited time so it’s best to order now before this offer expires and Kaiser Coach goes back to its original price of $299 per month. Your Queen Formula Supplement will also be shipped the next following day from our facility located in the US.
+                You will get immediate access to Kaiser Coach as well as all of your bonuses included in the Kaiser Body Bundle, an email will be sent to you with instructions as well as your login details so you can access everything. Kaiser Coach is available with the Kaiser Body Bundle FREE of charge only for a limited time so it’s best to order now before this offer expires and Kaiser Coach goes back to its original price of $299 per month. Your Kaiser Burner Supplement will also be shipped the next following day from our facility located in the US.
             
               </div>
             </div>
@@ -190,11 +190,11 @@ const Faq = () => {
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(12)}>
-                <span className="float-start fw-bold">What's so special about Queen Formula?</span>
+                <span className="float-start fw-bold">What's so special about Kaiser Burner?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                What you are getting with Queen Formula is something that has been built from scratch, with years of Research & Development.
+                What you are getting with Kaiser Burner is something that has been built from scratch, with years of Research & Development.
                 <br /><br />
                 12 of the most powerful ingredients squeezed into one tiny capsule which you can take once a day in the morning to help with:
                 <br />
@@ -222,17 +222,17 @@ const Faq = () => {
                 <br />
                 You also don’t need to restrict what you eat, robbing your body of nourishment is not the answer and it won’t lead to your best results.
                 <br /><br />
-                The gym also isn’t required, all you need to do is let Queen Formula do the work for you.       
+                The gym also isn’t required, all you need to do is let Kaiser Burner do the work for you.       
               </div>
             </div>
   
             <div className="faq-wrap">
               <div className="faq-question clearfix" onClick={() => faqClick(13)}>
-                <span className="float-start fw-bold">I Already Take Medication, Is There Anything Else Queen Formula Can Conflict With?</span>
+                <span className="float-start fw-bold">I Already Take Medication, Is There Anything Else Kaiser Burner Can Conflict With?</span>
                 <span className="faq-arrow fw-light float-end hoverable"><BsFillPlusCircleFill /></span>
               </div>
               <div className="faq-answer">
-                If you’re already on medication, consult your doctor before taking Queen Formula.
+                If you’re already on medication, consult your doctor before taking Kaiser Burner.
               </div>
             </div>
   

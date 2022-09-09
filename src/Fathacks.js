@@ -1,7 +1,7 @@
 
 import React, {useEffect} from 'react';
 import Sticky from "./Sticky";
-import ResultPanel from "./vsl-components/Results";
+
 import TiktokPixel from 'tiktok-pixel';
 import ReactPixel from 'react-facebook-pixel';
 import Vid from './Vid';
@@ -29,9 +29,9 @@ import WebHook from './WebHook';
     
     return (
       <div>
-        <Sticky />
-        <ResultPanel />
         <Vid setRoute={setRoute} />
+        <Sticky />
+    
         
       </div>
       )

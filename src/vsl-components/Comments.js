@@ -2,22 +2,7 @@ import React from 'react';
 
 
 export const commentsArray = [
-   {
-      "id": 1,
-     
-      "created": "2022-07-22",
-
-      "title": "I can eat Ice Cream!",
-      
-"content": <div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src="https://player.vimeo.com/video/637761406?h=b385d6fb1e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="1 JeAnna Bland"></iframe></div>,
-   
-       "page": 1,
-      "creator": 1,
-      "fullname": "JeAnna Bland",
-    
-      "upvote_count": 44,
-
-   },
+  
 
    {
       "id": 1,
@@ -70,22 +55,6 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2022-07-09",
-
-      "title": "Just trust the program ladies, you won't even notice it",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764559?h=8d29eef55d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="15 Nicolette"></iframe></div>,
-   
-       "page": 1,
-      "creator": 1,
-      "fullname": "Nicollete Peterson",
-    
-      "upvote_count": 36,
-
-   },
 
    {
       "id": 1,
@@ -191,22 +160,7 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2022-05-11",
 
-      "title": "",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764633?h=4d6ca7baf0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="16 Robin"></iframe></div>,
-   
-       "page": 2,
-      "creator": 1,
-      "fullname": "Robin Hensen",
-    
-      "upvote_count": 20,
-
-   },
 
    {
       "id": 1,
@@ -296,22 +250,7 @@ export const commentsArray = [
    },
 
 
-   {
-      "id": 1,
-     
-      "created": "2022-06-27",
 
-      "title": "I'm eating more food!",
-      
-"content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761455?h=c8588f96e5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="2 Linda_testimonial"></iframe></div>,
-   
-       "page": 1,
-      "creator": 1,
-      "fullname": "Linda Blair",
-    
-      "upvote_count": 23,
-
-   },
 
 
    {
@@ -349,22 +288,7 @@ export const commentsArray = [
    },
 
 
-   {
-      "id": 1,
-     
-      "created": "2022-04-30",
 
-      "title": "I'm finally able to pursue my dream of becoming a model!",
-      
-"content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761545?h=34ccbb643e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="3 Rebeca"></iframe></div>,
-   
-       "page": 2,
-      "creator": 1,
-      "fullname": "Rebeca Purcel",
-    
-      "upvote_count": 24,
-
-   },
 
    {
       "id": 1,
@@ -400,39 +324,9 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2022-03-16",
 
-      "title": "Yep! I'm in a bikini again!",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761630?h=0ecc858e9a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="4 Shardai"></iframe></div>,
-   
-       "page": 2,
-      "creator": 1,
-      "fullname": "Shardai",
-    
-      "upvote_count": 34,
 
-   },
 
-   {
-      "id": 1,
-     
-      "created": "2022-03-12",
-
-      "title": "I'm much more confident",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761677?h=18d9657607&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="5 Faith Hernandez"></iframe></div>,
-   
-       "page": 3,
-      "creator": 1,
-      "fullname": "Faith",
-    
-      "upvote_count": 25,
-
-   },
 
    {
       "id": 1,
@@ -469,22 +363,7 @@ export const commentsArray = [
    },
 
 
-   {
-      "id": 1,
-     
-      "created": "2022-03-04",
-
-      "title": "really like this video of me! thanks KaiserFit!",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761760?h=a96e3b355c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="6 Samantha"></iframe></div>,
-   
-       "page": 3,
-      "creator": 1,
-      "fullname": "Samantha Lamond",
-    
-      "upvote_count": 19,
-
-   },
+ 
 
    {
       "id": 1,
@@ -606,22 +485,7 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2022-02-24",
-
-      "title": "Do I get a reward for keeping my transformation for over a year? 😂",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761857?h=8b68772bea&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="7 Tess"></iframe></div>,
-   
-       "page": 3,
-      "creator": 1,
-      "fullname": "Tess Cardinale",
-    
-      "upvote_count": 33,
-
-   },
+  
 
    {
       "id": 1,
@@ -641,22 +505,7 @@ export const commentsArray = [
    },
 
 
-   {
-      "id": 1,
-     
-      "created": "2022-02-16",
 
-      "title": "I'm smiling whenever I look at myself in the mirror 😊",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637761934?h=bc2064a7ba&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="8 Jacque Cole"></iframe></div>,
-   
-       "page": 4,
-      "creator": 1,
-      "fullname": "Jacque Cole",
-    
-      "upvote_count": 29,
-
-   },
 
    {
       "id": 1,
@@ -709,74 +558,12 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2022-02-09",
+ 
 
-      "title": "",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764770?h=a163c03538&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="17 Annie"></iframe></div>,
-   
-       "page": 4,
-      "creator": 1,
-      "fullname": "Anni Raumi",
-    
-      "upvote_count": 13,
 
-   },
-
-   {
-      "id": 1,
-     
-      "created": "2022-01-31",
-
-      "title": "I'm glad I found the KaiserFit Team",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762163?h=fe8c79d173&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="9 Joie"></iframe></div>,
-   
-       "page": 4,
-      "creator": 1,
-      "fullname": "Joie Dusolt",
-    
-      "upvote_count": 23,
-
-   },
-
-   {
-      "id": 1,
-     
-      "created": "2022-01-25",
-
-      "title": "Finally found a fix for my metabolism",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762456?h=5d6a6965e7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="10 Charmaine"></iframe></div>,
-   
-       "page": 4,
-      "creator": 1,
-      "fullname": "Charmaine Jorsling",
-    
-      "upvote_count": 17,
-
-   },
 
    
-   {
-      "id": 1,
-     
-      "created": "2022-01-19",
 
-      "title": "Imagine, having a 26-inch waist again...Thanks KaiserFit!",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637762894?h=5d7bed0252&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="12 Lariena"></iframe></div>,
-   
-       "page": 4,
-      "creator": 1,
-      "fullname": "Lariena Armstrong",
-    
-      "upvote_count": 37,
-
-   },
 
    {
       "id": 1,
@@ -881,39 +668,9 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2021-12-30",
 
-      "title": "Truly one of a kind!",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637763049?h=55c420771f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="13 Naiara"></iframe></div>,
-   
-       "page": 5,
-      "creator": 1,
-      "fullname": "Naiara Sward",
-    
-      "upvote_count": 36,
 
-   },
 
-   {
-      "id": 1,
-     
-      "created": "2021-12-22",
-
-      "title": "",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764937?h=67af1f2495&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="18 Enisa"></iframe></div>,
-   
-       "page": 5,
-      "creator": 1,
-      "fullname": "Enisa",
-    
-      "upvote_count": 20,
-
-   },
 
    {
       "id": 1,
@@ -966,22 +723,7 @@ export const commentsArray = [
 
    },
 
-   {
-      "id": 1,
-     
-      "created": "2021-12-23",
-
-      "title": "Sending love to the KaiserFit Fam!",
-      
-      "content": <div style={{padding:"56.25% 0 0 0", position:"relative"}}><iframe src="https://player.vimeo.com/video/637764190?h=30685a22ad&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} title="14 Olivia"></iframe></div>,
-   
-       "page": 5,
-      "creator": 1,
-      "fullname":"Olivia Sens",
-    
-      "upvote_count": 26,
-
-   },
+ 
 
    
    {
