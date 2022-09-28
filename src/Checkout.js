@@ -19,11 +19,11 @@ const Checkout = ({setRoute}) => {
     document.title = "Checkout"
     const [productType, setProduct] = useState("kb");
     const dba=GetCookie("product");
-    useEffect(()=>{
-      $('html, body').animate({
-        scrollTop: $("#timerBanner").offset().top
-    }, "fast");
-    },[])
+    // useEffect(()=>{
+    //   $('html, body').animate({
+    //     scrollTop: $("#timerBanner").offset().top
+    // }, "fast");
+    // },[])
    
 function DivTimer() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -270,9 +270,9 @@ function ProductSection(){
 }
     return(
         <>
-        <DivTimer />
+        {/* <DivTimer />
         <Section2 />
-        <ProductSection />
+        <ProductSection /> */}
         <CheckoutForm dba={dba} productType={productType} setRoute={setRoute} />
         </>
     )

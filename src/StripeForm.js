@@ -103,7 +103,8 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       setPaymentStatus(true)
           switch (result.paymentIntent.status) {
         case "succeeded":
-          console.log(result.paymentIntent)
+  
+          
           setPaymentMethod(result.paymentIntent.payment_method)
           setOrderNumber(result.paymentIntent.id)
           setAmount(result.paymentIntent.amount)
@@ -157,7 +158,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       <div id="orderbumpBanner" className="clearfix position-relative" style={{backgroundColor: "#1c2634", padding:"10px"}}>
         <input type="checkbox" onChange={BumpCheck} id="ob" name="ob" checked={obCheck} className="ms-2"/>
         <GoArrowRight className="blink position-absolute start-0 red-text" style={{top: "25%"}} /><label className="text-white" htmlFor="ob">Yes! Another Free Bonus!! </label>
-        
+      
         <input type="hidden" id="obId" name="obId" value="79" />
         <input type="hidden" id="page" name="page" value="checkout" />
         </div >
