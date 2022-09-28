@@ -31,7 +31,7 @@ export default function DreamyUltimate({num}) {
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===platinumPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('http://3.93.181.214/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

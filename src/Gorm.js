@@ -25,7 +25,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://pay.kaiserfitapp.com/stripe/createPm2.php", {
+    fetch("http://3.93.181.214/apiv4/index.php/createPm/test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId: priceId, price: price })
@@ -39,22 +39,22 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
       .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
       const timeStamp = Date.now();    
       const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-      TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-      TiktokPixel.pageView();
-      TiktokPixel.track('AddPaymentInfo');
+      // TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+      // TiktokPixel.pageView();
+      // TiktokPixel.track('AddPaymentInfo');
   
-      ReactPixel.init('334082198751683')
-      ReactPixel.pageView();
-      ReactPixel.track('AddPaymentInfo')
+      // ReactPixel.init('334082198751683')
+      // ReactPixel.pageView();
+      // ReactPixel.track('AddPaymentInfo')
 
-     WebHook('AddPaymentInfo', event_id)
+    //  WebHook('AddPaymentInfo', event_id)
   }, []);
 
   useEffect(()=> {
    
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
-        fetch('https://pay.kaiserfitapp.com/stripe/createCustomer2.php', {
+        fetch('http://3.93.181.214/apiv4/index.php/createCustomer/test', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

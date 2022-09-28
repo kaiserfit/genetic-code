@@ -25,7 +25,7 @@ export default function StripeForm( {clientSecret, customerDetails, setPaymentMe
       "payment_intent_client_secret"
     );
 
-   
+  
      
 
     if (!clientSecret) {

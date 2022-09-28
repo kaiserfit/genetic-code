@@ -39,8 +39,8 @@ export default function DreamyPremium({num}) {
    
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===goldPack);
-    
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+  
+      fetch('http://3.93.181.214/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -66,23 +66,23 @@ export default function DreamyPremium({num}) {
          
         // tiktok
        
-            TiktokPixel.track('CompletePayment',{
-            content_id: 'Dreamy Lean',
-            content_type: 'product',
-            quantity: 1,
-            price: data.price,
-            value: data.price,
-            currency: 'USD'});
+            // TiktokPixel.track('CompletePayment',{
+            // content_id: 'Dreamy Lean',
+            // content_type: 'product',
+            // quantity: 1,
+            // price: data.price,
+            // value: data.price,
+            // currency: 'USD'});
 
 
         // facebook
-        ReactPixel.track('Purchase', {
-            value: data.price,
-            currency: 'USD'
-          }, {eventID:event_id} )
+        // ReactPixel.track('Purchase', {
+        //     value: data.price,
+        //     currency: 'USD'
+        //   }, {eventID:event_id} )
 
 
-          WebHook('Purchase', event_id) 
+        //   WebHook('Purchase', event_id) 
 
           e.target.innerText = "Purchase Successful!"
           e.target.classList.remove('btn-warning')
