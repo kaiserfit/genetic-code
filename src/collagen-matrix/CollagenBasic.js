@@ -32,7 +32,7 @@ export default function CollagenBasic({num}) {
       e.target.disabled = true;
       var x = cmData.filter(x=>x.id===basicPack);
     
-      fetch('https://pay.kaiserfitapp.com/stripe/upsellMain2.php', {
+      fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

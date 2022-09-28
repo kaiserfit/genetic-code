@@ -25,7 +25,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost/stripe/index.php/createPm/test", {
+    fetch("https://queenformula.net/apiv4/index.php/createPm/test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId: priceId, price: price })
@@ -54,7 +54,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
    
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
-        fetch('http://localhost/stripe/index.php/createCustomer/test', {
+        fetch('https://queenformula.net/apiv4/index.php/createCustomer/test', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

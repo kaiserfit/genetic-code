@@ -95,7 +95,7 @@ const ThankYou =() =>{
         e.target.disabled = true;
         
        var set = e.target.dataset
-        fetch('https://pay.kaiserfitapp.com/stripe/upsell.php', {
+        fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -107,7 +107,8 @@ const ThankYou =() =>{
             itemid: set.id,
             desc: set.desc,
             bot: botCount,
-            url: url
+            url: url,
+            page: 'ty'
           })
         })
         .then((res) => res.json())
