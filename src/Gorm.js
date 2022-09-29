@@ -25,7 +25,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://queenformula.net/apiv4/index.php/createPm", {
+    fetch("https://pay.kaiserfitapp.com/apiv4/index.php/createPm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId: priceId, price: price })
@@ -54,7 +54,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
    
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false"
-        fetch('https://queenformula.net/apiv4/index.php/createCustomer', {
+        fetch('https://pay.kaiserfitapp.com/apiv4/index.php/createCustomer', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
