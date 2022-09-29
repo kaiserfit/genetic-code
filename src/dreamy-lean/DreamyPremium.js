@@ -40,7 +40,7 @@ export default function DreamyPremium({num}) {
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===goldPack);
   
-      fetch('https://pay.kaiserfitapp.com/apiv4/index.php/upsell/test', {
+      fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
