@@ -40,7 +40,7 @@ export default function DreamyPremium({num}) {
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===goldPack);
   
-      fetch('https://queenformula.net/apiv4/index.php/upsell', {
+      fetch('http://localhost/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

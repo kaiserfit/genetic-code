@@ -11,7 +11,7 @@ import 'react-phone-input-2/lib/style.css'
 import Select from 'react-select'
 import $ from "jquery"
 import {Prices} from "./prices"
-
+import axios from "axios";
 import Gorm from "./Gorm";
 
 
@@ -175,7 +175,45 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
           cd[0].phone = phone;
           setCustomerDetails(cd);
           // setCustomerDetails(customerDetails => ({name:f}));
+          var ipx = localStorage.getItem('_uip')
+          //send to non-buyers
+          var nonBuyerData = {
+            api_key: 'cLlL1tqV0HmMII2c1G6I',
+            name: f,
+            email: em,
+            list: 'ivjFaa7aAJo8921ooWPJcZ892w',
+            referrer: window.location.href,
+            hp: '',
+            ipaddress: ipx,
+            }
+          var abandonCartData = {
+            api_key: 'cLlL1tqV0HmMII2c1G6I',
+            name: f,
+            email: em,
+            list: 'nTKk4tvGKlBzm4zrkh9Agw',
+            referrer: window.location.href,
+            hp: '',
+            ipaddress: ipx,
+            }
       
+        
+              //  axios.post( 'https://queenformula.net/sendy/subscribe', data)
+
+              axios({
+                method: "POST",
+                url: "https://queenformula.net/sendy/subscribe",
+                data: nonBuyerData,
+                headers: { "Content-Type": "multipart/form-data" },
+              })
+
+              axios({
+                method: "POST",
+                url: "https://queenformula.net/sendy/subscribe",
+                data: abandonCartData,
+                headers: { "Content-Type": "multipart/form-data" },
+              })
+                
+       
           
             setStep(checkoutStep=>checkoutStep+1)
             $('html, body').animate({

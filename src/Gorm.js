@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-
+import axios from "axios";
 import StripeForm from "./StripeForm";
 import "./App.css"
 import GetCookie from "./Cookie";
@@ -12,8 +12,8 @@ import WebHook from "./WebHook";
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
-const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
-// const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
+// const stripePromise = loadStripe("pk_live_DIH0BmB1obyjQvuimdsJI9MH");
+const stripePromise = loadStripe("pk_test_laGA1Jl4I44TUJFzQJI8DNuD");
 
 export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}) {
   const [clientSecret, setClientSecret] = useState("");
@@ -25,7 +25,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://queenformula.net/apiv4/index.php/createPm", {
+    fetch("http://localhost/apiv4/index.php/createPm/test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId: priceId, price: price })
@@ -53,8 +53,38 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
   useEffect(()=> {
    
     if (customerPaymentMethod !== ""){
-        var ob = (orderBump) ? "true" : "false"
-        fetch('https://queenformula.net/apiv4/index.php/createCustomer', {
+        var ob = (orderBump) ? "true" : "false";
+
+        axios({
+          method: "POST",
+          url: "https://queenformula.net/sendy/api/subscribers/delete.php",
+          data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'ivjFaa7aAJo8921ooWPJcZ892w', email:customerDetails[0].email},
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+
+        axios({
+          method: "POST",
+          url: "https://queenformula.net/sendy/api/subscribers/delete.php",
+          data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'nTKk4tvGKlBzm4zrkh9Agw', email:customerDetails[0].email},
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+
+        var ipx = localStorage.getItem('_uip')
+        axios({
+          method: "POST",
+          url: "https://queenformula.net/sendy/subscribe",
+          data: {
+            api_key: 'cLlL1tqV0HmMII2c1G6I',
+            name: customerDetails[0].name,
+            email: customerDetails[0].email,
+            list: 'gvPodrI1haUinwHFG2L2763g',
+            referrer: window.location.href,
+            hp: '',
+            ipaddress: ipx,
+          },
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        fetch('http://localhost/apiv4/index.php/createCustomer/test', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
