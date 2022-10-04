@@ -32,7 +32,7 @@ export default function CollagenUltimate({num}) {
       e.target.disabled = true;
       var x = cmData.filter(x=>x.id===platinumPack);
     
-      fetch('http://localhost/apiv4/index.php/upsell/test', {
+      fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

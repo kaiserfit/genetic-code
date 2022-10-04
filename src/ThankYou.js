@@ -95,7 +95,7 @@ const ThankYou =() =>{
         e.target.disabled = true;
         
        var set = e.target.dataset
-        fetch('http://localhost/apiv4/index.php/upsell/test', {
+        fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

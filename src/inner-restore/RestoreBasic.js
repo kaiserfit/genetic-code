@@ -32,7 +32,7 @@ export default function RestoreBasic({num}) {
       e.target.disabled = true;
       var x = irData.filter(x=>x.id===basicPack);
     
-      fetch('http://localhost/apiv4/index.php/upsell/test', {
+      fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
