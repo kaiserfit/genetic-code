@@ -199,19 +199,19 @@ const CheckoutForm = ({dba, productType, setRoute}) => {
         
               //  axios.post( 'https://queenformula.net/sendy/subscribe', data)
 
-              axios({
-                method: "POST",
-                url: "https://queenformula.net/sendy/subscribe",
-                data: nonBuyerData,
-                headers: { "Content-Type": "multipart/form-data" },
-              })
+              // axios({
+              //   method: "POST",
+              //   url: "https://queenformula.net/sendy/subscribe",
+              //   data: nonBuyerData,
+              //   headers: { "Content-Type": "multipart/form-data" },
+              // })
 
-              axios({
-                method: "POST",
-                url: "https://queenformula.net/sendy/subscribe",
-                data: abandonCartData,
-                headers: { "Content-Type": "multipart/form-data" },
-              })
+              // axios({
+              //   method: "POST",
+              //   url: "https://queenformula.net/sendy/subscribe",
+              //   data: abandonCartData,
+              //   headers: { "Content-Type": "multipart/form-data" },
+              // })
                 
        
           

@@ -55,35 +55,35 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
     if (customerPaymentMethod !== ""){
         var ob = (orderBump) ? "true" : "false";
 
-        axios({
-          method: "POST",
-          url: "https://queenformula.net/sendy/api/subscribers/delete.php",
-          data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'ivjFaa7aAJo8921ooWPJcZ892w', email:customerDetails[0].email},
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        // axios({
+        //   method: "POST",
+        //   url: "https://queenformula.net/sendy/api/subscribers/delete.php",
+        //   data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'ivjFaa7aAJo8921ooWPJcZ892w', email:customerDetails[0].email},
+        //   headers: { "Content-Type": "multipart/form-data" },
+        // })
 
-        axios({
-          method: "POST",
-          url: "https://queenformula.net/sendy/api/subscribers/delete.php",
-          data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'nTKk4tvGKlBzm4zrkh9Agw', email:customerDetails[0].email},
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        // axios({
+        //   method: "POST",
+        //   url: "https://queenformula.net/sendy/api/subscribers/delete.php",
+        //   data: {api_key:'cLlL1tqV0HmMII2c1G6I',list_id:'nTKk4tvGKlBzm4zrkh9Agw', email:customerDetails[0].email},
+        //   headers: { "Content-Type": "multipart/form-data" },
+        // })
 
-        var ipx = localStorage.getItem('_uip')
-        axios({
-          method: "POST",
-          url: "https://queenformula.net/sendy/subscribe",
-          data: {
-            api_key: 'cLlL1tqV0HmMII2c1G6I',
-            name: customerDetails[0].name,
-            email: customerDetails[0].email,
-            list: 'gvPodrI1haUinwHFG2L2763g',
-            referrer: window.location.href,
-            hp: '',
-            ipaddress: ipx,
-          },
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        // var ipx = localStorage.getItem('_uip')
+        // axios({
+        //   method: "POST",
+        //   url: "https://queenformula.net/sendy/subscribe",
+        //   data: {
+        //     api_key: 'cLlL1tqV0HmMII2c1G6I',
+        //     name: customerDetails[0].name,
+        //     email: customerDetails[0].email,
+        //     list: 'gvPodrI1haUinwHFG2L2763g',
+        //     referrer: window.location.href,
+        //     hp: '',
+        //     ipaddress: ipx,
+        //   },
+        //   headers: { "Content-Type": "multipart/form-data" },
+        // })
         fetch('https://queenformula.net/apiv4/index.php/createCustomer/test', {
           method: 'POST',
           headers: {
