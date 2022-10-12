@@ -270,9 +270,9 @@ function ProductSection(){
 }
     return(
         <>
-        {/* <DivTimer />
+        <DivTimer />
         <Section2 />
-        <ProductSection /> */}
+        <ProductSection />
         <CheckoutForm dba={dba} productType={productType} setRoute={setRoute} />
         </>
     )
