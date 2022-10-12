@@ -120,23 +120,23 @@ const ThankYou =() =>{
               const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
              
             //tiktok
-                TiktokPixel.track('CompletePayment',{
-                content_id: set.content,
-                content_type: 'product',
-                quantity: 1,
-                price: 97.00,
-                value: 97.00,
-                currency: 'USD'});
+                // TiktokPixel.track('CompletePayment',{
+                // content_id: set.content,
+                // content_type: 'product',
+                // quantity: 1,
+                // price: 97.00,
+                // value: 97.00,
+                // currency: 'USD'});
 
 
             //facebook
-            ReactPixel.track('Purchase', {
-                value: 97.00,
-                currency: 'USD'
-              }, {eventID:event_id} )
+            // ReactPixel.track('Purchase', {
+            //     value: 97.00,
+            //     currency: 'USD'
+            //   }, {eventID:event_id} )
 
 
-              WebHook('Purchase', event_id)
+            //   WebHook('Purchase', event_id)
               // 2 is code for successful purchase
                 switch(set.id){
                     case "25201":

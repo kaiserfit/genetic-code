@@ -24,11 +24,11 @@ const DreamyLean = () => {
     const bot = state.bot
     const product = state.product
 
-    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-    TiktokPixel.pageView();
+    // TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    // TiktokPixel.pageView();
 
-    ReactPixel.init('334082198751683')
-    ReactPixel.pageView();
+    // ReactPixel.init('334082198751683')
+    // ReactPixel.pageView();
 
     useEffect(()=>{
         $('html, body').animate({
@@ -45,23 +45,23 @@ const DreamyLean = () => {
       const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
     
           
-    TiktokPixel.track('CompletePayment',{
-        content_id: 'Kaiser Burner',
-        content_type: 'product',
-        quantity: 1,
-        price:price,
-        value: price,
-        currency: 'USD'});
+    // TiktokPixel.track('CompletePayment',{
+    //     content_id: 'Kaiser Burner',
+    //     content_type: 'product',
+    //     quantity: 1,
+    //     price:price,
+    //     value: price,
+    //     currency: 'USD'});
 
 
 
 
-    ReactPixel.track('Purchase', {
-        value: price,
-        currency: 'USD'
-      }, {eventID:event_id} )
+    // ReactPixel.track('Purchase', {
+    //     value: price,
+    //     currency: 'USD'
+    //   }, {eventID:event_id} )
 
-      WebHook('Purchase', event_id)
+    //   WebHook('Purchase', event_id)
       document.cookie="ini_purchase=1;path=/"
         }
              

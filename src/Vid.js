@@ -73,18 +73,18 @@ const Vid = ({setRoute}) => {
       } 
 
       if (hook1){
+        
+      //   const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
+      // .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
+      // const timeStamp = Date.now();    
+      // const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
+      //   TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+      //   TiktokPixel.track('InitiateCheckout');
 
-        const hashVal  = [...crypto.getRandomValues(new Uint8Array(8))]
-      .map((x,i)=>(i=x/255*61|0,String.fromCharCode(i+(i>9?i>35?61:55:48)))).join``
-      const timeStamp = Date.now();    
-      const event_id = 'event-'+hashVal+'-'+timeStamp; //unique ID of event
-        TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-        TiktokPixel.track('InitiateCheckout');
+      //   ReactPixel.init('334082198751683')
+      //   ReactPixel.track('InitiateCheckout')
 
-        ReactPixel.init('334082198751683')
-        ReactPixel.track('InitiateCheckout')
-
-        WebHook('InitiateCheckout', event_id)
+      //   WebHook('InitiateCheckout', event_id)
       }
       
     

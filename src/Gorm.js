@@ -82,7 +82,7 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
         })
         .then((res) => res.json())
         .then((data)=>{
-          console.log(data);
+      
           localStorage.setItem("customerName", customerDetails[0].name)
           localStorage.setItem("cid", data.customerid)
           document.cookie="orderid="+customerOrderNumber+";path=/";
@@ -92,12 +92,12 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
           document.cookie="bot="+bot+";path=/";   
          
           setTimeout(() => {
-            // setRoute("thankyou");
-            // navigate("/thankyou", { push: true, state: { price: parseFloat(price) } });
+            setRoute("thankyou");
+            navigate("/thankyou", { push: true, state: { price: parseFloat(price) } });
             
             
-            setRoute("dreamy-lean");
-            navigate("/dreamy-lean", { push: true, state: { price: amount, bot: bot, product: p } });
+            // setRoute("dreamy-lean");
+            // navigate("/dreamy-lean", { push: true, state: { price: amount, bot: bot, product: p } });
 
           }, 1000);
         })

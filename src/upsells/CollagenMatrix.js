@@ -25,11 +25,11 @@ const CollagenMatrix = () => {
     // const bot = state.bot
     // const product = state.product
 
-    TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
-    TiktokPixel.pageView();
+    // TiktokPixel.init('CBSRIBJC77U6QAIGVM3G');
+    // TiktokPixel.pageView();
 
-    ReactPixel.init('334082198751683')
-    ReactPixel.pageView();
+    // ReactPixel.init('334082198751683')
+    // ReactPixel.pageView();
 
     
     useEffect(()=>{
