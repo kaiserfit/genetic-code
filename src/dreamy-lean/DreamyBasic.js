@@ -32,11 +32,12 @@ function DreamyBasic({num}) {
       e.target.disabled = true;
       var x = dlData.filter(x=>x.id===basicPack);
     
-      fetch('https://queenformula.net/apiv4/index.php/upsell/test', {
+      fetch('https://queenformula.net/apiv4/index.php/upsell', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
+'x-api-key':'4pX42OnC2TjR',
         },
         body: JSON.stringify({
           cid: GetCookie('cid'),

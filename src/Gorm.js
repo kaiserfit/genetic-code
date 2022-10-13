@@ -25,9 +25,12 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
  
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://queenformula.net/apiv4/index.php/createPm/test", {
+    fetch("https://queenformula.net/apiv4/index.php/createPm", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-api-key':'4pX42OnC2TjR', },
         body: JSON.stringify({ priceId: priceId, price: price })
       
       })
@@ -57,11 +60,12 @@ export default function Gorm({priceId, price, customerDetails, setRoute, bot, p}
 
        
       
-        fetch('https://queenformula.net/apiv4/index.php/createCustomer/test', {
+        fetch('https://queenformula.net/apiv4/index.php/createCustomer', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+'x-api-key':'4pX42OnC2TjR',
           },
           body: JSON.stringify({
             name: customerDetails[0].name,
